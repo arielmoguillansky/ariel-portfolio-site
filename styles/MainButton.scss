@@ -1,0 +1,89 @@
+.linkBox {
+  padding: 0 10px;
+  width: max-content;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 42px;
+  text-transform: uppercase;
+  border: 2px solid #fff;
+  margin: auto;
+  transition: 0.52s cubic-bezier(0.7, 0.3, 0, 1);
+  transform: translateX(-22px);
+  &:hover {
+    transform: translateX(25px);
+    transition-delay: 0.15s;
+    .linkArrowR {
+      .arrowContainer i {
+        transform: translateX(105%);
+        transition-duration: 0.35s;
+      }
+      &::before {
+        transform: translateX(-105%);
+      }
+    }
+    .linkArrowL {
+      .arrowContainer i {
+        transform: translateX(0%);
+        transition-delay: 0.22s;
+      }
+      &::before {
+        transform: translateX(0%);
+        transition-delay: 0.22s;
+      }
+    }
+  }
+  .arrowContainer {
+    overflow: hidden;
+    i {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: auto;
+      transition: 0.45s cubic-bezier(0.7, 0.3, 0, 1);
+    }
+  }
+  .linkArrowL {
+    right: 100%;
+    &::before {
+      border-left: 2px solid #fff;
+      transform-origin: 100% 0;
+      background-color: #fff;
+      transform: translateX(105%);
+    }
+    .arrowContainer i {
+      transform: translateX(-105%);
+    }
+  }
+  .linkArrowR {
+    left: 100%;
+    &::before {
+      margin-left: -3px;
+      border-right: 2px solid #fff;
+      transform-origin: 0 0;
+    }
+  }
+  .linkArrowL,
+  .linkArrowR {
+    position: absolute;
+    height: 42px;
+    width: 50px;
+    top: -2px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      height: 38px;
+      border-top: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transition: 0.55s cubic-bezier(0.7, 0.3, 0, 1);
+    }
+  }
+}
