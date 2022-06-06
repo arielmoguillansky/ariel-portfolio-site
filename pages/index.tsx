@@ -1,14 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
-import {
-  Parallax,
-  ParallaxBanner,
-  ParallaxProvider,
-} from "react-scroll-parallax";
+import { ParallaxBanner, ParallaxProvider } from "react-scroll-parallax";
 import Typed from "react-typed";
-import CustomLink from "../components/CustomLink";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import MainButton from "../components/MainButton";
@@ -20,7 +14,7 @@ const Home: NextPage = () => {
   const header: any = {
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
-    children: <Header />,
+    children: <Header expand={true} />,
   };
   const backgroundColorTransition: any = {
     opacity: [0, 0.9],
@@ -128,6 +122,19 @@ const Home: NextPage = () => {
       </div>
     ),
   };
+
+  const section4Content: any = {
+    shouldAlwaysCompleteAnimation: true,
+    expanded: false,
+    children: (
+      <div className="section3Content">
+        <div>
+          <h2>3D</h2>
+          <MainButton url="#" arrowColor="black" />
+        </div>
+      </div>
+    ),
+  };
   return (
     <div>
       <Head>
@@ -155,6 +162,16 @@ const Home: NextPage = () => {
               speed: -20,
             },
             section3Content,
+          ]}
+          className="section3Parallax"
+        ></ParallaxBanner>
+        <ParallaxBanner
+          layers={[
+            {
+              image: Section3Bg.src,
+              speed: -20,
+            },
+            section4Content,
           ]}
           className="section3Parallax"
         ></ParallaxBanner>

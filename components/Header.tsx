@@ -1,13 +1,20 @@
 import Image from "next/image";
+import Link from "next/link";
 import HeaderLogo from "../public/vercel.svg";
 import CustomLink from "./CustomLink";
 
-const Header = () => {
+type HeaderProps = {
+  expand?: boolean;
+};
+
+const Header = ({ expand }: HeaderProps) => {
   return (
-    <header>
-      <div>
-        <Image src={HeaderLogo} alt="Author's logo" width={70} height={70} />
-      </div>
+    <header className={expand ? "expanded" : ""}>
+      <Link href={"/"}>
+        <a>
+          <Image src={HeaderLogo} alt="Author's logo" width={70} height={70} />
+        </a>
+      </Link>
       <div className="menuLInk">
         <CustomLink text="About" url="#" />
         <CustomLink text="Contact" url="#" />
