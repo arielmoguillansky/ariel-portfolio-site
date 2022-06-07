@@ -1,6 +1,22 @@
 /* ////////////////////////// JOSEFIN SANS FONT ////////////////////////////// */
 
 @font-face {
+  font-family: "JosefinSansSemiBold";
+  src: url('/fonts/woff2/josefin-sans/JosefinSans-SemiBold.woff2') format('woff2'),
+       url('/fonts/josefin-sans/JosefinSans-SemiBold.woff') format('woff');
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "JosefinSansMedium";
+  src: url('/fonts/woff2/josefin-sans/JosefinSans-Medium.woff2') format('woff2'),
+       url('/fonts/josefin-sans/JosefinSans-Medium.woff') format('woff');
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
   font-family: "JosefinSansRegular";
   src: url('/fonts/woff2/josefin-sans/JosefinSans-Regular.woff2') format('woff2'),
        url('/fonts/josefin-sans/JosefinSans-Regular.woff') format('woff');

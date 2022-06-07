@@ -11,24 +11,24 @@
   transition: 0.52s cubic-bezier(0.7, 0.3, 0, 1);
   // transform: translateX(-22px);
   &.filled {
-    border: 2px solid red;
+    border: 2px solid $yelpyRed;
     .linkArrowL {
       &::before {
-        border-left: 2px solid red;
-        background-color: red;
+        border-left: 2px solid $yelpyRed;
+        background-color: $yelpyRed;
       }
     }
     .linkArrowR {
       &::before {
-        background-color: red;
-        border-right: 2px solid red;
+        background-color: $yelpyRed;
+        border-right: 2px solid $yelpyRed;
       }
     }
     .linkArrowL,
     .linkArrowR {
       &::before {
-        border-top: 2px solid red;
-        border-bottom: 2px solid red;
+        border-top: 2px solid $yelpyRed;
+        border-bottom: 2px solid $yelpyRed;
       }
     }
   }

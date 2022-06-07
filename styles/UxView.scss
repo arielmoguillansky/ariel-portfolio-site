@@ -1,0 +1,168 @@
+.uxView {
+  h1 {
+    margin-bottom: 20px;
+    font-size: 4rem;
+  }
+  .projectCard {
+    cursor: pointer;
+    position: relative;
+    &:hover {
+      .overlayScreen {
+        h3 {
+          transition: all 0.4s 0.15s ease;
+          opacity: 1;
+          transform: translateY(0px);
+        }
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+    .overlayScreen {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h3 {
+        position: relative;
+        z-index: 10;
+        color: black;
+        font-size: 3rem;
+        transition: all 0.15s ease;
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+    }
+  }
+}
+h2 {
+  font-size: 32px;
+  margin: 40px 0;
+}
+.contentBlock {
+  width: 60%;
+  max-width: 1000px;
+  margin: 80px auto;
+  table {
+    width: 100%;
+    margin: auto;
+    font-size: 22px;
+    text-align: center;
+    th {
+      font-family: $josefineReg;
+      font-weight: 500;
+    }
+    td {
+      font-family: $josefineLigth;
+    }
+    td,
+    th {
+      padding: 10px 40px;
+      &:not(:last-of-type) {
+        border-right-color: $screechingWhite;
+        border-right-width: 2px;
+      }
+    }
+  }
+  &.grid {
+    gap: 6rem;
+  }
+  .ideationImg {
+    width: 100%;
+    height: 500px;
+  }
+  .wireframeImg {
+    box-shadow: 0 2px 21px rgb(0 0 0 / 10%);
+  }
+  &.highlighted {
+    padding: 6rem 0;
+    width: unset;
+    max-width: unset;
+    background-color: $screechingWhite;
+    & > * {
+      width: 60%;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h5 {
+      margin-bottom: 10px;
+    }
+  }
+  p {
+    font-family: $halantReg;
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  h4 {
+    color: $yelpyRed;
+    font-family: $halantBold;
+    font-size: 48px;
+  }
+  h5 {
+    color: $yelpyRed;
+    font-family: $halantBold;
+    font-size: 22px;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: 700;
+  }
+  span {
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: block;
+  }
+  & > div {
+    margin: 80px auto;
+  }
+}
+
+.bannerSection {
+  height: calc(100vh - 238px);
+  overflow-y: hidden;
+  position: relative;
+}
+
+.sideMenu {
+  position: fixed;
+  right: 8%;
+  bottom: 50%;
+  z-index: 1;
+  a {
+    margin: 8px 0;
+    display: block;
+    opacity: 0.2;
+    transition: opacity 0.25s ease;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@media (min-width: 1536px) {
+  .contentBlock {
+    .ideationImg {
+      width: 100%;
+      height: 724px;
+    }
+  }
+}
