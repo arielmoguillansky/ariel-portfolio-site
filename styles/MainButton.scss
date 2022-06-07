@@ -9,7 +9,29 @@
   border: 2px solid #fff;
   margin: auto;
   transition: 0.52s cubic-bezier(0.7, 0.3, 0, 1);
-  transform: translateX(-22px);
+  // transform: translateX(-22px);
+  &.filled {
+    border: 2px solid red;
+    .linkArrowL {
+      &::before {
+        border-left: 2px solid red;
+        background-color: red;
+      }
+    }
+    .linkArrowR {
+      &::before {
+        background-color: red;
+        border-right: 2px solid red;
+      }
+    }
+    .linkArrowL,
+    .linkArrowR {
+      &::before {
+        border-top: 2px solid red;
+        border-bottom: 2px solid red;
+      }
+    }
+  }
   &:hover {
     transform: translateX(25px);
     transition-delay: 0.15s;
@@ -41,6 +63,7 @@
       justify-content: center;
       height: auto;
       transition: 0.45s cubic-bezier(0.7, 0.3, 0, 1);
+      position: relative;
     }
   }
   .linkArrowL {

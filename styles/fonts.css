@@ -1,7 +1,9 @@
+/* ////////////////////////// JOSEFIN SANS FONT ////////////////////////////// */
+
 @font-face {
   font-family: "JosefinSansRegular";
-  src: url('../public/fonts/woff2/AnyConv.com__JosefinSans-Regular.woff2') format('woff2')
-      url('../public/fonts/AnyConv.com__JosefinSans-Regular.woff') format('woff');
+  src: url('/fonts/woff2/josefin-sans/JosefinSans-Regular.woff2') format('woff2'),
+       url('/fonts/josefin-sans/JosefinSans-Regular.woff') format('woff');
   font-display: swap;
   font-weight: 500;
   font-style: normal;
@@ -9,11 +11,40 @@
 
 @font-face {
   font-family: "JosefinSansLight";
-  src: url('../public/fonts/woff2/JosefinSans-Light.woff2') format('woff2')
-      url('../public/fonts/AnyConv.com__JosefinSans-Light.woff') format('woff');
+  src: url('/fonts/woff2/josefin-sans/JosefinSans-Light.woff2') format('woff2'),
+      url('/fonts/josefin-sans/JosefinSans-Light.woff') format('woff');
   font-display: swap;
   font-weight: 300;
   font-style: normal;
+}
+
+/* ////////////////////////// HALANT FONT ////////////////////////////// */
+
+@font-face {
+  font-family: "HalantRegular";
+  src: url('/fonts/woff2/halant/Halant-Regular.woff2') format('woff2'),
+      url('/fonts/halant/Halant-Regular.woff') format('woff');
+  font-display: swap;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HalantMedium";
+  src: url('/fonts/woff2/halant/Halant-Medium.woff2') format('woff2'),
+      url('/fonts/halant/Halant-Medium.woff') format('woff');
+  font-display: swap;
+  font-weight: 700;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "HalantBold";
+  src: url('../public/fonts/woff2/halant/Halant-Bold.woff2') format('woff2'),
+       url('/fonts/woff2/halant/Halant-Bold.woff') format('woff');
+  font-display: swap;
+  font-weight: 900;
+  font-style: bolder;
 }
 
 /* ////////////////////////// ICONS ////////////////////////////// */
