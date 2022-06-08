@@ -152,6 +152,9 @@ h2 {
     display: block;
     opacity: 0.2;
     transition: opacity 0.25s ease;
+    &.isCurrent {
+      opacity: 1;
+    }
     &:hover {
       opacity: 1;
     }
