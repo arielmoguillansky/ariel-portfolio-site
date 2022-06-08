@@ -4,14 +4,15 @@ import CardPlaceholder from "/public/images/Mechh.png";
 
 type ProjectCardProps = {
   url: string;
+  text: string;
 };
 
-const ProjectCard = ({ url }: ProjectCardProps) => (
+const ProjectCard = ({ url, text }: ProjectCardProps) => (
   <Link href={url}>
     <div className="projectCard">
       <Image src={CardPlaceholder} alt="Work Background" layout="responsive" />
       <div className="overlayScreen">
-        <h3>Project name</h3>
+        <h3>{text}</h3>
       </div>
     </div>
   </Link>

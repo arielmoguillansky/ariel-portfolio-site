@@ -6,24 +6,24 @@ import Header from "../../components/Header";
 import MainButton from "../../components/MainButton";
 import CardPlaceholder from "/public/images/Mechh.png";
 import SketchImage from "/public/images/ux-1/ideation.jpg";
-import HomeScreenWire from "/public/images/ux-1/home1.png";
-import RestockScreenWire from "/public/images/ux-1/restock.png";
-import ProviderScreenWire from "/public/images/ux-1/restock2.png";
-import ProviderScreen from "/public/images/ux-1/provider.png";
-import LoginScreenWire from "/public/images/ux-1/login-wire.png";
-import LoginScreen from "/public/images/ux-1/login.png";
-import CheckoutScreen from "/public/images/ux-1/checkout.png";
-import OutOfStockScreen from "/public/images/ux-1/out-of-stock.png";
-import ProgressScreen from "/public/images/ux-1/home-progress.png";
-import EditScreen from "/public/images/ux-1/edit.png";
-import PrototypeMockup from "/public/images/ux-1/closure1.png";
+import JobsScreenWire from "/public/images/ux-3/jobs-wire.png";
+import ProfileScreenWire from "/public/images/ux-3/profile-wire.png";
+import HomePageScreenWire from "/public/images/ux-3/homepage.png";
+import JobsListScreenWire from "/public/images/ux-3/jobs2.png";
+import HomePageScreen from "/public/images/ux-3/homepage2.png";
+import JobsListScreen from "/public/images/ux-3/jobs3.png";
+import Screen1 from "/public/images/ux-3/screen1.png";
+import Screen2 from "/public/images/ux-3/screen2.png";
+import Screen3 from "/public/images/ux-3/screen3.png";
+import Screen4 from "/public/images/ux-3/screen4.png";
+import PrototypeMockup from "/public/images/ux-3/closure.png";
 import Scrollspy from "react-scrollspy";
 import { Fade } from "react-awesome-reveal";
 import { useEffect, useState } from "react";
 import ToTopButton from "../../components/ToTopButton";
 import { goToTop } from "../../helpers/utils";
 
-const UxProject: NextPage = () => {
+const Jobsxheroes: NextPage = () => {
   const [showTopBtn, setShowTopBtn] = useState<boolean>(false);
 
   useEffect(() => {
@@ -66,7 +66,7 @@ const UxProject: NextPage = () => {
       {showTopBtn && (
         <ToTopButton className="icon-long-arrow-right" onClick={goToTop} />
       )}
-      <h2 className="text-center">Boxify</h2>
+      <h2 className="text-center">JobsxHeroes</h2>
       <div className="bannerSection">
         <Image
           src={CardPlaceholder}
@@ -92,23 +92,20 @@ const UxProject: NextPage = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td>native app design</td>
+                  <td>native app &#38; responsive website design</td>
                   <td>UX designer / researcher</td>
                   <td>Figma</td>
-                  <td>4 weeks</td>
+                  <td>6 weeks</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div className="contentBlock">
             <p>
-              Tea Connection is a regional beverage &#38; patisserie store with
-              various branches distributed in the whole region. Tea Connection
-              strives to deliver healthy, a large variety of teas and cakes.
-              They offer a wide spectrum of competitive pricing. Boxify, the
-              inventory app made for Tea Connection, targets managers and
-              employees who are in charge of managing the store’s inventory and
-              need a fast a reliable way to control stocks.
+              JobsxHeroes collects all job offers around the world. JxH strives
+              to offer the best positions for all war veterans who are off duty.
+              It offers a wide spectrum of employers and positions that values
+              the life-changing experience users went through.
             </p>
           </div>
         </section>
@@ -119,16 +116,18 @@ const UxProject: NextPage = () => {
           <div className="contentBlock">
             <h5 className="subtitle">Problem</h5>
             <p>
-              Managers and employees find the process of controlling inventory
-              and restocking stressful and time-consuming.
+              Only 30% of veterans are able to be re-inserted in a job. Most of
+              them feel discouraged due to disabilities, or not having a degree.
+              Most of employers don’t have the knowledge of the valuable skills
+              these users have and tend to omit them.
             </p>
           </div>
           <div className="contentBlock highlighted">
             <h5 className="subtitle">A new design challenge</h5>
             <p>
-              Design an app for Tea Connection that allows users to easily
-              restocking their products and having a clear visualization of the
-              inventory of any branch they manage.
+              Design a responsive website that allows users to easily find a job
+              that adjusts to their necessities and find positions that values
+              their personal skills and life experience.
             </p>
           </div>
           <div className="contentBlock">
@@ -137,34 +136,20 @@ const UxProject: NextPage = () => {
           <div className="grid grid-cols-2 contentBlock">
             <div>
               <h4>01.</h4>
-              <h5 className="subtitle">Time</h5>
+              <h5 className="subtitle">Accessibility</h5>
               <p>
-                Inventory managers often waste time looking for a specific item
-                between a lot of stock.
+                There are no sites that filter job positions based on any
+                situation a war veteran might be in, such us restricted
+                locations, physical disability and more.
               </p>
             </div>
             <div>
               <h4>02.</h4>
-              <h5 className="subtitle">Accessibility</h5>
+              <h5 className="subtitle">Equity</h5>
               <p>
-                Sometimes items are in a deposit inside the store or far away.
-                Some of them are not organized and it’s difficult to find them.
-              </p>
-            </div>
-            <div>
-              <h4>03.</h4>
-              <h5 className="subtitle">Organization</h5>
-              <p>
-                Some articles are stocked in different places, others are just
-                next to unrelated items, making confusion to the workers.
-              </p>
-            </div>
-            <div>
-              <h4>04.</h4>
-              <h5 className="subtitle">Budget</h5>
-              <p>
-                Re stocking should be precise because budget is tight and
-                companies can’t afford wasting money with overfill of items.
+                Most jobs descriptions are not thought for those with any
+                physical impediment or age and fall for confidence in getting a
+                position
               </p>
             </div>
           </div>
@@ -176,11 +161,9 @@ const UxProject: NextPage = () => {
           <div className="contentBlock">
             <h5 className="subtitle">Ideating &#38; sketching</h5>
             <p>
-              Taking the time to draft iterations of each screen of the app on
-              paper ensured that the elements that made it to digital wireframes
-              would be well-suited to address user pain points. For the home
-              screen, I prioritized a quick and easy restocking process to help
-              users save time.
+              I did a quick ideation exercise to come up with ideas for how to
+              address gaps identified in the competitive audit. My focus was
+              specifically on fast application and display location.
             </p>
             <div className="relative my-6 ideationImg">
               <Image
@@ -196,16 +179,17 @@ const UxProject: NextPage = () => {
             <div className="flex items-center justify-between mb-14">
               <div className="w-1/4">
                 <h4>01.</h4>
-                <h5 className="subtitle">Homepage</h5>
+                <h5 className="subtitle">Jobs list</h5>
                 <p>
-                  As the initial design phase continued, I made sure to base
-                  screen designs on feedback and findings from the user
-                  research.
+                  After ideating and drafting some paper wireframes, I created
+                  the initial designs for the JobsxHeroes app. These designs
+                  focused on handy and fast controls to save, view location,
+                  view details or apply each application.
                 </p>
               </div>
               <div className="w-1/4 wireframeImg">
                 <Image
-                  src={HomeScreenWire}
+                  src={JobsScreenWire}
                   alt="Work Background"
                   layout="responsive"
                 />
@@ -214,16 +198,16 @@ const UxProject: NextPage = () => {
             <div className="flex flex-row-reverse items-center justify-between">
               <div className="w-1/4 text-right">
                 <h4>02.</h4>
-                <h5 className="subtitle">Restocking</h5>
+                <h5 className="subtitle">Profile selector</h5>
                 <p>
-                  Fast restocking was a key user need to address in the designs
-                  in addition to easy scheduling sync with providers
-                  availability.
+                  Profile selection was a key user need to address in the
+                  designs to easily change aspects of their profile to better
+                  match job&#39;s expectations and requirements
                 </p>
               </div>
               <div className="w-1/4 wireframeImg">
                 <Image
-                  src={RestockScreenWire}
+                  src={ProfileScreenWire}
                   alt="Work Background"
                   layout="responsive"
                 />
@@ -247,26 +231,18 @@ const UxProject: NextPage = () => {
             <div className="">
               <h4>01.</h4>
               <p>
-                Users need a faster and effortless authentication method to
-                access the app
+                People want to set multiple profiles and select them accordingly
               </p>
             </div>
             <div className="">
               <h4>02.</h4>
-              <p>Users need a fast restock feature with multiple selections</p>
+              <p>People want to save a job for later applications</p>
             </div>
             <div className="">
               <h4>03.</h4>
               <p>
-                Users need a fast search, sort or filter feature on the home
-                screen
-              </p>
-            </div>
-            <div className="">
-              <h4>04.</h4>
-              <p>
-                Providers selection can be well organized for a better
-                visualization
+                People had difficulty in looking for jobs under a specific
+                criteria
               </p>
             </div>
           </div>
@@ -282,14 +258,14 @@ const UxProject: NextPage = () => {
                 <div className="flex justify-center w-full">
                   <div className="w-1/2 mr-4 wireframeImg">
                     <Image
-                      src={ProviderScreenWire}
+                      src={HomePageScreenWire}
                       alt="Work Background"
                       layout="responsive"
                     />
                   </div>
                   <div className="w-1/2 wireframeImg">
                     <Image
-                      src={LoginScreenWire}
+                      src={JobsListScreenWire}
                       alt="Work Background"
                       layout="responsive"
                     />
@@ -301,14 +277,14 @@ const UxProject: NextPage = () => {
                 <div className="flex justify-center w-full">
                   <div className="w-1/2 mr-4 wireframeImg">
                     <Image
-                      src={ProviderScreen}
+                      src={HomePageScreen}
                       alt="Work Background"
                       layout="responsive"
                     />
                   </div>
                   <div className="w-1/2 wireframeImg">
                     <Image
-                      src={LoginScreen}
+                      src={JobsListScreen}
                       alt="Work Background"
                       layout="responsive"
                     />
@@ -328,28 +304,28 @@ const UxProject: NextPage = () => {
             <div className="grid w-full grid-cols-4 gap-8 my-6">
               <div className="wireframeImg">
                 <Image
-                  src={ProgressScreen}
+                  src={Screen2}
                   alt="Work Background"
                   layout="responsive"
                 />
               </div>
               <div className="wireframeImg">
                 <Image
-                  src={OutOfStockScreen}
+                  src={Screen1}
                   alt="Work Background"
                   layout="responsive"
                 />
               </div>
               <div className="wireframeImg">
                 <Image
-                  src={EditScreen}
+                  src={Screen3}
                   alt="Work Background"
                   layout="responsive"
                 />
               </div>
               <div className="wireframeImg">
                 <Image
-                  src={CheckoutScreen}
+                  src={Screen4}
                   alt="Work Background"
                   layout="responsive"
                 />
@@ -373,12 +349,13 @@ const UxProject: NextPage = () => {
             </div>
           </div>
           <MainButton
-            url="https://www.figma.com/proto/dICfHNAaFTzWLB6Fpomjtf/Tea-Store-Portfolio-Project---Google-UX?node-id=61%3A159&scaling=scale-down&page-id=61%3A149&starting-point-node-id=106%3A1878"
+            url="https://www.figma.com/proto/V2KzVY6dmOymrgj2g7bJHu/JobsxHeroes-(Copy)?node-id=18%3A227&scaling=scale-down&page-id=1%3A3&starting-point-node-id=18%3A227"
             arrowColor="black"
             text="view prototype"
             filled
           />
         </section>
+
         <section id="reflection">
           <div className="contentBlock">
             <h3>&#8901; Going Forward &#8901;</h3>
@@ -386,25 +363,46 @@ const UxProject: NextPage = () => {
           <div className="contentBlock">
             <h5 className="subtitle">Impact</h5>
             <p>
-              Boxify makes users labors easier and makes them more productive.
-            </p>
-          </div>
-          <div className="contentBlock highlighted">
-            <h5 className="subtitle">From peer feedback...</h5>
-            <p>
-              <em>
-                “The app help me to be more efficient in managing the store’s
-                inventory and improves the relation with providers too!”
-              </em>
+              JobsxHeroes project really helped those who were considered not
+              suitable for any jobs. Moreover, employers are now more aware of
+              how skillful and valuable are all war veterans and how much they
+              deserve a chance to grow personally and financially.
             </p>
           </div>
           <div className="contentBlock">
             <h5 className="subtitle">What I learned</h5>
             <p>
-              While designing Boxify, I learned that the first ideas for the app
-              are only the beginning of the process. Usability studies and peer
-              feedback influenced each iteration of the app’s designs.
+              I learned that even though the problem I was trying to solve was a
+              big one, diligently going through each step of the design process
+              and aligning with specific user needs helped me come up with
+              solutions that were both feasible and useful.
             </p>
+          </div>
+          <div className="contentBlock">
+            <h5 className="subtitle">Next steps</h5>
+            <div className="grid grid-cols-3 gap-12">
+              <div>
+                <h4>01.</h4>
+                <p>
+                  Conduct research on how successful the app is in reaching the
+                  goal to facilitate war veterans to apply for a job.
+                </p>
+              </div>
+              <div>
+                <h4>02.</h4>
+                <p>
+                  Add more educational resources for users to learn about how to
+                  improve job interviews or CVs.
+                </p>
+              </div>
+              <div>
+                <h4>03.</h4>
+                <p>
+                  Provide incentives and rewards to users for successfully
+                  applying to a new post or creating a new profile.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </Fade>
@@ -413,4 +411,4 @@ const UxProject: NextPage = () => {
   );
 };
 
-export default UxProject;
+export default Jobsxheroes;

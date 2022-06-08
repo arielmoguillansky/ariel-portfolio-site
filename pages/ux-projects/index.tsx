@@ -13,12 +13,12 @@ const UxPage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className="uxView container m-auto">
+      <div className="container m-auto uxView">
         <h1>Selected work</h1>
         <div className="grid grid-cols-2 gap-6">
-          <ProjectCard url="/ux-projects/boxify" />
-          <ProjectCard url="#" />
-          <ProjectCard url="#" />
+          <ProjectCard text="Boxify" url="/ux-projects/boxify" />
+          <ProjectCard text="VetFriends" url="/ux-projects/vetfriends" />
+          <ProjectCard text="JobsxHeroes" url="/ux-projects/jobsxheroes" />
         </div>
       </div>
       <Footer />
