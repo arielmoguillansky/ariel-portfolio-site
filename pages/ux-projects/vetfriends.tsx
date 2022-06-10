@@ -4,8 +4,9 @@ import Image from "next/image";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import MainButton from "../../components/MainButton";
-import CardPlaceholder from "/public/images/Mechh.png";
-import SketchImage from "/public/images/ux-1/ideation.jpg";
+import PresentationBanner from "/public/images/ux-2/presentation-banner.jpg";
+import CloseBanner from "/public/images/ux-2/close-banner.jpg";
+import SketchImage from "/public/images/ux-2/sketch.jpg";
 import ScheduleScreenWire from "/public/images/ux-2/schedule-wire.png";
 import LocationScreenWire from "/public/images/ux-2/location-wire.png";
 import BookingWireScreen from "/public/images/ux-2/booking-wire.png";
@@ -70,10 +71,11 @@ const VetFriends: NextPage = () => {
       <h2 className="text-center">VetFriends</h2>
       <div className="bannerSection">
         <Image
-          src={CardPlaceholder}
+          src={PresentationBanner}
           alt="Work Background"
           layout="fill"
           objectFit="cover"
+          placeholder="blur"
         />
       </div>
       <Fade big>
@@ -103,12 +105,13 @@ const VetFriends: NextPage = () => {
           </div>
           <div className="contentBlock">
             <p>
-              VetFriends groups all vet clinics &#38; stores distributed in the
-              whole country. VF clinics strives to offer superb care to all
-              pets. They offer a wide spectrum of medical attention and online
-              pharmacy, with focus on a reliable and easy online appointment
-              booking. VetFriends responsive website, targets all owners who
-              wants to give their pets special care with a clean agenda.
+              VetFriends groups all vet clinics &#38; stores distributed in a
+              whole country. The VF clinics website intends to offer superb care
+              to all pets and confidence to their owners. It offers a wide
+              spectrum of specialists and studies, with focus on a reliable
+              online appointment booking. VetFriends responsive website, targets
+              all owners who wants to give their pets special care without
+              messing their agenda.
             </p>
           </div>
         </section>
@@ -184,8 +187,8 @@ const VetFriends: NextPage = () => {
               <Image
                 src={SketchImage}
                 alt="Work Background"
-                layout="fill"
-                objectFit="contain"
+                layout="responsive"
+                placeholder="blur"
               />
             </div>
           </div>
@@ -205,6 +208,7 @@ const VetFriends: NextPage = () => {
                   src={ScheduleScreenWire}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
             </div>
@@ -223,6 +227,7 @@ const VetFriends: NextPage = () => {
                   src={LocationScreenWire}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
             </div>
@@ -279,6 +284,7 @@ const VetFriends: NextPage = () => {
                       src={BookingWireScreen}
                       alt="Work Background"
                       layout="responsive"
+                      placeholder="blur"
                     />
                   </div>
                 </div>
@@ -291,6 +297,7 @@ const VetFriends: NextPage = () => {
                       src={BookingScreen}
                       alt="Work Background"
                       layout="responsive"
+                      placeholder="blur"
                     />
                   </div>
                 </div>
@@ -308,6 +315,7 @@ const VetFriends: NextPage = () => {
                 src={PetSelectionScreen}
                 alt="Work Background"
                 layout="responsive"
+                placeholder="blur"
               />
             </div>
           </div>
@@ -319,6 +327,7 @@ const VetFriends: NextPage = () => {
                   src={Screen1}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
               <div className="wireframeImg">
@@ -326,6 +335,7 @@ const VetFriends: NextPage = () => {
                   src={Screen2}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
               <div className="wireframeImg">
@@ -333,6 +343,7 @@ const VetFriends: NextPage = () => {
                   src={Screen3}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
               <div className="wireframeImg">
@@ -340,6 +351,7 @@ const VetFriends: NextPage = () => {
                   src={Screen4}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
               <div className="wireframeImg">
@@ -347,6 +359,7 @@ const VetFriends: NextPage = () => {
                   src={Screen5}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
               <div className="wireframeImg">
@@ -354,6 +367,7 @@ const VetFriends: NextPage = () => {
                   src={Screen6}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
             </div>
@@ -371,6 +385,7 @@ const VetFriends: NextPage = () => {
                 src={PrototypeMockup}
                 alt="Work Background"
                 layout="responsive"
+                placeholder="blur"
               />
             </div>
           </div>
@@ -404,12 +419,22 @@ const VetFriends: NextPage = () => {
           <div className="contentBlock">
             <h5 className="subtitle">What I learned</h5>
             <p>
-              While designing VetFriends, I learned that the first ideas for the
-              app are only the beginning of the process. Usability studies and
-              peer feedback influenced each iteration of the app’s designs.
+              While designing VetFriends website, I learned that the first ideas
+              for the app are only the beginning of the process. Usability
+              studies and peer feedback influenced each iteration of the app’s
+              designs.
             </p>
           </div>
         </section>
+        <div className="bannerSection">
+          <Image
+            src={CloseBanner}
+            alt="Work Background"
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+          />
+        </div>
       </Fade>
       <Footer />
     </div>

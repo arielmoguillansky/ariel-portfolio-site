@@ -4,8 +4,9 @@ import Image from "next/image";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import MainButton from "../../components/MainButton";
-import CardPlaceholder from "/public/images/Mechh.png";
-import SketchImage from "/public/images/ux-1/ideation.jpg";
+import PresentationBanner from "/public/images/ux-1/presentation-banner.jpg";
+import CloseBanner from "/public/images/ux-1/close-banner.jpg";
+import SketchImage from "/public/images/ux-1/sketch.jpg";
 import HomeScreenWire from "/public/images/ux-1/home1.png";
 import RestockScreenWire from "/public/images/ux-1/restock.png";
 import ProviderScreenWire from "/public/images/ux-1/restock2.png";
@@ -69,10 +70,11 @@ const UxProject: NextPage = () => {
       <h2 className="text-center">Boxify</h2>
       <div className="bannerSection">
         <Image
-          src={CardPlaceholder}
+          src={PresentationBanner}
           alt="Work Background"
           layout="fill"
           objectFit="cover"
+          placeholder="blur"
         />
       </div>
       <Fade big>
@@ -186,8 +188,8 @@ const UxProject: NextPage = () => {
               <Image
                 src={SketchImage}
                 alt="Work Background"
-                layout="fill"
-                objectFit="contain"
+                layout="responsive"
+                placeholder="blur"
               />
             </div>
           </div>
@@ -208,6 +210,7 @@ const UxProject: NextPage = () => {
                   src={HomeScreenWire}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
             </div>
@@ -226,6 +229,7 @@ const UxProject: NextPage = () => {
                   src={RestockScreenWire}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
             </div>
@@ -285,6 +289,7 @@ const UxProject: NextPage = () => {
                       src={ProviderScreenWire}
                       alt="Work Background"
                       layout="responsive"
+                      placeholder="blur"
                     />
                   </div>
                   <div className="w-1/2 wireframeImg">
@@ -292,6 +297,7 @@ const UxProject: NextPage = () => {
                       src={LoginScreenWire}
                       alt="Work Background"
                       layout="responsive"
+                      placeholder="blur"
                     />
                   </div>
                 </div>
@@ -304,6 +310,7 @@ const UxProject: NextPage = () => {
                       src={ProviderScreen}
                       alt="Work Background"
                       layout="responsive"
+                      placeholder="blur"
                     />
                   </div>
                   <div className="w-1/2 wireframeImg">
@@ -311,6 +318,7 @@ const UxProject: NextPage = () => {
                       src={LoginScreen}
                       alt="Work Background"
                       layout="responsive"
+                      placeholder="blur"
                     />
                   </div>
                 </div>
@@ -331,6 +339,7 @@ const UxProject: NextPage = () => {
                   src={ProgressScreen}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
               <div className="wireframeImg">
@@ -338,6 +347,7 @@ const UxProject: NextPage = () => {
                   src={OutOfStockScreen}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
               <div className="wireframeImg">
@@ -345,6 +355,7 @@ const UxProject: NextPage = () => {
                   src={EditScreen}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
               <div className="wireframeImg">
@@ -352,6 +363,7 @@ const UxProject: NextPage = () => {
                   src={CheckoutScreen}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
             </div>
@@ -369,6 +381,7 @@ const UxProject: NextPage = () => {
                 src={PrototypeMockup}
                 alt="Work Background"
                 layout="responsive"
+                placeholder="blur"
               />
             </div>
           </div>
@@ -401,12 +414,24 @@ const UxProject: NextPage = () => {
           <div className="contentBlock">
             <h5 className="subtitle">What I learned</h5>
             <p>
-              While designing Boxify, I learned that the first ideas for the app
-              are only the beginning of the process. Usability studies and peer
-              feedback influenced each iteration of the app’s designs.
+              I learned a wide variety of ideation techniques, the importance of
+              designing user-centered products and how crucial is testing the
+              application from start to finish with actual users. And, of
+              course, the project does not end with the prototype, but I must
+              keep going further in testings and refinement to improve the
+              product, as this is an iterative process.
             </p>
           </div>
         </section>
+        <div className="bannerSection">
+          <Image
+            src={CloseBanner}
+            alt="Work Background"
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+          />
+        </div>
       </Fade>
       <Footer />
     </div>

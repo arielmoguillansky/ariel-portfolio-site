@@ -4,8 +4,9 @@ import Image from "next/image";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import MainButton from "../../components/MainButton";
-import CardPlaceholder from "/public/images/Mechh.png";
-import SketchImage from "/public/images/ux-1/ideation.jpg";
+import PresentationBanner from "/public/images/ux-3/presentation-banner.png";
+import CloseBanner from "/public/images/ux-3/close-banner.png";
+import SketchImage from "/public/images/ux-3/sketch.jpg";
 import JobsScreenWire from "/public/images/ux-3/jobs-wire.png";
 import ProfileScreenWire from "/public/images/ux-3/profile-wire.png";
 import HomePageScreenWire from "/public/images/ux-3/homepage.png";
@@ -69,10 +70,11 @@ const Jobsxheroes: NextPage = () => {
       <h2 className="text-center">JobsxHeroes</h2>
       <div className="bannerSection">
         <Image
-          src={CardPlaceholder}
+          src={PresentationBanner}
           alt="Work Background"
           layout="fill"
           objectFit="cover"
+          placeholder="blur"
         />
       </div>
       <Fade big>
@@ -102,10 +104,12 @@ const Jobsxheroes: NextPage = () => {
           </div>
           <div className="contentBlock">
             <p>
-              JobsxHeroes collects all job offers around the world. JxH strives
-              to offer the best positions for all war veterans who are off duty.
-              It offers a wide spectrum of employers and positions that values
-              the life-changing experience users went through.
+              The JobsxHeroes application collects all job offers around the
+              world that can potencially fit any war veteran. JxH makes great
+              effort to offer the best positions for all war veterans who are
+              off duty and want to reintegrate to the working market. Moreover,
+              it offers a wide spectrum of employers that values the
+              life-changing experience users went through.
             </p>
           </div>
         </section>
@@ -116,18 +120,18 @@ const Jobsxheroes: NextPage = () => {
           <div className="contentBlock">
             <h5 className="subtitle">Problem</h5>
             <p>
-              Only 30% of veterans are able to be re-inserted in a job. Most of
-              them feel discouraged due to disabilities, or not having a degree.
-              Most of employers don’t have the knowledge of the valuable skills
-              these users have and tend to omit them.
+              Only 30% of veterans are employed. Most of them feel discouraged
+              due to disabilities, or not having any advance studies.
+              Furthermore, most of employers don’t have the knowledge of the
+              valuable skills these users have and tend to omit them.
             </p>
           </div>
           <div className="contentBlock highlighted">
             <h5 className="subtitle">A new design challenge</h5>
             <p>
-              Design a responsive website that allows users to easily find a job
-              that adjusts to their necessities and find positions that values
-              their personal skills and life experience.
+              Design a native app and a responsive website that allows users to
+              easily find a job that suits to their qualifications, necessities
+              and values their personal skills and life experience.
             </p>
           </div>
           <div className="contentBlock">
@@ -139,7 +143,7 @@ const Jobsxheroes: NextPage = () => {
               <h5 className="subtitle">Accessibility</h5>
               <p>
                 There are no sites that filter job positions based on any
-                situation a war veteran might be in, such us restricted
+                situation that a war veteran might be in, such us restricted
                 locations, physical disability and more.
               </p>
             </div>
@@ -161,30 +165,32 @@ const Jobsxheroes: NextPage = () => {
           <div className="contentBlock">
             <h5 className="subtitle">Ideating &#38; sketching</h5>
             <p>
-              I did a quick ideation exercise to come up with ideas for how to
-              address gaps identified in the competitive audit. My focus was
-              specifically on fast application and display location.
+              This time I used the Crazy Eight ideation exercise. I expected
+              this help me think of several ideas in a very short time -8
+              minutes in this case-. With only a sheet of paper, a stylographs
+              -I love&#39;em- and a timer, I let the ideas flow. As this project
+              require two products, I made two sessions of crazy eights
             </p>
             <div className="relative my-6 ideationImg">
               <Image
                 src={SketchImage}
                 alt="Work Background"
-                layout="fill"
-                objectFit="contain"
+                layout="responsive"
+                placeholder="blur"
               />
             </div>
           </div>
           <div className="contentBlock">
             <h5 className="subtitle">Digital Wireframes</h5>
             <div className="flex items-center justify-between mb-14">
-              <div className="w-1/4">
+              <div className="w-1/2">
                 <h4>01.</h4>
                 <h5 className="subtitle">Jobs list</h5>
                 <p>
-                  After ideating and drafting some paper wireframes, I created
-                  the initial designs for the JobsxHeroes app. These designs
-                  focused on handy and fast controls to save, view location,
-                  view details or apply each application.
+                  After ideating and drafting some paper wireframes, I proceed
+                  to create the first designs for the JobsxHeroes app. These
+                  designs focused on handy and fast controls to save, view
+                  location, view details or apply each application.
                 </p>
               </div>
               <div className="w-1/4 wireframeImg">
@@ -192,17 +198,18 @@ const Jobsxheroes: NextPage = () => {
                   src={JobsScreenWire}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
             </div>
             <div className="flex flex-row-reverse items-center justify-between">
-              <div className="w-1/4 text-right">
+              <div className="w-1/2 text-right">
                 <h4>02.</h4>
                 <h5 className="subtitle">Profile selector</h5>
                 <p>
-                  Profile selection was a key user need to address in the
-                  designs to easily change aspects of their profile to better
-                  match job&#39;s expectations and requirements
+                  I wanted to address the profile selection in the designs to
+                  easily change aspects of their profile to better match
+                  job&#39;s expectations and requirements.
                 </p>
               </div>
               <div className="w-1/4 wireframeImg">
@@ -210,6 +217,7 @@ const Jobsxheroes: NextPage = () => {
                   src={ProfileScreenWire}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
             </div>
@@ -222,9 +230,10 @@ const Jobsxheroes: NextPage = () => {
           <div className="contentBlock">
             <h5 className="subtitle">Usability studies</h5>
             <p>
-              I conducted one round of usability studies. Findings helped guide
-              the designs from wireframes to mockups and refine the design in
-              the high fidelity construction.
+              Before jumping into making the hi-fi mockups, I conducted one
+              round of usability studies to see if any adjustment needed to be
+              made. Some of these findings helped me in the process of
+              refinement.
             </p>
           </div>
           <div className="grid grid-cols-2 contentBlock">
@@ -249,8 +258,10 @@ const Jobsxheroes: NextPage = () => {
           <div className="contentBlock">
             <h5 className="subtitle">New designs</h5>
             <p>
-              Early designs offered only email and password access, but users
-              find PIN auth easier when opening the app oftenly.
+              The homepage early concept lacked from clarity and categorization,
+              making it laborious to fast search for a job. To address this, the
+              first section of the screen was intended to popular jobs
+              categories.
             </p>
             <div className="flex justify-around mb-14">
               <div className="w-1/2 mr-20">
@@ -261,6 +272,7 @@ const Jobsxheroes: NextPage = () => {
                       src={HomePageScreenWire}
                       alt="Work Background"
                       layout="responsive"
+                      placeholder="blur"
                     />
                   </div>
                   <div className="w-1/2 wireframeImg">
@@ -268,6 +280,7 @@ const Jobsxheroes: NextPage = () => {
                       src={JobsListScreenWire}
                       alt="Work Background"
                       layout="responsive"
+                      placeholder="blur"
                     />
                   </div>
                 </div>
@@ -280,6 +293,7 @@ const Jobsxheroes: NextPage = () => {
                       src={HomePageScreen}
                       alt="Work Background"
                       layout="responsive"
+                      placeholder="blur"
                     />
                   </div>
                   <div className="w-1/2 wireframeImg">
@@ -287,16 +301,19 @@ const Jobsxheroes: NextPage = () => {
                       src={JobsListScreen}
                       alt="Work Background"
                       layout="responsive"
+                      placeholder="blur"
                     />
                   </div>
                 </div>
               </div>
             </div>
             <p>
-              In second order, possibilities studies revealed that was not easy
-              for user to pick a provider. Having dozen of providers they had to
-              remember which one they used last time. So some sorting and
-              grouping was needed.
+              Secondly, each position did not have any detail: when the user
+              applied, the row dissapeared from the list, confusing the user
+              wether he has already applied or not. After refinement, as the
+              save functionality was implemented, each row will display a
+              particular state when a user interacts with it, such as applied or
+              saved.
             </p>
           </div>
           <div className="contentBlock">
@@ -307,6 +324,7 @@ const Jobsxheroes: NextPage = () => {
                   src={Screen2}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
               <div className="wireframeImg">
@@ -314,6 +332,7 @@ const Jobsxheroes: NextPage = () => {
                   src={Screen1}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
               <div className="wireframeImg">
@@ -321,6 +340,7 @@ const Jobsxheroes: NextPage = () => {
                   src={Screen3}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
               <div className="wireframeImg">
@@ -328,6 +348,7 @@ const Jobsxheroes: NextPage = () => {
                   src={Screen4}
                   alt="Work Background"
                   layout="responsive"
+                  placeholder="blur"
                 />
               </div>
             </div>
@@ -335,16 +356,18 @@ const Jobsxheroes: NextPage = () => {
           <div className="contentBlock">
             <h5 className="subtitle">Closure</h5>
             <p>
-              The final high-fidelity prototype presented cleaner user flows for
-              fast restocking and checkout. It also meet user needs multiple
-              item selections, fast PIN auth and a dedicated search
-              functionality.{" "}
+              The final high-fidelity prototype showed a more dynamic and clear
+              flow. The opportunity to conveniently change the profile
+              accordingly increases user&#39;s probability to be hired.
+              Condensed group of actions taken from emails apps, makes the
+              experience agile and enjoyable.
             </p>
             <div className="relative w-full my-6">
               <Image
                 src={PrototypeMockup}
                 alt="Work Background"
                 layout="responsive"
+                placeholder="blur"
               />
             </div>
           </div>
@@ -405,6 +428,15 @@ const Jobsxheroes: NextPage = () => {
             </div>
           </div>
         </section>
+        <div className="bannerSection">
+          <Image
+            src={CloseBanner}
+            alt="Work Background"
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+          />
+        </div>
       </Fade>
       <Footer />
     </div>
