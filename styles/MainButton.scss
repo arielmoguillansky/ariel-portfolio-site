@@ -10,25 +10,69 @@
   margin: auto;
   transition: 0.52s cubic-bezier(0.7, 0.3, 0, 1);
   // transform: translateX(-22px);
-  &.filled {
-    border: 2px solid $yelpyRed;
+  &.boxyfyblue {
+    border: 2px solid $boxifyblue;
     .linkArrowL {
       &::before {
-        border-left: 2px solid $yelpyRed;
-        background-color: $yelpyRed;
+        border-left: 2px solid $boxifyblue;
+        background-color: $boxifyblue;
       }
     }
     .linkArrowR {
       &::before {
-        background-color: $yelpyRed;
-        border-right: 2px solid $yelpyRed;
+        background-color: $boxifyblue;
+        border-right: 2px solid $boxifyblue;
       }
     }
     .linkArrowL,
     .linkArrowR {
       &::before {
-        border-top: 2px solid $yelpyRed;
-        border-bottom: 2px solid $yelpyRed;
+        border-top: 2px solid $boxifyblue;
+        border-bottom: 2px solid $boxifyblue;
+      }
+    }
+  }
+  &.vetblue {
+    border: 2px solid $vetblue;
+    .linkArrowL {
+      &::before {
+        border-left: 2px solid $vetblue;
+        background-color: $vetblue;
+      }
+    }
+    .linkArrowR {
+      &::before {
+        background-color: $vetblue;
+        border-right: 2px solid $vetblue;
+      }
+    }
+    .linkArrowL,
+    .linkArrowR {
+      &::before {
+        border-top: 2px solid $vetblue;
+        border-bottom: 2px solid $vetblue;
+      }
+    }
+  }
+  &.warherored {
+    border: 2px solid $warHeroRed;
+    .linkArrowL {
+      &::before {
+        border-left: 2px solid $warHeroRed;
+        background-color: $warHeroRed;
+      }
+    }
+    .linkArrowR {
+      &::before {
+        background-color: $warHeroRed;
+        border-right: 2px solid $warHeroRed;
+      }
+    }
+    .linkArrowL,
+    .linkArrowR {
+      &::before {
+        border-top: 2px solid $warHeroRed;
+        border-bottom: 2px solid $warHeroRed;
       }
     }
   }

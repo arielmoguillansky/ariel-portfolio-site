@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import MainButton from "../components/MainButton";
 import Section1Bg from "/public/images/section1Bg.png";
-import Section2Bg from "/public/images/section2Bg.png";
+import Section2Bg from "/public/images/ux/ux-presentation-banner.jpg";
 import Section3Bg from "/public/images/section3Bg.png";
 
 const Home: NextPage = () => {
@@ -66,7 +66,8 @@ const Home: NextPage = () => {
       <div className="section1Content">
         <div>
           <h2>development</h2>
-          <MainButton url="#" arrowColor="black" />
+          <h3 className="text-2xl text-center">coming soon</h3>
+          {/* <MainButton url="#" arrowColor="black"  /> */}
         </div>
       </div>
     ),
@@ -101,7 +102,8 @@ const Home: NextPage = () => {
       <div className="section3Content">
         <div>
           <h2>product design</h2>
-          <MainButton url="#" arrowColor="black" />
+          <h3 className="text-2xl text-center">coming soon</h3>
+          {/* <MainButton url="#" arrowColor="black" /> */}
         </div>
       </div>
     ),
@@ -130,7 +132,8 @@ const Home: NextPage = () => {
       <div className="section3Content">
         <div>
           <h2>3D</h2>
-          <MainButton url="#" arrowColor="black" />
+          <h3 className="text-2xl text-center">coming soon</h3>
+          {/* <MainButton url="#" arrowColor="black" /> */}
         </div>
       </div>
     ),
@@ -148,12 +151,12 @@ const Home: NextPage = () => {
           className="heroBlockParallax"
         ></ParallaxBanner>
         <ParallaxBanner
-          layers={[section1Bg, section1Content]}
-          className="section1Parallax"
-        ></ParallaxBanner>
-        <ParallaxBanner
           layers={[section2Bg, section2Content]}
           className="section2Parallax"
+        ></ParallaxBanner>
+        <ParallaxBanner
+          layers={[section1Bg, section1Content]}
+          className="section1Parallax"
         ></ParallaxBanner>
         <ParallaxBanner
           layers={[
@@ -176,7 +179,6 @@ const Home: NextPage = () => {
           className="section3Parallax"
         ></ParallaxBanner>
       </ParallaxProvider>
-
       <Footer />
     </div>
   );

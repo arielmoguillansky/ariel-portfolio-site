@@ -1,18 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import CardPlaceholder from "/public/images/Mechh.png";
 
 type ProjectCardProps = {
   url: string;
   text: string;
+  subtitle: string;
+  children: any;
 };
 
-const ProjectCard = ({ url, text }: ProjectCardProps) => (
+const ProjectCard = ({ url, text, children, subtitle }: ProjectCardProps) => (
   <Link href={url}>
     <div className="projectCard">
-      <Image src={CardPlaceholder} alt="Work Background" layout="responsive" />
+      {children}
       <div className="overlayScreen">
         <h3>{text}</h3>
+        <span>{subtitle}</span>
       </div>
     </div>
   </Link>

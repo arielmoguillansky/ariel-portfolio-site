@@ -38,7 +38,7 @@ const UxProject: NextPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="boxify">
       <Head>
         <title>Ariel Moguillansky</title>
         <meta name="description" content="Ari's Portfolio Website" />
@@ -280,10 +280,12 @@ const UxProject: NextPage = () => {
               Early designs offered only email and password access, but users
               find PIN auth easier when opening the app oftenly.
             </p>
-            <div className="flex justify-around mb-14">
+          </div>
+          <div className="contentBlock expanded">
+            <div>
               <div className="w-1/2 mr-20">
                 <span>Before usability studies</span>
-                <div className="flex justify-center w-full">
+                <div className="imageContainer">
                   <div className="w-1/2 mr-4 wireframeImg">
                     <Image
                       src={ProviderScreenWire}
@@ -304,7 +306,7 @@ const UxProject: NextPage = () => {
               </div>
               <div className="w-1/2">
                 <span className="subtitle">After usability studies</span>
-                <div className="flex justify-center w-full">
+                <div className="imageContainer">
                   <div className="w-1/2 mr-4 wireframeImg">
                     <Image
                       src={ProviderScreen}
@@ -324,13 +326,16 @@ const UxProject: NextPage = () => {
                 </div>
               </div>
             </div>
-            <p>
+          </div>
+          <div className="contentBlock">
+            <p className="text-white">
               In second order, possibilities studies revealed that was not easy
               for user to pick a provider. Having dozen of providers they had to
               remember which one they used last time. So some sorting and
               grouping was needed.
             </p>
           </div>
+
           <div className="contentBlock">
             <h5 className="subtitle">Key Mockups</h5>
             <div className="grid w-full grid-cols-4 gap-8 my-6">
@@ -387,9 +392,9 @@ const UxProject: NextPage = () => {
           </div>
           <MainButton
             url="https://www.figma.com/proto/dICfHNAaFTzWLB6Fpomjtf/Tea-Store-Portfolio-Project---Google-UX?node-id=61%3A159&scaling=scale-down&page-id=61%3A149&starting-point-node-id=106%3A1878"
-            arrowColor="black"
+            arrowColor="#F9AA33"
             text="view prototype"
-            filled
+            className="boxyfyblue"
           />
         </section>
         <section id="reflection">
@@ -423,11 +428,11 @@ const UxProject: NextPage = () => {
             </p>
           </div>
         </section>
-        <div className="bannerSection">
+        <div className="bannerSection foot">
           <Image
             src={CloseBanner}
             alt="Work Background"
-            layout="fill"
+            layout="responsive"
             objectFit="cover"
             placeholder="blur"
           />

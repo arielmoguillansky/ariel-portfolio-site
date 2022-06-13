@@ -5,13 +5,13 @@ type MainButtonProps = {
   arrowColor?: string;
   text?: string;
   customStyle?: string;
-  filled?: boolean;
+  className?: string;
 };
 const MainButton = ({
   url,
   arrowColor,
   text,
-  filled,
+  className,
   customStyle,
 }: MainButtonProps) => {
   const arrowStyle = {
@@ -19,7 +19,7 @@ const MainButton = ({
   };
   return (
     <Link href={url}>
-      <a className={`linkBox ${customStyle} ${filled ? "filled" : ""}`}>
+      <a className={`linkBox ${customStyle} ${className}`}>
         <span className="linkArrowL">
           <span className="arrowContainer">
             <i className="icon-long-arrow-right" style={arrowStyle} />
@@ -28,7 +28,7 @@ const MainButton = ({
         <span className="linkText">{text || "View All Projects"}</span>
         <span className="linkArrowR">
           <span className="arrowContainer">
-            <i className="icon-long-arrow-right" />
+            <i className="icon-long-arrow-right" style={arrowStyle} />
           </span>
         </span>
       </a>

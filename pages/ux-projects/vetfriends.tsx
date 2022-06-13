@@ -39,7 +39,7 @@ const VetFriends: NextPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="vetfriends">
       <Head>
         <title>Ariel Moguillansky</title>
         <meta name="description" content="Ari's Portfolio Website" />
@@ -272,13 +272,17 @@ const VetFriends: NextPage = () => {
           <div className="contentBlock">
             <h5 className="subtitle">New designs</h5>
             <p>
-              Early designs did not offer selection information from previous
-              steps.
+              Findings from studies on early concepts indicated that users
+              wanted to see what they have set in previous steps, without going
+              back.
             </p>
-            <div className="flex justify-around mb-14">
-              <div className="w-1/2 mr-5">
+          </div>
+
+          <div className="contentBlock expanded">
+            <div>
+              <div className="w-1/2 mr-20">
                 <span>Before usability studies</span>
-                <div className="flex justify-center w-full">
+                <div className="imageContainer">
                   <div className="w-full wireframeImg">
                     <Image
                       src={BookingWireScreen}
@@ -291,7 +295,7 @@ const VetFriends: NextPage = () => {
               </div>
               <div className="w-1/2">
                 <span className="subtitle">After usability studies</span>
-                <div className="flex justify-center w-full">
+                <div className="imageContainer">
                   <div className="w-full wireframeImg">
                     <Image
                       src={BookingScreen}
@@ -303,13 +307,15 @@ const VetFriends: NextPage = () => {
                 </div>
               </div>
             </div>
-            <p>
-              In second order, possibilities studies revealed that was not easy
-              for user to pick a provider. Having dozen of providers they had to
-              remember which one they used last time. So some sorting and
-              grouping was needed.
+          </div>
+          <div className="contentBlock">
+            <p className="text-white">
+              In second order, studies revealed that a pet selection was
+              crucial. For those who own more than one, they felt it was
+              necessary have a profile with all their pets.
             </p>
-
+          </div>
+          <div className="contentBlock">
             <div className="w-full wireframeImg">
               <Image
                 src={PetSelectionScreen}
@@ -319,6 +325,7 @@ const VetFriends: NextPage = () => {
               />
             </div>
           </div>
+
           <div className="contentBlock">
             <h5 className="subtitle">Key Mockups</h5>
             <div className="grid w-full grid-cols-2 gap-4 my-6">
@@ -375,10 +382,11 @@ const VetFriends: NextPage = () => {
           <div className="contentBlock">
             <h5 className="subtitle">Closure</h5>
             <p>
-              The final high-fidelity prototype presented cleaner user flows for
-              fast restocking and checkout. It also meet user needs multiple
-              item selections, fast PIN auth and a dedicated search
-              functionality.{" "}
+              The final high-fidelity prototype presented a clearer user flow
+              for booking a study or vet&#39;s appointment. It met with the
+              requirements of showing previous steps information, selecting from
+              a collection of pets saved on a profile, fast filtering and
+              multiple payment methods.
             </p>
             <div className="relative w-full my-6">
               <Image
@@ -391,9 +399,9 @@ const VetFriends: NextPage = () => {
           </div>
           <MainButton
             url="https://xd.adobe.com/view/8297a693-72ed-447a-8f5f-e58796e4477a-d7c4/"
-            arrowColor="black"
+            arrowColor="white"
             text="view prototype"
-            filled
+            className="vetblue"
           />
         </section>
         <section id="reflection">
@@ -403,7 +411,7 @@ const VetFriends: NextPage = () => {
           <div className="contentBlock">
             <h5 className="subtitle">Impact</h5>
             <p>
-              VetFriends website makes pets owner’s life easier and happy
+              VetFriends website makes pets owner&#39;s life easier and happy
               knowing that their pet will be properly taken care.
             </p>
           </div>
@@ -411,8 +419,8 @@ const VetFriends: NextPage = () => {
             <h5 className="subtitle">From peer feedback...</h5>
             <p>
               <em>
-                “The website help me to easily managing my agenda with my pet’s
-                treatment!”
+                “With this website it&#39; so much easier and clearer to book an
+                appointment that is located near my home.”
               </em>
             </p>
           </div>
@@ -421,16 +429,16 @@ const VetFriends: NextPage = () => {
             <p>
               While designing VetFriends website, I learned that the first ideas
               for the app are only the beginning of the process. Usability
-              studies and peer feedback influenced each iteration of the app’s
-              designs.
+              studies and peer feedback influenced each iteration of the
+              app&#39;s designs.
             </p>
           </div>
         </section>
-        <div className="bannerSection">
+        <div className="bannerSection foot">
           <Image
             src={CloseBanner}
             alt="Work Background"
-            layout="fill"
+            layout="responsive"
             objectFit="cover"
             placeholder="blur"
           />
