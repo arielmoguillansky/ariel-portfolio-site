@@ -9,8 +9,51 @@ import MainButton from "../components/MainButton";
 import Section1Bg from "/public/images/section1Bg.png";
 import Section2Bg from "/public/images/ux/ux-presentation-banner.jpg";
 import Section3Bg from "/public/images/section3Bg.png";
+import { useRouter } from "next/router";
+const indexContent: { [key: string]: any } = {
+  "en-US": {
+    heroTitle: "hi, i'm ariel.",
+    heroSubtitle: [
+      "product designer",
+      "ux analyst",
+      "web developer",
+      "project manager",
+      "university lecturer",
+    ],
+    content: [
+      {
+        development: "development",
+        id: "industrial design",
+        imageUrl: "",
+      },
+    ],
+  },
 
+  "es-ES": {
+    heroTitle: "hola, soy ariel.",
+    heroSubtitle: [
+      "diseñador industrial",
+      "analista UX",
+      "desarrollador",
+      "project manager",
+      "docente universitario",
+    ],
+    content: [
+      {
+        title:
+          "El nuevo asistente de Otter.ai puede transcribir automáticamente sus reuniones de Zoom",
+        synopsis:
+          "El servicio de transcripción de voz con tecnología de inteligencia artificial Otter.ai quiere facilitar aún más a sus usuarios comerciales la grabación de sus reuniones. La compañía presenta hoy una nueva función, Otter Assistant, que ...",
+        imageUrl: "",
+      },
+    ],
+  },
+};
 const Home: NextPage = () => {
+  const { locale } = useRouter();
+  const { heroTitle, heroSubtitle, buttonText } =
+    indexContent[locale ?? "en-US"];
+
   const header: any = {
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
@@ -30,20 +73,9 @@ const Home: NextPage = () => {
     children: (
       <div className="heroContent">
         <div className="heroBlock">
-          <h1>hi, i&#39;m ariel.</h1>
+          <h1>{heroTitle}</h1>
           <h2>
-            <Typed
-              strings={[
-                "product designer",
-                "ux analyst",
-                "web developer",
-                "project manager",
-                "university lecturer",
-              ]}
-              typeSpeed={40}
-              backSpeed={50}
-              loop
-            />
+            <Typed strings={heroSubtitle} typeSpeed={40} backSpeed={50} loop />
           </h2>
         </div>
       </div>

@@ -7,8 +7,27 @@ import ProjectCard from "../../components/ProjectCard";
 import BoxifyPlaceholder from "/public/images/ux-1/placeholder-banner.jpg";
 import VetFriendsPlaceholder from "/public/images/ux-2/placeholder-banner.png";
 import JobsPlaceholder from "/public/images/ux-3/placeholder-banner.jpg";
+import { useRouter } from "next/router";
+
+const indexContent: { [key: string]: any } = {
+  "en-US": {
+    pageTitle: "Selected work",
+    projects: ["app", "responsive website", "responsive website + app"],
+  },
+
+  "es-ES": {
+    pageTitle: "Trabajos seleccionados",
+    projects: [
+      "aplicación",
+      "sitio responsivo",
+      "sitio responsivo + apĺicación",
+    ],
+  },
+};
 
 const UxPage: NextPage = () => {
+  const { locale } = useRouter();
+  const { pageTitle, projects } = indexContent[locale ?? "en-US"];
   return (
     <div>
       <Head>
@@ -18,9 +37,13 @@ const UxPage: NextPage = () => {
       </Head>
       <Header />
       <div className="container m-auto uxView">
-        <h1>Selected work</h1>
+        <h1>{pageTitle}</h1>
         <div className="grid grid-cols-2 gap-6">
-          <ProjectCard subtitle="app" text="Boxify" url="/ux-projects/boxify">
+          <ProjectCard
+            subtitle={projects[0]}
+            text="Boxify"
+            url="/ux-projects/boxify"
+          >
             <Image
               src={BoxifyPlaceholder}
               alt="Work Background"
@@ -30,7 +53,7 @@ const UxPage: NextPage = () => {
             />
           </ProjectCard>
           <ProjectCard
-            subtitle="responsive website"
+            subtitle={projects[1]}
             text="VetFriends"
             url="/ux-projects/vetfriends"
           >
@@ -42,7 +65,7 @@ const UxPage: NextPage = () => {
             />
           </ProjectCard>
           <ProjectCard
-            subtitle="responsive website + app"
+            subtitle={projects[2]}
             text="JobsxHeroes"
             url="/ux-projects/jobsxheroes"
           >
