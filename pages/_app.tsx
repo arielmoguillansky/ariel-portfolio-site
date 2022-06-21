@@ -4,6 +4,7 @@ import "../styles/index.scss";
 import type { AppProps } from "next/app";
 import LoadingBar from "../components/LoadingBar";
 import { useState } from "react";
+import LanguageSelector from "../components/LanguageSelector";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [progress, setProgress] = useState(100);

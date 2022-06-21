@@ -6,9 +6,9 @@ import Typed from "react-typed";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import MainButton from "../components/MainButton";
-import Section1Bg from "/public/images/section1Bg.png";
-import Section2Bg from "/public/images/ux/ux-presentation-banner.jpg";
-import Section3Bg from "/public/images/section3Bg.png";
+import UxBG from "/public/images/ux-bg.png";
+import ProductBg from "/public/images/product-bg.png";
+import RenderBg from "/public/images/render-bg.png";
 import { useRouter } from "next/router";
 const indexContent: { [key: string]: any } = {
   "en-US": {
@@ -49,6 +49,12 @@ const indexContent: { [key: string]: any } = {
     ],
   },
 };
+
+const codeTyping = [
+  "<p>export function useLocalStorage	&#60;T&#62;(key: string, initialValue: T) {<br><em>const</em> [storedValue, setStoredValue] = useState &#60;T&#62;(() => {<br>if (typeof window === 'undefined') { return initialValue }</p><p> try {<br><em>const</em> item = window.localStorage.getItem(key)</p><p> return item ? JSON.parse(item) : initialValue<br>} catch (e) {<br>console.error(e)<br>return initialValue<br>}<br>})",
+  "<p>class NewService<br/>def self.get_session_token!  <br/>response = onnection.post do |req|<br/>req.options.timeout = 120<br/>req.url api_path<br/>req.headers['Content-Type'] = application/json'<br/>req.body = {<br/>id: '13576991614322',<br/>method: 'authenticate',<br/>params: [ENV_SERVICE_USERNAME'], ENV['SERVICE_PASSWORD']],<br/>dataContext: 'json',<br/>jsonrpc: '2.0'<br/>}.to_json<br/>end<br/><br/>if response.status == 200<br/>session = ServiceSession.new(response.body)<br/>",
+];
+
 const Home: NextPage = () => {
   const { locale } = useRouter();
   const { heroTitle, heroSubtitle, buttonText } =
@@ -59,11 +65,11 @@ const Home: NextPage = () => {
     expanded: false,
     children: <Header expand={true} />,
   };
-  const backgroundColorTransition: any = {
+  const heroBg: any = {
     opacity: [0, 0.9],
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
-    children: <div className="heroBackground" />,
+    children: <div className="hero-bg" />,
   };
   const heroBlock: any = {
     translateY: [0, 100],
@@ -71,8 +77,8 @@ const Home: NextPage = () => {
     expanded: false,
     scale: [1, 0.7, "easeInQuad"],
     children: (
-      <div className="heroContent">
-        <div className="heroBlock">
+      <div className="hero-content">
+        <div className="hero-text">
           <h1>{heroTitle}</h1>
           <h2>
             <Typed strings={heroSubtitle} typeSpeed={40} backSpeed={50} loop />
@@ -81,35 +87,35 @@ const Home: NextPage = () => {
       </div>
     ),
   };
-  const section1Bg: any = {
-    translateY: [-150, 50],
+  const devSectionBg: any = {
+    translateY: [-20, 50],
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
     children: (
-      <div>
-        <Image src={Section1Bg} alt="Work Background" layout="responsive" />
+      <div className="code-animation-container">
+        <Typed strings={codeTyping} typeSpeed={40} fadeOut loop />
+        {/* <Image src={UxBG} alt="Work Background" layout="responsive" /> */}
       </div>
     ),
   };
-  const section1Content: any = {
+  const devSectionContent: any = {
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
     children: (
-      <div className="section1Content">
+      <div className="dev-section-content">
         <div>
-          <h2>development</h2>
-          <h3 className="text-2xl text-center">coming soon</h3>
+          <h2> {locale === "es-ES" ? "desarrollo" : "development"}</h2>
+          <h3>{locale === "es-ES" ? "proximamente" : "coming soon"}</h3>
           {/* <MainButton url="#" arrowColor="black"  /> */}
         </div>
       </div>
     ),
   };
-
-  const section2Content: any = {
+  const uxSectionContent: any = {
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
     children: (
-      <div className="section2Content">
+      <div className="ux-section-content">
         <div>
           <h2>UX</h2>
           <MainButton url="/ux-projects" arrowColor="black" />
@@ -117,54 +123,78 @@ const Home: NextPage = () => {
       </div>
     ),
   };
-  const section2Bg: any = {
-    translateY: [-150, 50],
+  const uxSectionBg: any = {
+    translateY: [-0, 50],
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
     children: (
-      <div>
-        <Image src={Section2Bg} alt="Work Background" layout="responsive" />
+      <div className="relative block w-full m-auto ux-bg-parallax">
+        <Image
+          src={UxBG}
+          alt="Work Background"
+          layout="intrinsic"
+          width={2541 / 3}
+          height={1610 / 3}
+        />
       </div>
     ),
   };
-  const section3Content: any = {
+  const productSectionContent: any = {
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
     children: (
       <div className="section3Content">
         <div>
-          <h2>product design</h2>
-          <h3 className="text-2xl text-center">coming soon</h3>
+          <h2>
+            {" "}
+            {locale === "es-ES" ? "diseño de producto" : "product design"}
+          </h2>
+          <h3>{locale === "es-ES" ? "proximamente" : "coming soon"}</h3>
           {/* <MainButton url="#" arrowColor="black" /> */}
         </div>
       </div>
     ),
   };
-  const section3Bg: any = {
-    translateY: [-95, 0],
+  const productSectionBg: any = {
+    translateY: [-20, 30],
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
     children: (
-      <div>
+      <div className="float-right">
         <Image
-          src={Section3Bg}
+          src={ProductBg}
           alt="Work Background"
           layout="intrinsic"
-          width={1920}
-          height={1080}
+          width={1247}
+          height={678}
         />
       </div>
     ),
   };
-
-  const section4Content: any = {
+  const renderSectionBg: any = {
+    translateY: [-20, 10],
+    shouldAlwaysCompleteAnimation: true,
+    expanded: false,
+    children: (
+      <div className="float-right mr-16">
+        <Image
+          src={RenderBg}
+          alt="Work Background"
+          layout="intrinsic"
+          width={439}
+          height={1030}
+        />
+      </div>
+    ),
+  };
+  const renderSectionContent: any = {
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
     children: (
       <div className="section3Content">
         <div>
           <h2>3D</h2>
-          <h3 className="text-2xl text-center">coming soon</h3>
+          <h3>{locale === "es-ES" ? "proximamente" : "coming soon"}</h3>
           {/* <MainButton url="#" arrowColor="black" /> */}
         </div>
       </div>
@@ -179,36 +209,24 @@ const Home: NextPage = () => {
       </Head>
       <ParallaxProvider>
         <ParallaxBanner
-          layers={[heroBlock, backgroundColorTransition, header]}
-          className="heroBlockParallax"
+          layers={[heroBlock, heroBg, header]}
+          className="hero-block"
         ></ParallaxBanner>
         <ParallaxBanner
-          layers={[section2Bg, section2Content]}
-          className="section2Parallax"
+          layers={[uxSectionBg, uxSectionContent]}
+          className="ux-section parallax-wrapper"
         ></ParallaxBanner>
         <ParallaxBanner
-          layers={[section1Bg, section1Content]}
-          className="section1Parallax"
+          layers={[devSectionBg, devSectionContent]}
+          className="dev-section parallax-wrapper"
         ></ParallaxBanner>
         <ParallaxBanner
-          layers={[
-            {
-              image: Section3Bg.src,
-              speed: -20,
-            },
-            section3Content,
-          ]}
-          className="section3Parallax"
+          layers={[productSectionBg, productSectionContent]}
+          className="product-section parallax-wrapper"
         ></ParallaxBanner>
         <ParallaxBanner
-          layers={[
-            {
-              image: Section3Bg.src,
-              speed: -20,
-            },
-            section4Content,
-          ]}
-          className="section3Parallax"
+          layers={[renderSectionBg, renderSectionContent]}
+          className="render-section parallax-wrapper"
         ></ParallaxBanner>
       </ParallaxProvider>
       <Footer />

@@ -12,21 +12,6 @@ const Header = ({ expand }: HeaderProps) => {
   const { locale, asPath } = useRouter();
   return (
     <header className={expand ? "expanded" : ""}>
-      <Link
-        className={locale === "es-ES" ? "active" : ""}
-        href={asPath}
-        locale="es-ES"
-      >
-        es-ES
-      </Link>
-
-      <Link
-        className={locale === "es-ES" ? "active" : ""}
-        href={asPath}
-        locale="en-US"
-      >
-        en-US
-      </Link>
       <Link href={"/"}>
         <a>
           <Image src={HeaderLogo} alt="Author's logo" width={70} height={70} />

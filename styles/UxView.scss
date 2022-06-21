@@ -51,7 +51,7 @@
         transition: all 0.15s ease;
         opacity: 0;
         transform: translateY(50px);
-        font-family: $josefineLigth;
+        font-family: $josefineLight;
       }
       &::after {
         content: "";
@@ -69,8 +69,8 @@
   }
 }
 h2 {
+  color: white;
   font-size: 32px;
-  margin: 40px 0;
 }
 .contentBlock {
   width: 60%;
@@ -86,7 +86,7 @@ h2 {
       font-weight: 500;
     }
     td {
-      font-family: $josefineLigth;
+      font-family: $josefineLight;
     }
     td,
     th {

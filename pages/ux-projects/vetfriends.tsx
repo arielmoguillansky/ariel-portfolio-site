@@ -67,7 +67,7 @@ const indexContent: { [key: string]: any } = {
       content: [
         {
           title: "Opportunity",
-          text: "Pet owners find difficult to look for a vet clinic near to their current location that has a doctor  to a specific date-time and not have to wait.",
+          text: "Pet owners find difficult to look for a vet clinic near to their current location that has a doctor to a specific date-time and not have to wait.",
         },
         {
           title: "A new design challenge",
@@ -89,7 +89,7 @@ const indexContent: { [key: string]: any } = {
               text: "Doctors have limited schedule and varies from location.",
             },
             {
-              title: "Accessibility",
+              title: "Visibility",
               text: "Some doctors are specialist in rare species or only make particular studies.",
             },
           ],
@@ -153,7 +153,7 @@ const indexContent: { [key: string]: any } = {
       content: [
         {
           title: "Impact",
-          text: "VetFriends website makes pets owner&#39;s life easier and happy knowing that their pet will be properly taken care.",
+          text: "VetFriends website makes pets owner's life easier and happy knowing that their pet will be properly taken care.",
         },
         {
           title: "From peer feedback...",
@@ -173,44 +173,44 @@ const indexContent: { [key: string]: any } = {
       table: {
         headings: ["Entregable", "Rol", "Herramientas", "Cronograma"],
         body: [
-          "diseño de aplicación nativa",
+          "diseño de sitio web responsivo",
           "analista / diseñador UX",
-          "Figma",
-          "4 semanas",
+          "Adobe XD",
+          "3 semanas",
         ],
       },
 
-      text: "Boxify es una aplicación que mejora la gestión de inventario y facilita el proceso re restock. Esta pensada para locales de té y café regionales. Los principales usuarios son empleados y gerentes que están a cargo del inventario y buscan una manera eficiente y confiable de gestionar el stock de su local.",
+      text: "El sitio VetFriends nuclea las clínicas veterinarias distribuidas en todo el país. Su misión es ofrecer servicios de cuidado y atención médica a todos los animales además de brindar confianza a sus dueños. Una grran variedad de especialistas veterinarios y estudios médicos están incluidos es la plataforma, cuyo diseño se enfocó exclusivamente en mejorar el sistema de turnos online.",
     },
     understanding: {
       title: "Comprensión",
       content: [
         {
           title: "Oportunidad",
-          text: "Para gerentes y empleados a cargo, el control de inventario y reposición es un proceso laborioso y que consume mucho tiempo y no cuentan con herramientas dedicadas a facilitar y mejorar dicha tarea.",
+          text: "Quienes poseen mascotas tienen dificultad de encontrar y coordinar turnos en veterinarias que puedan cumplir con las necesidades de la mascota - atención de especies exóticas, exámenes, cercanía -. Actualmente, muchos sitios no permiten agendar turnos de forma online y condicionan la agenda del usuario. Muchos otros no ofrecen información detallada sobre la consulta y sus precios, empobreciendo la experiencia del usuario.",
         },
         {
           title: "Un nuevo desafío de diseño",
-          text: "Diseñar una aplicación que le permita a los usuarios una fácil y rápida reposición de productos mediante una interfaz clara y una experiencia de uso intuitiva.",
+          text: "Diseñar un sitio web responsivo que mejore la experienca al momento de agendar turnos con cualquier médico veterinario y obtener información precisa y detallada durante el proceso.",
         },
         {
           title: "Puntos claves",
           points: [
             {
               title: "Tiempo",
-              text: "Los encargados de depósito suelen perder mucho tiempo buscando un item espécifico.",
+              text: "Muchos dueños de mascotas consumen mucho tiempo buscando una clínica cercana que tenga turnos disponibles.",
             },
             {
-              title: "Accesibilidad",
-              text: "Algunos productos a reponer se encuentran en otras sucursales o son inaccesibles en ese momento.",
+              title: "Confianza",
+              text: "Los dueños quieren asegurarse en que la atención y el cuidado brindados a su mascota es la mejor.",
             },
             {
-              title: "Organización",
-              text: "Al no tener herramientas de control dedicadas, algunos articulos pueden llegar sobre abundar por reposiciones simultáneas generando perdida de dinero.",
+              title: "Agenda",
+              text: "La agenda de cada médico veterinario es distinta y además dinámica.",
             },
             {
-              title: "Presupuesto",
-              text: "Los pedidos de stock deben ser precisos a la necesidad del local, ya que cada sobrante es desperdicio y pérdida de dinero.",
+              title: "Visibilidad",
+              text: "Hay médicos veterinarios que se especializan en ciertas especies animales. Al no comunicarse consistentemente, pueden terminar ocupando turnos en atención a otros animales.",
             },
           ],
         },
@@ -221,18 +221,18 @@ const indexContent: { [key: string]: any } = {
       content: [
         {
           title: "Ideación & bocetado",
-          text: "Me tomé el tiempo para bocetar rápidamente cada pantalla de la aplicación a mano en papel. De esta forma, me aseguré de contemplar todos los elementos que responderían a los requerimientos presentados en los puntos claves.  Para la pantalla principal, por ejemplo, prioricé la sección de reposición rápida para economizar el tiempo de proceso a los empleados.",
+          text: "En esta primera estapa, dediqué un tiempo al bocetado de ideas, anotando los elementos básicos a diseñar que cumplan con los requisitos establecidos en la hipótesis y respondad a las necesidades puntuadas anteriormente. La página principal del sitio resalta la opción de agendado de turnos como la funcionalidad más visible y que el usuario rápidamente la detecte.",
         },
         {
           title: "Wireframes digitales",
           points: [
             {
-              title: "Página de inicio",
-              text: "Mientras la primera etapa de diseño seguía su curso, me aseguré de seguir algunas correcciones hechas surgidas de un estudio de usabilidad previo.",
+              title: "Programacón de turnos",
+              text: "A medida que la etapa de maquetizado avanzaba, me cercioré de que la pantalla de selección de turno ofrezca claridad y una funcionalidad amena.",
             },
             {
-              title: "Reposición",
-              text: "Tanto la funcionalidad de reposición rápida como la sincronización con la agenda del proveedor fueron dos elementos claves para los usuarios que debían ser abordados.",
+              title: "Establecimientos cercanos",
+              text: "Clínicas veterinarias disponibles según horario de atención y cercanía de ubicación fueron puntos claves para los usuarios y que debían ser atendidas en el desarrollo.",
             },
           ],
         },
@@ -243,28 +243,28 @@ const indexContent: { [key: string]: any } = {
       content: [
         {
           title: "Estudios de usabilidad",
-          text: "Realicé una ronda de tests de usabilidad. Los hallazgos me guiaron a mejorar el diseño de wireframes y a llevarlos a la instancia de prototipado y refinamiento con una mejor fidelidad.",
+          text: "Realicé una ronda de tests de usabilidad con el fín de guiar la etapa de refinamiento, corregir errores y mejorar aún más la usabilidad.",
           points: [
-            "Ciertos usuarios manifestaron la necesidad de tener una forma de autenticarse a la app más expeditiva",
-            "Es necesario que la funcionalidad de reposición rápida permita la selección de elementos simultáneos",
-            "Los usuarios necesitan la función de búsqueda dedicada, filtrado y ordenado de elementos dentro de la página principal.",
-            "La vista de selección de proveedores debe estar más clara y ofrecer grupos organizados según más utilizados o recientes para facilitar la búsqueda.",
+            "Se requiere de una forma de ver información seleccionada en los pasos anteriores.",
+            "Usuarios que tienen más de una mascota requieren de un selector de perfiles.",
+            "Es necesaria una función de filtrado por tipo de animal para la selección de estudios o médicos.",
+            "La pantalla de confirmación y procedimiento de pago no estaba clara.",
           ],
         },
         {
           title: "Nuevos diseños",
-          text: "Los primeros conceptos solo contemplaban un acceso por email y contraseña, pero los usuarios encontraron que el acceso por PIN era mejor para quienes accedían con frecuencia.",
+          text: "Uno de los resultados de los testeos de usabilidad arrojaron la necesidad que tenian los usuarios de confirmar la selección que van realizando en cada paso dentro del flow de turnos.",
           bus: "Antes de estudios de usabilidad",
           aus: "Después de estudios de usabilidad",
           text2:
-            "En segundo lugar, los estudios revelaron que para los usuarios no fué facil escoger un proovedor. En una situación donde habia decenas de proovedores, perdían tiempo en la búsqueda del mismo; algo que podría cambiar con un criterio de agrupación.",
+            "Otros resultados revelaron que la posibilidad de elegir las mascotas que requerían atención era crucial. Por eso, en la etapa de refinamiento contemplé una grilla de perfiles de mascotas con la posibilidad de seleccionar a más de una.",
         },
         {
           title: "Maquetados claves",
         },
         {
           title: "Cierre",
-          text: "El prototipo de alta fidelidad finalmente presentó un diseño más limpio y una experiencia de usuario clara, intuitiva y eficiente. Además contempló los requerimientos de múltiple selección de artículos, ingreso por PIN y búsqueda dedicada.",
+          text: "El prototipo final de alta fidelidad presentó un recorrido más claro, con una barra de pasos que permiten la flexibilidad de elección al usuario y la obtención de información detallada a medida que avanza en el la secuencia. Varios métodos de pagos disponibles y una facturación detallada brindan tranquilidad al usuario a la hora de agendar el turno.",
         },
       ],
     },
@@ -273,15 +273,15 @@ const indexContent: { [key: string]: any } = {
       content: [
         {
           title: "Impacto",
-          text: "Boxify hace las labores de reposición y control más amenas y precisas.",
+          text: "El sitio de VetFriends realmente mejora la experiencia de encontrar atención de calidad disponible sin generar incomodidad en la agenda diaria del usuario.",
         },
         {
           title: "Testimonio",
-          text: "“Con esta aplicación tengo mejor control de los inventarios de los locales en los que estoy a cargo. Ahora las tareas de cálculo de artículos son más precisas y claras. Me ha facilitado mucho la labor”",
+          text: "“Con éste sitio, me ahorro el tiempo de ir buscando turnos dsiponibles clínica por clínica, o llamando a varios veterinarios para conocer si cuentan con turnos disponibles que se coordinen con la disponibilidad de mi agenda. Sé que ahora mi mascota tendrá una mejor atención cuando lo requiera.”",
         },
         {
           title: "Lo que aprendí",
-          text: "Conocí una gran variedad de técnicas de ideación e investigación, la importancia de diseñar productos centrados en el usuario y la importancia de siempre testear el producto sin importar la instancia en la que se encuentre. Ademas, entendí que el proyecto no termina con la entrega del prototipo, sino que debo seguir refinandolo, más aún en una hipotética etapa de salida al mercado y uso, porque todo proceso de diseño, debe ser iterativo.",
+          text: "Mientras desarrollaba el sitio para VetFriends, aprendí las técnicas de diseño responsivo: evaluar que dispositivos primarios usan los usuarios para navegar y asi saber desde donde abordar el diseño contemplando todas las escalas de dispositivos.",
         },
       ],
     },
