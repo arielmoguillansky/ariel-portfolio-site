@@ -4,10 +4,85 @@ header {
   align-items: center;
   width: 100%;
   padding: 1rem 5rem;
+  .nav-link-wrapper {
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
   &.expanded {
-    padding: 5rem;
+    padding: 16px;
+    padding-right: 28px;
+    @media (min-width: 768px) {
+      padding: 5rem;
+    }
   }
   .custom-link:first-of-type {
     margin-right: 50px;
+  }
+}
+
+@mixin btn($left, $top) {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  transition-duration: 0.2s;
+}
+
+@mixin icon($height, $width) {
+  position: relative;
+  transition-duration: 0.2s;
+  height: $height;
+  width: $width;
+  background-color: $darkGray;
+}
+
+@mixin icon-before($height, $width, $top) {
+  transition-duration: 0.2s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: $darkGray;
+  content: "";
+  top: $top;
+}
+
+@mixin icon-after($height, $width, $top) {
+  transition-duration: 0.2s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: $darkGray;
+  content: "";
+  top: $top;
+}
+
+.btn4 {
+  @include btn(360px, 100px);
+
+  .icon {
+    @include icon(0px, 60px);
+
+    &:before {
+      @include icon-before(4px, 24px, -10px);
+    }
+
+    &:after {
+      @include icon-after(4px, 24px, 10px);
+    }
+  }
+
+  &.open {
+    .icon {
+      transition: 0.5s;
+
+      &:before {
+        transform: rotateZ(45deg) scaleX(1.25) translate(6px, 6px);
+      }
+
+      &:after {
+        transform: rotateZ(-45deg) scaleX(1.25) translate(6px, -6px);
+      }
+    }
   }
 }

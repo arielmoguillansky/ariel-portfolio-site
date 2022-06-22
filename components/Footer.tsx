@@ -1,11 +1,9 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
 import CustomLink from "./CustomLink";
 
 const Footer = () => {
   const { locale, asPath } = useRouter();
-  const [showLanguages, setShowLanguages] = useState(false);
   return (
     <footer>
       <div className="contact-block">

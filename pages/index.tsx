@@ -10,6 +10,8 @@ import UxBG from "/public/images/ux-bg.png";
 import ProductBg from "/public/images/product-bg.png";
 import RenderBg from "/public/images/render-bg.png";
 import { useRouter } from "next/router";
+import { useWindowSize } from "../helpers/hooks";
+import Link from "next/link";
 const indexContent: { [key: string]: any } = {
   "en-US": {
     heroTitle: "hi, i'm ariel.",
@@ -55,15 +57,21 @@ const codeTyping = [
   "<p>class NewService<br/>def self.get_session_token!  <br/>response = onnection.post do |req|<br/>req.options.timeout = 120<br/>req.url api_path<br/>req.headers['Content-Type'] = application/json'<br/>req.body = {<br/>id: '13576991614322',<br/>method: 'authenticate',<br/>params: [ENV_SERVICE_USERNAME'], ENV['SERVICE_PASSWORD']],<br/>dataContext: 'json',<br/>jsonrpc: '2.0'<br/>}.to_json<br/>end<br/><br/>if response.status == 200<br/>session = ServiceSession.new(response.body)<br/>",
 ];
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ showMenu, handleMobileMenu }: any) => {
   const { locale } = useRouter();
-  const { heroTitle, heroSubtitle, buttonText } =
-    indexContent[locale ?? "en-US"];
+  const { heroTitle, heroSubtitle } = indexContent[locale ?? "en-US"];
+  const isMobile = useWindowSize();
 
   const header: any = {
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
-    children: <Header expand={true} />,
+    children: (
+      <Header
+        expand={true}
+        handleMobileMenu={handleMobileMenu}
+        showMenu={showMenu}
+      />
+    ),
   };
   const heroBg: any = {
     opacity: [0, 0.9],
@@ -77,7 +85,7 @@ const Home: NextPage = () => {
     expanded: false,
     scale: [1, 0.7, "easeInQuad"],
     children: (
-      <div className="hero-content">
+      <div className={`hero-content ${showMenu ? "menu-open" : ""}`}>
         <div className="hero-text">
           <h1>{heroTitle}</h1>
           <h2>
@@ -88,7 +96,7 @@ const Home: NextPage = () => {
     ),
   };
   const devSectionBg: any = {
-    translateY: [-20, 50],
+    translateY: isMobile ? [-60, 120] : [-10, 50],
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
     children: (
@@ -124,7 +132,7 @@ const Home: NextPage = () => {
     ),
   };
   const uxSectionBg: any = {
-    translateY: [-0, 50],
+    translateY: isMobile ? [-30, 120] : [-0, 60],
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
     children: (
@@ -143,7 +151,7 @@ const Home: NextPage = () => {
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
     children: (
-      <div className="section3Content">
+      <div className="product-section-content">
         <div>
           <h2>
             {" "}
@@ -156,7 +164,7 @@ const Home: NextPage = () => {
     ),
   };
   const productSectionBg: any = {
-    translateY: [-20, 30],
+    translateY: isMobile ? [-30, 120] : [-10, 60],
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
     children: (
@@ -172,11 +180,11 @@ const Home: NextPage = () => {
     ),
   };
   const renderSectionBg: any = {
-    translateY: [-20, 10],
+    translateY: isMobile ? [-80, 50] : [-30, 20],
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
     children: (
-      <div className="float-right mr-16">
+      <div className="float-right md:mr-16">
         <Image
           src={RenderBg}
           alt="Work Background"
@@ -191,7 +199,7 @@ const Home: NextPage = () => {
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
     children: (
-      <div className="section3Content">
+      <div className="render-section-content">
         <div>
           <h2>3D</h2>
           <h3>{locale === "es-ES" ? "proximamente" : "coming soon"}</h3>

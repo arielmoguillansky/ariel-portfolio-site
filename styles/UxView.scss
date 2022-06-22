@@ -1,7 +1,11 @@
-.uxView {
+.ux-view {
+  padding: 0 20px;
   h1 {
     margin-bottom: 20px;
-    font-size: 4rem;
+    font-size: 64px;
+    @media (min-width: 768px) and (max-width: 1700px) {
+      font-size: 48px;
+    }
   }
   .projectCard {
     cursor: pointer;
@@ -72,10 +76,8 @@ h2 {
   color: white;
   font-size: 32px;
 }
-.contentBlock {
-  width: 60%;
-  max-width: 1000px;
-  margin: 80px auto;
+.content-table {
+  width: 100%;
   table {
     width: 100%;
     margin: auto;
@@ -97,15 +99,24 @@ h2 {
       }
     }
   }
+}
+.content-block {
+  width: 60%;
+  max-width: 1000px;
+  margin: 80px auto;
+
   &.expanded {
     width: 100%;
     max-width: unset;
     & > div {
-      width: 65%;
+      width: 75%;
       display: flex;
       justify-content: space-around;
       margin: auto;
       margin-bottom: 20px;
+      @media (min-width: 1536px) {
+        width: 65%;
+      }
       .imageContainer {
         position: relative;
         margin-top: 20px;
@@ -128,13 +139,21 @@ h2 {
     position: relative;
     &:after {
       content: "";
-      background-color: $yelpyRed;
       position: absolute;
       width: 100%;
-      bottom: -30%;
+      bottom: -60%;
       right: 0;
       height: 300px;
       z-index: -1;
+      @media (min-width: 1080px) {
+        bottom: -50%;
+      }
+      @media (min-width: 1366px) {
+        bottom: -40%;
+      }
+      @media (min-width: 1700px) {
+        bottom: -30%;
+      }
     }
   }
   &.grid {
@@ -203,11 +222,14 @@ h2 {
   }
 }
 
-.sideMenu {
+.content-nav {
   position: fixed;
-  right: 8%;
+  right: 4%;
   bottom: 50%;
   z-index: 1;
+  @media (min-width: 1536px) {
+    right: 8%;
+  }
   a {
     margin: 8px 0;
     display: block;
@@ -223,7 +245,7 @@ h2 {
 }
 
 @media (min-width: 1536px) {
-  .contentBlock {
+  .content-block {
     .ideationImg {
       width: 100%;
     }
@@ -231,7 +253,7 @@ h2 {
 }
 
 .boxify {
-  .contentBlock {
+  .content-block {
     h4,
     h5 {
       color: $boxifyyellow;
@@ -249,7 +271,7 @@ h2 {
   }
 }
 .vetfriends {
-  .contentBlock {
+  .content-block {
     h4,
     h5 {
       color: $vetpurple;
@@ -257,7 +279,10 @@ h2 {
     &.expanded {
       &:after {
         background-color: $vetpurple;
-        bottom: -50%;
+        bottom: -85%;
+        @media (min-width: 1536px) {
+          bottom: -50%;
+        }
       }
       .imageContainer {
         &::before {
@@ -268,7 +293,7 @@ h2 {
   }
 }
 .jobxheroes {
-  .contentBlock {
+  .content-block {
     h4,
     h5 {
       color: $warHeroDarkBlue;

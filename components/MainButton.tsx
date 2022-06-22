@@ -19,6 +19,7 @@ const MainButton = ({
   const arrowStyle = {
     color: arrowColor,
   };
+
   return (
     <Link href={url}>
       <a className={`linkBox ${customStyle} ${className}`}>
@@ -28,7 +29,7 @@ const MainButton = ({
           </span>
         </span>
         <span className="linkText">
-          {text || locale === "en-US" ? "view projects" : "ver proyectos"}
+          {text || (locale === "en-US" ? "view projects" : "ver proyectos")}
         </span>
         <span className="linkArrowR">
           <span className="arrowContainer">

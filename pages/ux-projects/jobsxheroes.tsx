@@ -301,7 +301,7 @@ const Jobsxheroes: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className="sideMenu">
+      <div className="content-nav">
         <Scrollspy
           items={[
             "overview",
@@ -335,10 +335,10 @@ const Jobsxheroes: NextPage = () => {
       </div>
       <Fade big>
         <section id="overview">
-          <div className="contentBlock">
+          <div className="content-block">
             <h3>&#8901; {overview.title} &#8901;</h3>
           </div>
-          <div className="contentBlock">
+          <div className="content-table">
             <table>
               <thead>
                 <tr>
@@ -358,26 +358,26 @@ const Jobsxheroes: NextPage = () => {
               </tbody>
             </table>
           </div>
-          <div className="contentBlock">
+          <div className="content-block">
             <p>{overview.text}</p>
           </div>
         </section>
         <section id="understanding">
-          <div className="contentBlock">
+          <div className="content-block">
             <h3>&#8901; {understanding.title} &#8901;</h3>
           </div>
-          <div className="contentBlock">
+          <div className="content-block">
             <h5 className="subtitle">{understanding.content[0].title}</h5>
             <p>{understanding.content[0].text}</p>
           </div>
-          <div className="contentBlock highlighted">
+          <div className="content-block highlighted">
             <h5 className="subtitle">{understanding.content[1].title}</h5>
             <p>{understanding.content[1].text}</p>
           </div>
-          <div className="contentBlock">
+          <div className="content-block">
             <h5 className="subtitle">{understanding.content[2].title}</h5>
           </div>
-          <div className="grid grid-cols-2 contentBlock">
+          <div className="grid grid-cols-2 content-block">
             <div>
               <h4>01.</h4>
               <h5 className="subtitle">
@@ -395,10 +395,10 @@ const Jobsxheroes: NextPage = () => {
           </div>
         </section>
         <section id="low-fidelity">
-          <div className="contentBlock">
+          <div className="content-block">
             <h3>&#8901; {lofi.title} &#8901;</h3>
           </div>
-          <div className="contentBlock">
+          <div className="content-block">
             <h5 className="subtitle">{lofi.content[0].title}</h5>
             <p>{lofi.content[0].text}</p>
             <div className="relative my-6 ideationImg">
@@ -410,7 +410,7 @@ const Jobsxheroes: NextPage = () => {
               />
             </div>
           </div>
-          <div className="contentBlock">
+          <div className="content-block">
             <h5 className="subtitle">{lofi.content[1].title}</h5>
             <div className="flex items-center justify-between mb-14">
               <div className="w-1/2">
@@ -418,7 +418,7 @@ const Jobsxheroes: NextPage = () => {
                 <h5 className="subtitle">{lofi.content[1].points[0].title}</h5>
                 <p>{lofi.content[1].points[0].text}</p>
               </div>
-              <div className="w-1/4 wireframeImg">
+              <div className="md:w-1/3 2xl:w-1/4 wireframeImg">
                 <Image
                   src={JobsScreenWire}
                   alt="Work Background"
@@ -433,7 +433,7 @@ const Jobsxheroes: NextPage = () => {
                 <h5 className="subtitle">{lofi.content[1].points[1].title}</h5>
                 <p>{lofi.content[1].points[1].text}</p>
               </div>
-              <div className="w-1/4 wireframeImg">
+              <div className="md:w-1/3 2xl:w-1/4 wireframeImg">
                 <Image
                   src={ProfileScreenWire}
                   alt="Work Background"
@@ -445,14 +445,14 @@ const Jobsxheroes: NextPage = () => {
           </div>
         </section>
         <section id="high-fidelity">
-          <div className="contentBlock">
+          <div className="content-block">
             <h3>&#8901; {hifi.title} &#8901;</h3>
           </div>
-          <div className="contentBlock">
+          <div className="content-block">
             <h5 className="subtitle">{hifi.content[0].title}</h5>
             <p>{hifi.content[0].text}</p>
           </div>
-          <div className="grid grid-cols-2 contentBlock">
+          <div className="grid grid-cols-2 content-block">
             <div>
               <h4>01.</h4>
               <p>{hifi.content[0].points[0]}</p>
@@ -466,11 +466,11 @@ const Jobsxheroes: NextPage = () => {
               <p>{hifi.content[0].points[2]}</p>
             </div>
           </div>
-          <div className="contentBlock">
+          <div className="content-block">
             <h5 className="subtitle">{hifi.content[1].title}</h5>
             <p>{hifi.content[1].text}</p>
           </div>
-          <div className="contentBlock expanded">
+          <div className="content-block expanded">
             <div className="flex justify-around mb-14">
               <div className="w-1/2 mr-20">
                 <span>{hifi.content[1].bus}</span>
@@ -516,12 +516,12 @@ const Jobsxheroes: NextPage = () => {
               </div>
             </div>
           </div>
-          <div className="contentBlock">
+          <div className="content-block">
             <p className="text-white">{hifi.content[1].text2}</p>
           </div>
-          <div className="contentBlock">
+          <div className="content-block">
             <h5 className="subtitle">{hifi.content[2].title}</h5>
-            <div className="grid w-full grid-cols-4 gap-8 my-6">
+            <div className="grid w-full grid-cols-2 gap-8 my-6 xl:grid-cols-4">
               <div className="wireframeImg">
                 <Image
                   src={Screen2}
@@ -556,7 +556,7 @@ const Jobsxheroes: NextPage = () => {
               </div>
             </div>
           </div>
-          <div className="contentBlock">
+          <div className="content-block">
             <h5 className="subtitle">{hifi.content[3].title}</h5>
             <p>{hifi.content[3].text}</p>
             <div className="relative w-full my-6">
@@ -577,10 +577,10 @@ const Jobsxheroes: NextPage = () => {
         </section>
 
         <section id="reflection">
-          <div className="contentBlock">
+          <div className="content-block">
             <h3>&#8901; {reflection.title} &#8901;</h3>
           </div>
-          <div className="contentBlock">
+          <div className="content-block">
             <h5 className="subtitle">{reflection.content[0].title}</h5>
             <p>
               JobsxHeroes project really helped those who were considered not
@@ -589,7 +589,7 @@ const Jobsxheroes: NextPage = () => {
               deserve a chance to grow personally and financially.
             </p>
           </div>
-          <div className="contentBlock">
+          <div className="content-block">
             <h5 className="subtitle">{reflection.content[1].title}</h5>
             <p>
               I learned that even though the problem I was trying to solve was a
@@ -598,7 +598,7 @@ const Jobsxheroes: NextPage = () => {
               solutions that were both feasible and useful.
             </p>
           </div>
-          <div className="contentBlock">
+          <div className="content-block">
             <h5 className="subtitle">{reflection.content[2].title}</h5>
             <div className="grid grid-cols-3 gap-12">
               <div>

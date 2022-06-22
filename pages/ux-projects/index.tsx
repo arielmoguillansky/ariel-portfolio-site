@@ -36,7 +36,7 @@ const UxPage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className="container m-auto uxView">
+      <div className="container m-auto ux-view">
         <h1>{pageTitle}</h1>
         <div className="grid grid-cols-2 gap-6">
           <ProjectCard
