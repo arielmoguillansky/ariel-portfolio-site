@@ -10,7 +10,7 @@ type ProjectCardProps = {
 
 const ProjectCard = ({ url, text, children, subtitle }: ProjectCardProps) => (
   <Link href={url}>
-    <div className="projectCard">
+    <div className="project-card">
       {children}
       <div className="overlayScreen">
         <h3>{text}</h3>

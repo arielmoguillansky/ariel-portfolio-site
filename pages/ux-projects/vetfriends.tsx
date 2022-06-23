@@ -427,7 +427,7 @@ const VetFriends: NextPage = () => {
           <div className="content-block">
             <h5 className="subtitle">{lofi.content[0].title}</h5>
             <p>{lofi.content[0].text}</p>
-            <div className="relative my-6 ideationImg">
+            <div className="relative my-6 ideation-img">
               <Image
                 src={SketchImage}
                 alt="Work Background"

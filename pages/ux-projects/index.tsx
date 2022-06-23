@@ -25,20 +25,20 @@ const indexContent: { [key: string]: any } = {
   },
 };
 
-const UxPage: NextPage = () => {
+const UxPage: NextPage = ({ handleMobileMenu, showMenu }: any) => {
   const { locale } = useRouter();
   const { pageTitle, projects } = indexContent[locale ?? "en-US"];
   return (
-    <div>
+    <div className="ux-view">
       <Head>
         <title>Ariel Moguillansky</title>
         <meta name="description" content="Ari's Portfolio Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
-      <div className="container m-auto ux-view">
+      <Header handleMobileMenu={handleMobileMenu} showMenu={showMenu} />
+      <div className={`container m-auto ${showMenu ? "menu-open" : ""}`}>
         <h1>{pageTitle}</h1>
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-4 md:gap-6 md:grid-cols-2">
           <ProjectCard
             subtitle={projects[0]}
             text="Boxify"
@@ -47,8 +47,7 @@ const UxPage: NextPage = () => {
             <Image
               src={BoxifyPlaceholder}
               alt="Work Background"
-              layout="fill"
-              objectFit="cover"
+              layout="responsive"
               placeholder="blur"
             />
           </ProjectCard>
