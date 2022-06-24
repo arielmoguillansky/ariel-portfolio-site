@@ -39,8 +39,12 @@ const Header = ({ expand, handleMobileMenu, showMenu }: HeaderProps) => {
         <Link href="/ux-projects">
           {locale === "en-US" ? "Projects" : "Proyectos"}
         </Link>
-        <Link href="#">{locale === "en-US" ? "About" : "Acerca de"}</Link>
-        <Link href="#">{locale === "en-US" ? "Contact" : "Contacto"}</Link>
+        <Link href="https://www.linkedin.com/in/arielmoguillansky/">
+          {locale === "en-US" ? "About" : "Acerca de"}
+        </Link>
+        <Link href="https://www.linkedin.com/in/arielmoguillansky/">
+          {locale === "en-US" ? "Contact" : "Contacto"}
+        </Link>
       </div>
     </header>
   );

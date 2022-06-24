@@ -9,8 +9,15 @@ const Footer = () => {
       <div className="contact-block">
         <h2>Ariel Moguillansky</h2>
         <div>
-          <CustomLink customClass="mr-4" text="Github" url="#" />
-          <CustomLink text="LinkedIn" url="#" />
+          <CustomLink
+            customClass="mr-4"
+            text="Github"
+            url="https://github.com/arielmoguillansky"
+          />
+          <CustomLink
+            text="LinkedIn"
+            url="https://www.linkedin.com/in/arielmoguillansky/"
+          />
         </div>
       </div>
       <div className={`language-block ${locale}`}>
