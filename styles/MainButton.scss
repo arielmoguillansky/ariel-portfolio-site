@@ -10,7 +10,7 @@
   margin: auto;
   transition: 0.52s cubic-bezier(0.7, 0.3, 0, 1);
   // transform: translateX(-22px);
-  &.boxyfyblue {
+  &.boxifyblue {
     border: 2px solid $boxifyblue;
     .linkArrowL {
       &::before {
@@ -154,12 +154,40 @@
   }
 }
 
-.toTopButton {
+.to-top-btn {
   width: 50px;
   height: 50px;
   position: fixed;
   z-index: 1;
-  right: 8%;
-  bottom: 20%;
+  right: 0;
+  bottom: 0;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  border-top-left-radius: 25px;
+  i {
+    transition: transform 0.2s 0.05s ease-in;
+    font-size: 35px;
+    color: white;
+  }
+  @media (min-width: 768px) {
+    border-radius: 25px;
+    background-color: white;
+    right: 9%;
+    bottom: 20%;
+    i {
+      color: $darkGray;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      i {
+        transform: translateY(-3px);
+      }
+    }
+  }
 }

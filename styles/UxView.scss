@@ -183,7 +183,6 @@
         &::before {
           content: "";
           border-bottom-width: 5px;
-          border-bottom-color: $yelpyRed;
           position: absolute;
           width: 100%;
           top: -15px;
@@ -343,6 +342,11 @@
 }
 
 .boxify {
+  .to-top-btn {
+    @media (max-width: 768px) {
+      background-color: $boxifyblue;
+    }
+  }
   .content-wrapper {
     &.menu-open {
       transition: transform 0.5s ease, opacity 0.2s ease;
@@ -369,6 +373,11 @@
   }
 }
 .vetfriends {
+  .to-top-btn {
+    @media (max-width: 768px) {
+      background-color: $vetblue;
+    }
+  }
   .content-wrapper {
     &.menu-open {
       transition: transform 0.5s ease, opacity 0.2s ease;
@@ -408,6 +417,11 @@
   }
 }
 .jobxheroes {
+  .to-top-btn {
+    @media (max-width: 768px) {
+      background-color: $warHeroRed;
+    }
+  }
   .content-wrapper {
     &.menu-open {
       transition: transform 0.5s ease, opacity 0.2s ease;
@@ -452,6 +466,20 @@
   margin: auto;
 }
 .swiper {
+  .imageContainer {
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    &::before {
+      content: "";
+      border-bottom-width: 5px;
+      position: absolute;
+      width: 100%;
+      top: -15px;
+    }
+  }
   overflow: unset;
   @media (min-width: 768px) {
     display: none;

@@ -344,7 +344,7 @@ const VetFriends: NextPage = ({ handleMobileMenu, showMenu }: any) => {
         </Scrollspy>
       </div>
       {showTopBtn && (
-        <ToTopButton className="icon-long-arrow-right" onClick={goToTop} />
+        <ToTopButton className="icon-angle-up" onClick={goToTop} />
       )}
       <div className={`content-wrapper ${showMenu ? "menu-open" : ""}`}>
         <h2 className="text-center">VetFriends</h2>

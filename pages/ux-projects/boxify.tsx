@@ -339,7 +339,7 @@ const UxProject: NextPage = ({ handleMobileMenu, showMenu }: any) => {
         </Scrollspy>
       </div>
       {showTopBtn && (
-        <ToTopButton className="icon-long-arrow-right" onClick={goToTop} />
+        <ToTopButton className="icon-angle-up" onClick={goToTop} />
       )}
       <div className={`content-wrapper ${showMenu ? "menu-open" : ""}`}>
         <h2 className="text-center">Boxify</h2>
@@ -704,7 +704,7 @@ const UxProject: NextPage = ({ handleMobileMenu, showMenu }: any) => {
               url="https://www.figma.com/proto/dICfHNAaFTzWLB6Fpomjtf/Tea-Store-Portfolio-Project---Google-UX?node-id=61%3A159&scaling=scale-down&page-id=61%3A149&starting-point-node-id=106%3A1878"
               arrowColor="#F9AA33"
               text={locale === "es-ES" ? "ver prototipo" : "view prototype"}
-              className="boxyfyblue"
+              className="boxifyblue"
             />
           </section>
           <section id="reflection">
