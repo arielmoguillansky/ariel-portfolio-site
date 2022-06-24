@@ -24,6 +24,7 @@ import { useEffect, useState } from "react";
 import ToTopButton from "../../components/ToTopButton";
 import { goToTop } from "../../helpers/utils";
 import { useRouter } from "next/router";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
 const contentSideMenu: { [key: string]: any } = {
   "en-US": {
@@ -276,7 +277,17 @@ const indexContent: { [key: string]: any } = {
   },
 };
 
-const Jobsxheroes: NextPage = () => {
+const SlideNextButton = ({ customClass }: any) => {
+  const swiper = useSwiper();
+
+  return (
+    <button className={customClass} onClick={() => swiper.slideNext()}>
+      Slide &gt;
+    </button>
+  );
+};
+
+const Jobsxheroes: NextPage = ({ handleMobileMenu, showMenu }: any) => {
   const [showTopBtn, setShowTopBtn] = useState<boolean>(false);
   const { locale } = useRouter();
   const { overview, understanding, lofi, hifi, reflection } =
@@ -294,13 +305,13 @@ const Jobsxheroes: NextPage = () => {
   }, []);
 
   return (
-    <div className="jobxheroes">
+    <div className="ux-view jobxheroes">
       <Head>
         <title>Ariel Moguillansky</title>
         <meta name="description" content="Ari's Portfolio Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <Header handleMobileMenu={handleMobileMenu} showMenu={showMenu} />
       <div className="content-nav">
         <Scrollspy
           items={[
@@ -323,310 +334,406 @@ const Jobsxheroes: NextPage = () => {
       {showTopBtn && (
         <ToTopButton className="icon-long-arrow-right" onClick={goToTop} />
       )}
-      <h2 className="text-center">JobsxHeroes</h2>
-      <div className="bannerSection">
-        <Image
-          src={PresentationBanner}
-          alt="Work Background"
-          layout="fill"
-          objectFit="cover"
-          placeholder="blur"
-        />
-      </div>
-      <Fade big>
-        <section id="overview">
-          <div className="content-block">
-            <h3>&#8901; {overview.title} &#8901;</h3>
-          </div>
-          <div className="content-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>{overview.table.headings[0]}</th>
-                  <th>{overview.table.headings[1]}</th>
-                  <th>{overview.table.headings[2]}</th>
-                  <th>{overview.table.headings[3]}</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{overview.table.body[0]}</td>
-                  <td>{overview.table.body[1]}</td>
-                  <td>{overview.table.body[2]}</td>
-                  <td>{overview.table.body[3]}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div className="content-block">
-            <p>{overview.text}</p>
-          </div>
-        </section>
-        <section id="understanding">
-          <div className="content-block">
-            <h3>&#8901; {understanding.title} &#8901;</h3>
-          </div>
-          <div className="content-block">
-            <h5 className="subtitle">{understanding.content[0].title}</h5>
-            <p>{understanding.content[0].text}</p>
-          </div>
-          <div className="content-block highlighted">
-            <h5 className="subtitle">{understanding.content[1].title}</h5>
-            <p>{understanding.content[1].text}</p>
-          </div>
-          <div className="content-block">
-            <h5 className="subtitle">{understanding.content[2].title}</h5>
-          </div>
-          <div className="grid grid-cols-2 content-block">
-            <div>
-              <h4>01.</h4>
-              <h5 className="subtitle">
-                {understanding.content[2].points[0].title}
-              </h5>
-              <p>{understanding.content[2].points[0].text}</p>
-            </div>
-            <div>
-              <h4>02.</h4>
-              <h5 className="subtitle">
-                {understanding.content[2].points[1].title}
-              </h5>
-              <p>{understanding.content[2].points[1].text}</p>
-            </div>
-          </div>
-        </section>
-        <section id="low-fidelity">
-          <div className="content-block">
-            <h3>&#8901; {lofi.title} &#8901;</h3>
-          </div>
-          <div className="content-block">
-            <h5 className="subtitle">{lofi.content[0].title}</h5>
-            <p>{lofi.content[0].text}</p>
-            <div className="relative my-6 ideation-img">
-              <Image
-                src={SketchImage}
-                alt="Work Background"
-                layout="responsive"
-                placeholder="blur"
-              />
-            </div>
-          </div>
-          <div className="content-block">
-            <h5 className="subtitle">{lofi.content[1].title}</h5>
-            <div className="flex items-center justify-between mb-14">
-              <div className="w-1/2">
-                <h4>01.</h4>
-                <h5 className="subtitle">{lofi.content[1].points[0].title}</h5>
-                <p>{lofi.content[1].points[0].text}</p>
-              </div>
-              <div className="md:w-1/3 2xl:w-1/4 wireframeImg">
-                <Image
-                  src={JobsScreenWire}
-                  alt="Work Background"
-                  layout="responsive"
-                  placeholder="blur"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row-reverse items-center justify-between">
-              <div className="w-1/2 text-right">
-                <h4>02.</h4>
-                <h5 className="subtitle">{lofi.content[1].points[1].title}</h5>
-                <p>{lofi.content[1].points[1].text}</p>
-              </div>
-              <div className="md:w-1/3 2xl:w-1/4 wireframeImg">
-                <Image
-                  src={ProfileScreenWire}
-                  alt="Work Background"
-                  layout="responsive"
-                  placeholder="blur"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="high-fidelity">
-          <div className="content-block">
-            <h3>&#8901; {hifi.title} &#8901;</h3>
-          </div>
-          <div className="content-block">
-            <h5 className="subtitle">{hifi.content[0].title}</h5>
-            <p>{hifi.content[0].text}</p>
-          </div>
-          <div className="grid grid-cols-2 content-block">
-            <div>
-              <h4>01.</h4>
-              <p>{hifi.content[0].points[0]}</p>
-            </div>
-            <div>
-              <h4>02.</h4>
-              <p>{hifi.content[0].points[1]}</p>
-            </div>
-            <div>
-              <h4>03.</h4>
-              <p>{hifi.content[0].points[2]}</p>
-            </div>
-          </div>
-          <div className="content-block">
-            <h5 className="subtitle">{hifi.content[1].title}</h5>
-            <p>{hifi.content[1].text}</p>
-          </div>
-          <div className="content-block expanded">
-            <div className="flex justify-around mb-14">
-              <div className="w-1/2 mr-20">
-                <span>{hifi.content[1].bus}</span>
-                <div className="imageContainer">
-                  <div className="w-1/2 mr-4 wireframeImg">
-                    <Image
-                      src={HomePageScreenWire}
-                      alt="Work Background"
-                      layout="responsive"
-                      placeholder="blur"
-                    />
-                  </div>
-                  <div className="w-1/2 wireframeImg">
-                    <Image
-                      src={JobsListScreenWire}
-                      alt="Work Background"
-                      layout="responsive"
-                      placeholder="blur"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="w-1/2">
-                <span className="subtitle">{hifi.content[1].aus}</span>
-                <div className="imageContainer">
-                  <div className="w-1/2 mr-4 wireframeImg">
-                    <Image
-                      src={HomePageScreen}
-                      alt="Work Background"
-                      layout="responsive"
-                      placeholder="blur"
-                    />
-                  </div>
-                  <div className="w-1/2 wireframeImg">
-                    <Image
-                      src={JobsListScreen}
-                      alt="Work Background"
-                      layout="responsive"
-                      placeholder="blur"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="content-block">
-            <p className="text-white">{hifi.content[1].text2}</p>
-          </div>
-          <div className="content-block">
-            <h5 className="subtitle">{hifi.content[2].title}</h5>
-            <div className="grid w-full grid-cols-2 gap-8 my-6 xl:grid-cols-4">
-              <div className="wireframeImg">
-                <Image
-                  src={Screen2}
-                  alt="Work Background"
-                  layout="responsive"
-                  placeholder="blur"
-                />
-              </div>
-              <div className="wireframeImg">
-                <Image
-                  src={Screen1}
-                  alt="Work Background"
-                  layout="responsive"
-                  placeholder="blur"
-                />
-              </div>
-              <div className="wireframeImg">
-                <Image
-                  src={Screen3}
-                  alt="Work Background"
-                  layout="responsive"
-                  placeholder="blur"
-                />
-              </div>
-              <div className="wireframeImg">
-                <Image
-                  src={Screen4}
-                  alt="Work Background"
-                  layout="responsive"
-                  placeholder="blur"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="content-block">
-            <h5 className="subtitle">{hifi.content[3].title}</h5>
-            <p>{hifi.content[3].text}</p>
-            <div className="relative w-full my-6">
-              <Image
-                src={PrototypeMockup}
-                alt="Work Background"
-                layout="responsive"
-                placeholder="blur"
-              />
-            </div>
-          </div>
-          <MainButton
-            url="https://www.figma.com/proto/V2KzVY6dmOymrgj2g7bJHu/JobsxHeroes-(Copy)?node-id=18%3A227&scaling=scale-down&page-id=1%3A3&starting-point-node-id=18%3A227"
-            arrowColor="white"
-            text="view prototype"
-            className="warherored"
-          />
-        </section>
-
-        <section id="reflection">
-          <div className="content-block">
-            <h3>&#8901; {reflection.title} &#8901;</h3>
-          </div>
-          <div className="content-block">
-            <h5 className="subtitle">{reflection.content[0].title}</h5>
-            <p>
-              JobsxHeroes project really helped those who were considered not
-              suitable for any jobs. Moreover, employers are now more aware of
-              how skillful and valuable are all war veterans and how much they
-              deserve a chance to grow personally and financially.
-            </p>
-          </div>
-          <div className="content-block">
-            <h5 className="subtitle">{reflection.content[1].title}</h5>
-            <p>
-              I learned that even though the problem I was trying to solve was a
-              big one, diligently going through each step of the design process
-              and aligning with specific user needs helped me come up with
-              solutions that were both feasible and useful.
-            </p>
-          </div>
-          <div className="content-block">
-            <h5 className="subtitle">{reflection.content[2].title}</h5>
-            <div className="grid grid-cols-3 gap-12">
-              <div>
-                <h4>01.</h4>
-                <p>{reflection.content[2].points[0]}</p>
-              </div>
-              <div>
-                <h4>02.</h4>
-                <p>{reflection.content[2].points[1]}</p>
-              </div>
-              <div>
-                <h4>03.</h4>
-                <p>{reflection.content[2].points[2]}</p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <div className="bannerSection foot">
+      <div className={`content-wrapper ${showMenu ? "menu-open" : ""}`}>
+        <h2 className="text-center">JobsxHeroes</h2>
+        <div className="bannerSection">
           <Image
-            src={CloseBanner}
+            src={PresentationBanner}
             alt="Work Background"
-            layout="responsive"
+            layout="fill"
             objectFit="cover"
             placeholder="blur"
           />
         </div>
-      </Fade>
-      <Footer />
+        <Fade big>
+          <section id="overview">
+            <div className="content-block">
+              <h3>&#8901; {overview.title} &#8901;</h3>
+            </div>
+            <div className="flex flex-col content-table md:flex-row">
+              <div>
+                <span>{overview.table.headings[0]}</span>
+                <p>{overview.table.body[0]}</p>
+              </div>
+              <div>
+                <span>{overview.table.headings[1]}</span>
+                <p>{overview.table.body[1]}</p>
+              </div>
+              <div>
+                <span>{overview.table.headings[2]}</span>
+                <p>{overview.table.body[2]}</p>
+              </div>
+              <div>
+                <span>{overview.table.headings[3]}</span>
+                <p>{overview.table.body[3]}</p>
+              </div>
+            </div>
+            <div className="content-block">
+              <p>{overview.text}</p>
+            </div>
+          </section>
+          <section id="understanding">
+            <div className="content-block">
+              <h3>&#8901; {understanding.title} &#8901;</h3>
+            </div>
+            <div className="content-block">
+              <h5 className="subtitle">{understanding.content[0].title}</h5>
+              <p>{understanding.content[0].text}</p>
+            </div>
+            <div className="content-block highlighted">
+              <h5 className="subtitle">{understanding.content[1].title}</h5>
+              <p>{understanding.content[1].text}</p>
+            </div>
+            <div className="content-block">
+              <h5 className="subtitle">{understanding.content[2].title}</h5>
+            </div>
+            <div className="grid grid-cols-2 content-block">
+              <div>
+                <h4>01.</h4>
+                <h5 className="subtitle">
+                  {understanding.content[2].points[0].title}
+                </h5>
+                <p>{understanding.content[2].points[0].text}</p>
+              </div>
+              <div>
+                <h4>02.</h4>
+                <h5 className="subtitle">
+                  {understanding.content[2].points[1].title}
+                </h5>
+                <p>{understanding.content[2].points[1].text}</p>
+              </div>
+            </div>
+          </section>
+          <section id="low-fidelity">
+            <div className="content-block">
+              <h3>&#8901; {lofi.title} &#8901;</h3>
+            </div>
+            <div className="content-block">
+              <h5 className="subtitle">{lofi.content[0].title}</h5>
+              <p>{lofi.content[0].text}</p>
+              <div className="relative my-6 ideation-img">
+                <Image
+                  src={SketchImage}
+                  alt="Work Background"
+                  layout="responsive"
+                  placeholder="blur"
+                />
+              </div>
+            </div>
+            <div className="content-block">
+              <h5 className="subtitle">{lofi.content[1].title}</h5>
+              <div className="flex flex-col items-center justify-between md:flex-row mb-14">
+                <div className="w-full md:w-1/2 2xl:w-1/4">
+                  <h4>01.</h4>
+                  <h5 className="subtitle">
+                    {lofi.content[1].points[0].title}
+                  </h5>
+                  <p>{lofi.content[1].points[0].text}</p>
+                </div>
+                <div className="w-full mt-12 md:w-1/3 2xl:w-1/4 wireframeImg md:mt-0">
+                  <Image
+                    src={JobsScreenWire}
+                    alt="Work Background"
+                    layout="responsive"
+                    placeholder="blur"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col items-center justify-between !mt-10 md:flex-row-reverse">
+                <div className="w-full text-right md:w-1/2 2xl:w-1/4">
+                  <h4>02.</h4>
+                  <h5 className="subtitle">
+                    {lofi.content[1].points[1].title}
+                  </h5>
+                  <p>{lofi.content[1].points[1].text}</p>
+                </div>
+                <div className="w-full mt-12 md:w-1/3 2xl:w-1/4 wireframeImg md:mt-0">
+                  <Image
+                    src={ProfileScreenWire}
+                    alt="Work Background"
+                    layout="responsive"
+                    placeholder="blur"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="high-fidelity">
+            <div className="content-block">
+              <h3>&#8901; {hifi.title} &#8901;</h3>
+            </div>
+            <div className="content-block">
+              <h5 className="subtitle">{hifi.content[0].title}</h5>
+              <p>{hifi.content[0].text}</p>
+            </div>
+            <div className="grid grid-cols-2 content-block">
+              <div>
+                <h4>01.</h4>
+                <p>{hifi.content[0].points[0]}</p>
+              </div>
+              <div>
+                <h4>02.</h4>
+                <p>{hifi.content[0].points[1]}</p>
+              </div>
+              <div>
+                <h4>03.</h4>
+                <p>{hifi.content[0].points[2]}</p>
+              </div>
+            </div>
+            <div className="content-block">
+              <h5 className="subtitle">{hifi.content[1].title}</h5>
+              <p>{hifi.content[1].text}</p>
+            </div>
+            <div className="content-block expanded">
+              <Swiper spaceBetween={10} slidesPerView={1}>
+                <SlideNextButton customClass="text-white" />
+                <SwiperSlide>
+                  <div className="w-1/2 mr-20">
+                    <span>{hifi.content[1].bus}</span>
+                    <div className="imageContainer">
+                      <div className="w-1/2 mr-4 wireframeImg">
+                        <Image
+                          src={HomePageScreenWire}
+                          alt="Work Background"
+                          layout="responsive"
+                          placeholder="blur"
+                        />
+                      </div>
+                      <div className="w-1/2 wireframeImg">
+                        <Image
+                          src={JobsListScreenWire}
+                          alt="Work Background"
+                          layout="responsive"
+                          placeholder="blur"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="w-1/2">
+                    <span className="subtitle">{hifi.content[1].aus}</span>
+                    <div className="imageContainer">
+                      <div className="w-1/2 mr-4 wireframeImg">
+                        <Image
+                          src={HomePageScreen}
+                          alt="Work Background"
+                          layout="responsive"
+                          placeholder="blur"
+                        />
+                      </div>
+                      <div className="w-1/2 wireframeImg">
+                        <Image
+                          src={JobsListScreen}
+                          alt="Work Background"
+                          layout="responsive"
+                          placeholder="blur"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+              <div className="!hidden md:!flex justify-around mb-14">
+                <div className="w-1/2 mr-20">
+                  <span>{hifi.content[1].bus}</span>
+                  <div className="imageContainer">
+                    <div className="w-1/2 mr-4 wireframeImg">
+                      <Image
+                        src={HomePageScreenWire}
+                        alt="Work Background"
+                        layout="responsive"
+                        placeholder="blur"
+                      />
+                    </div>
+                    <div className="w-1/2 wireframeImg">
+                      <Image
+                        src={JobsListScreenWire}
+                        alt="Work Background"
+                        layout="responsive"
+                        placeholder="blur"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="w-1/2">
+                  <span className="subtitle">{hifi.content[1].aus}</span>
+                  <div className="imageContainer">
+                    <div className="w-1/2 mr-4 wireframeImg">
+                      <Image
+                        src={HomePageScreen}
+                        alt="Work Background"
+                        layout="responsive"
+                        placeholder="blur"
+                      />
+                    </div>
+                    <div className="w-1/2 wireframeImg">
+                      <Image
+                        src={JobsListScreen}
+                        alt="Work Background"
+                        layout="responsive"
+                        placeholder="blur"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-block">
+              <p className="text-white">{hifi.content[1].text2}</p>
+            </div>
+            <div className="content-block">
+              <h5 className="subtitle">{hifi.content[2].title}</h5>
+              <Swiper spaceBetween={10} slidesPerView={1}>
+                <SlideNextButton />
+                <SwiperSlide>
+                  <div className="wireframeImg">
+                    <Image
+                      src={Screen2}
+                      alt="Work Background"
+                      layout="responsive"
+                      placeholder="blur"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="wireframeImg">
+                    <Image
+                      src={Screen1}
+                      alt="Work Background"
+                      layout="responsive"
+                      placeholder="blur"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="wireframeImg">
+                    <Image
+                      src={Screen3}
+                      alt="Work Background"
+                      layout="responsive"
+                      placeholder="blur"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="wireframeImg">
+                    <Image
+                      src={Screen4}
+                      alt="Work Background"
+                      layout="responsive"
+                      placeholder="blur"
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+              <div className="!hidden md:!grid w-full grid-cols-2 gap-8 my-6 xl:grid-cols-4">
+                <div className="wireframeImg">
+                  <Image
+                    src={Screen2}
+                    alt="Work Background"
+                    layout="responsive"
+                    placeholder="blur"
+                  />
+                </div>
+                <div className="wireframeImg">
+                  <Image
+                    src={Screen1}
+                    alt="Work Background"
+                    layout="responsive"
+                    placeholder="blur"
+                  />
+                </div>
+                <div className="wireframeImg">
+                  <Image
+                    src={Screen3}
+                    alt="Work Background"
+                    layout="responsive"
+                    placeholder="blur"
+                  />
+                </div>
+                <div className="wireframeImg">
+                  <Image
+                    src={Screen4}
+                    alt="Work Background"
+                    layout="responsive"
+                    placeholder="blur"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="content-block">
+              <h5 className="subtitle">{hifi.content[3].title}</h5>
+              <p>{hifi.content[3].text}</p>
+              <div className="relative w-full my-6 ideation-img">
+                <Image
+                  src={PrototypeMockup}
+                  alt="Work Background"
+                  layout="responsive"
+                  placeholder="blur"
+                />
+              </div>
+            </div>
+            <MainButton
+              url="https://www.figma.com/proto/V2KzVY6dmOymrgj2g7bJHu/JobsxHeroes-(Copy)?node-id=18%3A227&scaling=scale-down&page-id=1%3A3&starting-point-node-id=18%3A227"
+              arrowColor="white"
+              text="view prototype"
+              className="warherored"
+            />
+          </section>
+
+          <section id="reflection">
+            <div className="content-block">
+              <h3>&#8901; {reflection.title} &#8901;</h3>
+            </div>
+            <div className="content-block">
+              <h5 className="subtitle">{reflection.content[0].title}</h5>
+              <p>
+                JobsxHeroes project really helped those who were considered not
+                suitable for any jobs. Moreover, employers are now more aware of
+                how skillful and valuable are all war veterans and how much they
+                deserve a chance to grow personally and financially.
+              </p>
+            </div>
+            <div className="content-block">
+              <h5 className="subtitle">{reflection.content[1].title}</h5>
+              <p>
+                I learned that even though the problem I was trying to solve was
+                a big one, diligently going through each step of the design
+                process and aligning with specific user needs helped me come up
+                with solutions that were both feasible and useful.
+              </p>
+            </div>
+            <div className="content-block">
+              <h5 className="subtitle">{reflection.content[2].title}</h5>
+              <div className="grid grid-cols-3 gap-12">
+                <div>
+                  <h4>01.</h4>
+                  <p>{reflection.content[2].points[0]}</p>
+                </div>
+                <div>
+                  <h4>02.</h4>
+                  <p>{reflection.content[2].points[1]}</p>
+                </div>
+                <div>
+                  <h4>03.</h4>
+                  <p>{reflection.content[2].points[2]}</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div className="bannerSection foot">
+            <Image
+              src={CloseBanner}
+              alt="Work Background"
+              layout="responsive"
+              objectFit="cover"
+              placeholder="blur"
+            />
+          </div>
+        </Fade>
+        <Footer />
+      </div>
     </div>
   );
 };

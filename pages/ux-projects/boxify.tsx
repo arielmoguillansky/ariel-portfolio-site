@@ -319,7 +319,6 @@ const UxProject: NextPage = ({ handleMobileMenu, showMenu }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header handleMobileMenu={handleMobileMenu} showMenu={showMenu} />
-
       <div className="content-nav">
         <Scrollspy
           items={[
@@ -358,25 +357,23 @@ const UxProject: NextPage = ({ handleMobileMenu, showMenu }: any) => {
             <div className="content-block">
               <h3>&#8901; {overview.title} &#8901;</h3>
             </div>
-            <div className="content-table">
-              <table>
-                <thead>
-                  <tr>
-                    <th>{overview.table.headings[0]}</th>
-                    <th>{overview.table.headings[1]}</th>
-                    <th>{overview.table.headings[2]}</th>
-                    <th>{overview.table.headings[3]}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>{overview.table.body[0]}</td>
-                    <td>{overview.table.body[1]}</td>
-                    <td>{overview.table.body[2]}</td>
-                    <td>{overview.table.body[3]}</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div className="flex flex-col content-table md:flex-row">
+              <div>
+                <span>{overview.table.headings[0]}</span>
+                <p>{overview.table.body[0]}</p>
+              </div>
+              <div>
+                <span>{overview.table.headings[1]}</span>
+                <p>{overview.table.body[1]}</p>
+              </div>
+              <div>
+                <span>{overview.table.headings[2]}</span>
+                <p>{overview.table.body[2]}</p>
+              </div>
+              <div>
+                <span>{overview.table.headings[3]}</span>
+                <p>{overview.table.body[3]}</p>
+              </div>
             </div>
             <div className="content-block">
               <p>{overview.text}</p>
@@ -516,7 +513,6 @@ const UxProject: NextPage = ({ handleMobileMenu, showMenu }: any) => {
               <Swiper spaceBetween={10} slidesPerView={1}>
                 <SlideNextButton />
                 <SwiperSlide>
-                  {" "}
                   <div className="">
                     <span>{hifi.content[1].bus}</span>
                     <div className="imageContainer">
@@ -540,7 +536,6 @@ const UxProject: NextPage = ({ handleMobileMenu, showMenu }: any) => {
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  {" "}
                   <div>
                     <span className="subtitle">{hifi.content[1].aus}</span>
                     <div className="imageContainer">
@@ -564,7 +559,7 @@ const UxProject: NextPage = ({ handleMobileMenu, showMenu }: any) => {
                   </div>
                 </SwiperSlide>
               </Swiper>
-              <div className="!hidden md:flex">
+              <div className="!hidden md:!flex">
                 <div className="w-1/2 mr-20">
                   <span>{hifi.content[1].bus}</span>
                   <div className="imageContainer">
@@ -658,7 +653,7 @@ const UxProject: NextPage = ({ handleMobileMenu, showMenu }: any) => {
                   </div>
                 </SwiperSlide>
               </Swiper>
-              <div className="!hidden md:block w-full grid-cols-2 gap-8 my-6 md:grid xl:grid-cols-4">
+              <div className="!hidden md:!block w-full grid-cols-2 gap-8 my-6 md:grid xl:grid-cols-4">
                 <div className="wireframeImg">
                   <Image
                     src={ProgressScreen}

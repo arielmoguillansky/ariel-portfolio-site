@@ -102,22 +102,48 @@
 }
 
 .content-table {
-  width: 100%;
-  table {
+  width: 80%;
+  margin: auto;
+  @media (min-width: 768px) {
+    width: 60%;
+  }
+  div {
     width: 100%;
-    margin: auto;
-    font-size: 22px;
-    text-align: center;
-    th {
+    margin: 0;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-left-color: $screechingWhite;
+    border-left-width: 3px;
+    padding-left: 5px;
+
+    @media (min-width: 768px) {
+      min-height: 100px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0;
+      text-align: center;
+      font-size: 22px;
+      border-left: none;
+      display: flex;
+      flex-direction: column;
+      &:not(:last-of-type) {
+        border-right-color: $screechingWhite;
+        border-right-width: 2px;
+      }
+    }
+    span {
       font-family: $josefineReg;
       font-weight: 500;
     }
-    td {
+    p {
       font-family: $josefineLight;
     }
     td,
     th {
-      padding: 10px 40px;
+      padding: 5px 20px;
+      @media (min-width: 768px) {
+        padding: 10px 40px;
+      }
       &:not(:last-of-type) {
         border-right-color: $screechingWhite;
         border-right-width: 2px;
@@ -137,7 +163,7 @@
   &.expanded {
     width: 100%;
     max-width: unset;
-    & > div {
+    & > div:not(.swiper) {
       @media (min-width: 768px) {
         width: 75%;
         display: flex;
@@ -343,6 +369,14 @@
   }
 }
 .vetfriends {
+  .content-wrapper {
+    &.menu-open {
+      transition: transform 0.5s ease, opacity 0.2s ease;
+      opacity: 0;
+      transform: translateX(-100vw);
+    }
+    transition: transform 0.2s ease, opacity 0.5s ease;
+  }
   .content-block {
     h4,
     h5 {
@@ -352,6 +386,15 @@
       &:after {
         background-color: $vetpurple;
         bottom: -85%;
+        @media (min-width: 1024px) {
+          bottom: -80%;
+        }
+        @media (min-width: 1200px) {
+          bottom: -80%;
+        }
+        @media (min-width: 1700px) {
+          bottom: -30%;
+        }
         @media (min-width: 1536px) {
           bottom: -50%;
         }
@@ -365,6 +408,14 @@
   }
 }
 .jobxheroes {
+  .content-wrapper {
+    &.menu-open {
+      transition: transform 0.5s ease, opacity 0.2s ease;
+      opacity: 0;
+      transform: translateX(-100vw);
+    }
+    transition: transform 0.2s ease, opacity 0.5s ease;
+  }
   .content-block {
     h4,
     h5 {
@@ -373,8 +424,20 @@
     &.expanded {
       &:after {
         background-color: $warHeroDarkBlue;
-        bottom: -40%;
+        bottom: -60%;
         height: 360px;
+        @media (min-width: 768px) {
+          bottom: -40%;
+        }
+        @media (min-width: 1024px) {
+          bottom: -60%;
+        }
+        @media (min-width: 1200px) {
+          bottom: -40%;
+        }
+        @media (min-width: 1700px) {
+          bottom: -30%;
+        }
       }
       .imageContainer {
         &::before {
