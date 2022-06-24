@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <LoadingBar
-        color="#f11946"
+        color="#f9aa33"
         progress={progress}
         onLoaderFinished={() => setProgress(0)}
         height={3}
