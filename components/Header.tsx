@@ -28,7 +28,7 @@ const Header = ({ expand, handleMobileMenu, showMenu }: HeaderProps) => {
       <div className="nav-link-wrapper">
         <CustomLink
           text={`${locale === "en-US" ? "About" : "Acerca de"}`}
-          url="#"
+          url="/about"
         />
         <CustomLink
           text={`${locale === "en-US" ? "Contact" : "Contacto"}`}
@@ -39,9 +39,7 @@ const Header = ({ expand, handleMobileMenu, showMenu }: HeaderProps) => {
         <Link href="/ux-projects">
           {locale === "en-US" ? "Projects" : "Proyectos"}
         </Link>
-        <Link href="https://www.linkedin.com/in/arielmoguillansky/">
-          {locale === "en-US" ? "About" : "Acerca de"}
-        </Link>
+        <Link href="/about">{locale === "en-US" ? "About" : "Acerca de"}</Link>
         <Link href="https://www.linkedin.com/in/arielmoguillansky/">
           {locale === "en-US" ? "Contact" : "Contacto"}
         </Link>

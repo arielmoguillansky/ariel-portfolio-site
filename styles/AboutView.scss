@@ -1,0 +1,191 @@
+.about-view {
+  .content-wrapper {
+    &.menu-open {
+      transition: transform 0.5s ease, opacity 0.2s ease;
+      opacity: 0;
+      transform: translateX(-100vw);
+    }
+    transition: transform 0.2s ease, opacity 0.5s ease;
+  }
+  .about-section {
+    margin: auto;
+    margin-top: 40px;
+    color: $darkGray;
+    p {
+      font-family: $halantReg;
+      font-size: 18px;
+    }
+    h3 {
+      font-family: $halantBold;
+      color: $boxifyyellow;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    &.profile {
+      width: 100%;
+      background-color: $boxifyyellow;
+      margin-top: 110px;
+      padding-left: 0px;
+      padding-right: 0px;
+      padding-top: 75px;
+      padding-bottom: 75px;
+      position: relative;
+      h3 {
+        color: white;
+        margin: auto;
+        margin-top: -50px;
+        margin-bottom: 40px;
+      }
+      .wrapper {
+        margin: auto;
+        margin-top: -150px;
+        padding: 75px;
+        padding-bottom: 0;
+        border-radius: 20px;
+        background-color: $boxifyyellow;
+        @media (min-width: 768px) {
+          width: 1150px;
+        }
+      }
+      .content {
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+        @media (min-width: 768px) {
+          flex-direction: row;
+        }
+        & > div {
+          width: 100%;
+          padding: 0 20px;
+          &:not(:last-of-type) {
+            border-right: 1px solid white;
+          }
+          .image-wrapper {
+            width: 50%;
+            margin: auto;
+            margin-bottom: 20px;
+            min-height: 150px;
+          }
+          h4 {
+            color: white;
+            font-size: 24px;
+          }
+          span {
+            color: white;
+            font-size: 20px;
+            display: block;
+          }
+          p {
+            margin-bottom: 10px;
+            min-height: 110px;
+          }
+          ul {
+            font-family: $halantReg;
+            font-size: 18px;
+            list-style: disc;
+            padding-left: 20px;
+            li {
+              &::marker {
+                color: white;
+                font-size: 12px;
+                display: flex;
+                align-items: flex-start;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.resume {
+      width: 100%;
+      background-color: $boxifyyellow;
+      h3 {
+        color: white;
+      }
+      .container {
+        padding: 20px 0;
+        margin: auto;
+      }
+      .linkBox {
+        margin: 0;
+        .linkText {
+          color: white;
+        }
+        i {
+          color: white;
+        }
+        .linkArrowL i {
+          color: $boxifyyellow;
+        }
+      }
+    }
+    &.studies {
+      .study-block {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        i {
+          font-size: 32px;
+          cursor: pointer;
+        }
+        .study-year {
+          span {
+            color: $boxifyyellow;
+            font-size: 20px;
+            display: block;
+          }
+        }
+      }
+      h4 {
+        font-family: $halantBold;
+        font-size: 24px;
+        span {
+          margin-left: 10px;
+        }
+      }
+      span {
+        font-family: $halantReg;
+        font-size: 18px;
+      }
+    }
+    &.skills {
+      ul {
+        font-family: $halantReg;
+        font-size: 18px;
+        list-style: disc;
+        padding-left: 20px;
+        li {
+          &::marker {
+            color: $boxifyyellow;
+            font-size: 12px;
+            display: flex;
+            align-items: flex-start;
+          }
+        }
+      }
+    }
+  }
+
+  .about-banner {
+    height: calc(100vh - 238px);
+    overflow-y: hidden;
+    position: relative;
+    h1 {
+      color: black;
+      font-size: 120px;
+      width: 25%;
+      font-family: $josefineSemiBold;
+      text-transform: uppercase;
+      position: absolute;
+      z-index: 1;
+      top: 30%;
+      left: 10%;
+    }
+  }
+}
+
+.container {
+  @media (min-width: 1024px) {
+    max-width: 1000px !important;
+  }
+}
