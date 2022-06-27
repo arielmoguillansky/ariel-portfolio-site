@@ -1,0 +1,97 @@
+.contact-view {
+  overflow: hidden;
+  transition: transform 0.2s ease, opacity 0.5s ease;
+  .mobile-menu {
+    height: 100vh;
+  }
+  .content-wrapper {
+    height: calc(100vh - 110px);
+    &.menu-open {
+      transition: transform 0.5s ease, opacity 0.2s ease;
+      opacity: 0;
+      transform: translateX(-100vw);
+    }
+    .contact-banner {
+      height: 60%;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      background-color: $boxifyyellow;
+      &::after {
+        content: "";
+        background-color: $boxifyyellow;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        opacity: 0.8;
+        z-index: 1;
+        position: absolute;
+      }
+      h1 {
+        font-family: $halantBold;
+        position: absolute;
+        font-size: 120px;
+        z-index: 2;
+        left: 40%;
+      }
+      form {
+        bottom: 40px;
+        left: 40%;
+        position: absolute;
+        z-index: 2;
+        display: flex;
+        input,
+        textarea {
+          display: block;
+        }
+      }
+    }
+    .contact-info {
+      height: 40%;
+      h3 {
+        font-family: $halantBold;
+        font-size: 40px;
+      }
+      .map,
+      .info,
+      .social {
+        padding: 20px;
+      }
+      .info {
+        font-size: 20px;
+        h3 {
+          margin-bottom: 40px;
+        }
+        div {
+          margin-bottom: 20px;
+        }
+        a {
+          display: block;
+        }
+      }
+      .social {
+        background-color: $darkGray;
+        h3 {
+          color: $boxifyyellow;
+          margin-bottom: 40px;
+        }
+        a {
+          margin-bottom: 20px;
+          i {
+            color: $boxifyyellow;
+            font-size: 32px;
+          }
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.container {
+  width: 80% !important;
+  @media (min-width: 1024px) {
+    max-width: 1000px !important;
+  }
+}

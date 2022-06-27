@@ -25,8 +25,10 @@ const MainButton = ({
   return download ? (
     <a
       href={url}
+      target="_blank"
+      rel="noopener noreferrer"
       className={`linkBox ${customStyle || ""} ${className}`}
-      download
+      download={download}
     >
       <span className="linkArrowL">
         <span className="arrowContainer">

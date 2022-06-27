@@ -32,7 +32,7 @@ const Header = ({ expand, handleMobileMenu, showMenu }: HeaderProps) => {
         />
         <CustomLink
           text={`${locale === "en-US" ? "Contact" : "Contacto"}`}
-          url="#"
+          url="/contact"
         />
       </div>
       <div className={`mobile-menu ${showMenu ? "menu-open" : ""}`}>
@@ -40,7 +40,7 @@ const Header = ({ expand, handleMobileMenu, showMenu }: HeaderProps) => {
           {locale === "en-US" ? "Projects" : "Proyectos"}
         </Link>
         <Link href="/about">{locale === "en-US" ? "About" : "Acerca de"}</Link>
-        <Link href="https://www.linkedin.com/in/arielmoguillansky/">
+        <Link href="/contact">
           {locale === "en-US" ? "Contact" : "Contacto"}
         </Link>
       </div>

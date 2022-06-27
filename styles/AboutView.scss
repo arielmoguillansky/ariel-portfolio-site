@@ -1,11 +1,15 @@
 .about-view {
+  overflow: hidden;
+  transition: transform 0.2s ease, opacity 0.5s ease;
+  .mobile-menu {
+    height: 100vh;
+  }
   .content-wrapper {
     &.menu-open {
       transition: transform 0.5s ease, opacity 0.2s ease;
       opacity: 0;
       transform: translateX(-100vw);
     }
-    transition: transform 0.2s ease, opacity 0.5s ease;
   }
   .about-section {
     margin: auto;
@@ -24,26 +28,32 @@
     &.profile {
       width: 100%;
       background-color: $boxifyyellow;
-      margin-top: 110px;
-      padding-left: 0px;
-      padding-right: 0px;
-      padding-top: 75px;
-      padding-bottom: 75px;
-      position: relative;
+      padding-top: 40px;
+      @media (min-width: 768px) {
+        margin-top: 110px;
+        padding-left: 0px;
+        padding-right: 0px;
+        position: relative;
+        padding-top: 75px;
+        padding-bottom: 75px;
+      }
       h3 {
         color: white;
         margin: auto;
-        margin-top: -50px;
         margin-bottom: 40px;
+        @media (min-width: 768px) {
+          margin-top: -50px;
+        }
       }
       .wrapper {
+        width: 80%;
         margin: auto;
-        margin-top: -150px;
-        padding: 75px;
-        padding-bottom: 0;
-        border-radius: 20px;
         background-color: $boxifyyellow;
         @media (min-width: 768px) {
+          margin-top: -150px;
+          padding: 75px;
+          padding-bottom: 0;
+          border-radius: 20px;
           width: 1150px;
         }
       }
@@ -54,11 +64,18 @@
         @media (min-width: 768px) {
           flex-direction: row;
         }
+        &.container {
+          width: 100% !important;
+        }
         & > div {
           width: 100%;
-          padding: 0 20px;
+          @media (min-width: 768px) {
+            padding: 0 20px;
+          }
           &:not(:last-of-type) {
-            border-right: 1px solid white;
+            @media (min-width: 768px) {
+              border-right: 1px solid white;
+            }
           }
           .image-wrapper {
             width: 50%;
@@ -124,6 +141,7 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 40px;
+
         i {
           font-size: 32px;
           cursor: pointer;
@@ -132,7 +150,6 @@
           span {
             color: $boxifyyellow;
             font-size: 20px;
-            display: block;
           }
         }
       }
@@ -185,6 +202,7 @@
 }
 
 .container {
+  width: 80% !important;
   @media (min-width: 1024px) {
     max-width: 1000px !important;
   }
