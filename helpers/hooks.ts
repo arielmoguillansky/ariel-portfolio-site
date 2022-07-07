@@ -31,8 +31,8 @@ export const useWindowSize = () => {
 
 export const useToggleMenu = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
-  
   const handleMobileMenu = () => {
+    
     setShowMenu(!showMenu);
 
     const body = document.querySelector("body");
@@ -42,5 +42,6 @@ export const useToggleMenu = () => {
         : (body.style.overflowY = "");
     }
   };
-  return [showMenu, setShowMenu, handleMobileMenu] as any[]
+
+  return [showMenu, handleMobileMenu] as any[]
 }
