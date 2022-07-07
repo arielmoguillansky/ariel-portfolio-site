@@ -91,9 +91,30 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-pin-drop:before {
+  content: "\e900";
+}
+.icon-github:before {
+  content: "\f09b";
+}
+.icon-envelope:before {
+  content: "\f0e0";
+}
+.icon-linkedin:before {
+  content: "\f0e1";
+}
 .icon-angle-up:before {
   content: "\f106";
 }
+.icon-instagram:before {
+  content: "\f16d";
+}
 .icon-long-arrow-right:before {
   content: "\f178";
+}
+.icon-paper-plane:before {
+  content: "\f1d8";
+}
+.icon-check:before {
+  content: "\e901";
 }

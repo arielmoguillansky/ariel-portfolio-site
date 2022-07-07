@@ -26,3 +26,21 @@ export const useWindowSize = () => {
 
   if(windowSize.width && windowSize.width < 768) return true;
 }
+
+
+
+export const useToggleMenu = () => {
+  const [showMenu, setShowMenu] = useState<boolean>(false);
+  
+  const handleMobileMenu = () => {
+    setShowMenu(!showMenu);
+
+    const body = document.querySelector("body");
+    if (body) {
+      !showMenu
+        ? (body.style.overflowY = "hidden")
+        : (body.style.overflowY = "");
+    }
+  };
+  return [showMenu, setShowMenu, handleMobileMenu] as any[]
+}

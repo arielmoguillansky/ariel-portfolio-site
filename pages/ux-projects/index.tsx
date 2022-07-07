@@ -25,59 +25,50 @@ const indexContent: { [key: string]: any } = {
   },
 };
 
-const UxPage: NextPage = ({ handleMobileMenu, showMenu }: any) => {
+const UxPage: NextPage = ({ showMenu }: any) => {
   const { locale } = useRouter();
   const { pageTitle, projects } = indexContent[locale ?? "en-US"];
   return (
-    <div className="ux-view">
-      <Head>
-        <title>Ariel Moguillansky</title>
-        <meta name="description" content="Ari's Portfolio Website" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header handleMobileMenu={handleMobileMenu} showMenu={showMenu} />
-      <div className={`container m-auto ${showMenu ? "menu-open" : ""}`}>
-        <h1>{pageTitle}</h1>
-        <div className="grid grid-cols-1 gap-4 md:gap-6 md:grid-cols-2">
-          <ProjectCard
-            subtitle={projects[0]}
-            text="Boxify"
-            url="/ux-projects/boxify"
-          >
-            <Image
-              src={BoxifyPlaceholder}
-              alt="Work Background"
-              layout="responsive"
-              placeholder="blur"
-            />
-          </ProjectCard>
-          <ProjectCard
-            subtitle={projects[1]}
-            text="VetFriends"
-            url="/ux-projects/vetfriends"
-          >
-            <Image
-              src={VetFriendsPlaceholder}
-              alt="Work Background"
-              layout="responsive"
-              placeholder="blur"
-            />
-          </ProjectCard>
-          <ProjectCard
-            subtitle={projects[2]}
-            text="JobsxHeroes"
-            url="/ux-projects/jobsxheroes"
-          >
-            <Image
-              src={JobsPlaceholder}
-              alt="Work Background"
-              layout="responsive"
-              placeholder="blur"
-            />
-          </ProjectCard>
-        </div>
+    <div className={`container m-auto ${showMenu ? "menu-open" : ""}`}>
+      <h1>{pageTitle}</h1>
+      <div className="grid grid-cols-1 gap-4 md:gap-6 md:grid-cols-2">
+        <ProjectCard
+          subtitle={projects[0]}
+          text="Boxify"
+          url="/ux-projects/boxify"
+        >
+          <Image
+            src={BoxifyPlaceholder}
+            alt="Work Background"
+            layout="responsive"
+            placeholder="blur"
+          />
+        </ProjectCard>
+        <ProjectCard
+          subtitle={projects[1]}
+          text="VetFriends"
+          url="/ux-projects/vetfriends"
+        >
+          <Image
+            src={VetFriendsPlaceholder}
+            alt="Work Background"
+            layout="responsive"
+            placeholder="blur"
+          />
+        </ProjectCard>
+        <ProjectCard
+          subtitle={projects[2]}
+          text="JobsxHeroes"
+          url="/ux-projects/jobsxheroes"
+        >
+          <Image
+            src={JobsPlaceholder}
+            alt="Work Background"
+            layout="responsive"
+            placeholder="blur"
+          />
+        </ProjectCard>
       </div>
-      <Footer />
     </div>
   );
 };

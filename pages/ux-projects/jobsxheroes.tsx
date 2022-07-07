@@ -305,13 +305,7 @@ const Jobsxheroes: NextPage = ({ handleMobileMenu, showMenu }: any) => {
   }, []);
 
   return (
-    <div className="ux-view jobxheroes">
-      <Head>
-        <title>Ariel Moguillansky</title>
-        <meta name="description" content="Ari's Portfolio Website" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header handleMobileMenu={handleMobileMenu} showMenu={showMenu} />
+    <div className="ux-projects-view jobxheroes">
       <div className="content-nav">
         <Scrollspy
           items={[
@@ -732,7 +726,6 @@ const Jobsxheroes: NextPage = ({ handleMobileMenu, showMenu }: any) => {
             />
           </div>
         </Fade>
-        <Footer />
       </div>
     </div>
   );

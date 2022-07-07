@@ -1,5 +1,6 @@
-.ux-view {
+.ux-projects-view {
   overflow: hidden;
+  transition: transform 0.2s ease, opacity 0.5s ease;
   h1 {
     margin-bottom: 20px;
     font-size: 40px;
@@ -10,14 +11,13 @@
   .mobile-menu {
     height: 100vh;
   }
+  &.menu-open {
+    transition: transform 0.5s ease, opacity 0.2s ease;
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
   .container {
     padding: 0 10px;
-    transition: transform 0.2s ease, opacity 0.5s ease;
-    &.menu-open {
-      transition: transform 0.5s ease, opacity 0.2s ease;
-      opacity: 0;
-      transform: translateX(-100vw);
-    }
   }
   .project-card {
     cursor: pointer;

@@ -1,17 +1,16 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import { ParallaxBanner, ParallaxProvider } from "react-scroll-parallax";
 import Typed from "react-typed";
-import Footer from "../components/Footer";
 import Header from "../components/Header";
 import MainButton from "../components/MainButton";
 import UxBG from "/public/images/ux-bg.png";
 import ProductBg from "/public/images/product-bg.png";
 import RenderBg from "/public/images/render-bg.png";
 import { useRouter } from "next/router";
-import { useWindowSize } from "../helpers/hooks";
-import Link from "next/link";
+import { useToggleMenu, useWindowSize } from "../helpers/hooks";
+import { useState } from "react";
+
 const indexContent: { [key: string]: any } = {
   "en-US": {
     heroTitle: "hi, i'm ariel.",
@@ -57,10 +56,11 @@ const codeTyping = [
   "<p>class NewService<br/>def self.get_session_token!  <br/>response = onnection.post do |req|<br/>req.options.timeout = 120<br/>req.url api_path<br/>req.headers['Content-Type'] = application/json'<br/>req.body = {<br/>id: '13576991614322',<br/>method: 'authenticate',<br/>params: [ENV_SERVICE_USERNAME'], ENV['SERVICE_PASSWORD']],<br/>dataContext: 'json',<br/>jsonrpc: '2.0'<br/>}.to_json<br/>end<br/><br/>if response.status == 200<br/>session = ServiceSession.new(response.body)<br/>",
 ];
 
-const Home: NextPage = ({ showMenu, handleMobileMenu }: any) => {
+const Home: NextPage = () => {
   const { locale } = useRouter();
   const { heroTitle, heroSubtitle } = indexContent[locale ?? "en-US"];
   const isMobile = useWindowSize();
+  const [showMenu, handleMobileMenu] = useToggleMenu();
 
   const header: any = {
     shouldAlwaysCompleteAnimation: true,
@@ -210,11 +210,6 @@ const Home: NextPage = ({ showMenu, handleMobileMenu }: any) => {
   };
   return (
     <div>
-      <Head>
-        <title>Ariel Moguillansky</title>
-        <meta name="description" content="Ari's Portfolio Website" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <ParallaxProvider>
         <ParallaxBanner
           layers={[heroBlock, heroBg, header]}
@@ -237,7 +232,6 @@ const Home: NextPage = ({ showMenu, handleMobileMenu }: any) => {
           className="render-section parallax-wrapper"
         ></ParallaxBanner>
       </ParallaxProvider>
-      <Footer />
     </div>
   );
 };

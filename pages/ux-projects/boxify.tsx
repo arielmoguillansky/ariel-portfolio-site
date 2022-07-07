@@ -312,13 +312,7 @@ const UxProject: NextPage = ({ handleMobileMenu, showMenu }: any) => {
   }, []);
 
   return (
-    <div className="ux-view boxify">
-      <Head>
-        <title>Ariel Moguillansky</title>
-        <meta name="description" content="Ari's Portfolio Website" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header handleMobileMenu={handleMobileMenu} showMenu={showMenu} />
+    <div className={`boxify content-wrapper ${showMenu ? "menu-open" : ""}`}>
       <div className="content-nav">
         <Scrollspy
           items={[
@@ -341,7 +335,7 @@ const UxProject: NextPage = ({ handleMobileMenu, showMenu }: any) => {
       {showTopBtn && (
         <ToTopButton className="icon-angle-up" onClick={goToTop} />
       )}
-      <div className={`content-wrapper ${showMenu ? "menu-open" : ""}`}>
+      <div className={`content-wrapper `}>
         <h2 className="text-center">Boxify</h2>
         <div className="bannerSection">
           <Image
@@ -736,7 +730,6 @@ const UxProject: NextPage = ({ handleMobileMenu, showMenu }: any) => {
             />
           </div>
         </Fade>
-        <Footer />
       </div>
     </div>
   );

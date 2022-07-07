@@ -1,18 +1,29 @@
 .contact-view {
   overflow: hidden;
   transition: transform 0.2s ease, opacity 0.5s ease;
+  .container {
+    width: 100% !important;
+    max-width: 1000px !important;
+    @media (min-width: 768px) {
+      width: 60% !important;
+    }
+  }
   .mobile-menu {
     height: 100vh;
   }
+  transition: transform 0.2s ease, opacity 0.5s ease;
+  &.menu-open {
+    transition: transform 0.5s ease, opacity 0.2s ease;
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
   .content-wrapper {
-    height: calc(100vh - 110px);
-    &.menu-open {
-      transition: transform 0.5s ease, opacity 0.2s ease;
-      opacity: 0;
-      transform: translateX(-100vw);
-    }
+    position: relative;
     .contact-banner {
-      height: 60%;
+      @media (min-width: 768px) {
+        height: calc(100vh - 110px);
+      }
+      height: calc(100vh - 126px);
       overflow: hidden;
       position: relative;
       width: 100%;
@@ -28,70 +39,289 @@
         z-index: 1;
         position: absolute;
       }
-      h1 {
-        font-family: $halantBold;
-        position: absolute;
-        font-size: 120px;
-        z-index: 2;
-        left: 40%;
-      }
-      form {
-        bottom: 40px;
-        left: 40%;
-        position: absolute;
-        z-index: 2;
-        display: flex;
-        input,
-        textarea {
-          display: block;
-        }
-      }
     }
-    .contact-info {
-      height: 40%;
-      h3 {
-        font-family: $halantBold;
+    .info-wrapper {
+      h1 {
+        @media (min-width: 768px) {
+          font-size: 60px;
+        }
+        @media (min-width: 1280px) {
+          font-size: 120px;
+        }
         font-size: 40px;
+        color: $boxifyyellow;
+        font-family: $josefineReg;
+        margin: auto;
+        width: max-content;
       }
-      .map,
-      .info,
-      .social {
-        padding: 20px;
+      position: relative;
+      height: 100vh;
+      background-color: $darkGray;
+      padding: 20px;
+      @media (min-width: 768px) {
+        height: 80%;
+        min-height: 600px;
+        width: 50%;
+        z-index: 2;
+        position: absolute;
+        right: 0;
+        padding: 40px 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        top: 0;
+        bottom: 0;
+        margin: auto;
       }
-      .info {
-        font-size: 20px;
-        h3 {
-          margin-bottom: 40px;
+      .social-wrapper {
+        margin: 0 auto;
+        margin-top: 80px;
+        @media (min-width: 768px) {
+          margin-top: 10px;
+          font-size: 14px;
         }
-        div {
-          margin-bottom: 20px;
+        @media (min-width: 1280px) {
+          font-size: 16px;
+          margin-top: 40px;
         }
-        a {
-          display: block;
-        }
-      }
-      .social {
-        background-color: $darkGray;
-        h3 {
+        i {
           color: $boxifyyellow;
-          margin-bottom: 40px;
-        }
-        a {
-          margin-bottom: 20px;
-          i {
-            color: $boxifyyellow;
+          font-size: 32px;
+          @media (min-width: 768px) {
+            font-size: 20px;
+          }
+          @media (min-width: 1280px) {
             font-size: 32px;
           }
+        }
+        .location-mail {
+          i {
+            font-size: 20px;
+            margin-right: 20px;
+            @media (min-width: 768px) {
+              font-size: 14px;
+            }
+            @media (min-width: 1280px) {
+              font-size: 20px;
+            }
+          }
+          a {
+            display: block;
+            margin-bottom: 30px;
+            margin-top: 10px;
+          }
+          span {
+            color: $boxifyyellow;
+          }
+        }
+        .social {
+          display: flex;
+          justify-content: space-evenly;
+          margin-top: 40px;
+          @media (min-width: 768px) {
+            margin-top: 0px;
+            justify-content: space-between;
+          }
+          a {
+            display: block;
+            i {
+              &:hover {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+      form {
+        margin: auto;
+        position: relative;
+        @media (min-width: 768px) {
+          bottom: 20px;
+        }
+        .form-group {
+          position: relative;
+          padding: 15px 0 0;
+          &:first-of-type {
+            @media (min-width: 768px) {
+              margin-bottom: 20px;
+            }
+            @media (min-width: 1280px) {
+              margin-bottom: 40px;
+            }
+            margin-bottom: 30px;
+          }
+        }
+        input {
+          width: 100%;
+          border: 0;
+          border-bottom: 1px solid $boxifyyellow;
+          outline: 0;
+          font-size: 16px;
+          color: $boxifyyellow;
+          background: transparent;
+          transition: border-color 0.2s;
+          @media (min-width: 1280px) {
+            font-size: 20px;
+          }
+        }
+        input:-webkit-autofill,
+        textarea:-webkit-autofill {
+          -webkit-text-fill-color: $boxifyyellow;
+          -webkit-box-shadow: 0 0 0px 1000px $darkGray inset;
+        }
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill:focus {
+          -webkit-text-fill-color: white;
+          -webkit-box-shadow: 0 0 0px 1000px $darkGray inset;
+        }
+
+        textarea {
+          border: 1px solid $boxifyyellow;
+          outline: 0;
+          font-size: 16px;
+          color: $boxifyyellow;
+          padding: 10px;
+          background: transparent;
+          transition: border-color 0.2s;
+          resize: none;
+          box-sizing: border-box;
+          @media (min-width: 1280px) {
+            font-size: 20px;
+          }
+        }
+
+        label {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          transition: all 0.2s ease;
+          font-size: 16px;
+          color: $boxifyyellow;
+          @media (min-width: 1280px) {
+            font-size: 18px;
+          }
+        }
+        input:focus ~ label,
+        .has-value ~ label {
+          bottom: 30px;
           display: block;
+          font-size: 12px;
+          color: $boxifyyellow;
+          @media (min-width: 1280px) {
+            bottom: 35px;
+            font-size: 14px;
+          }
+        }
+        input:focus ~ label,
+        textarea:focus ~ label {
+          color: white;
+        }
+
+        input:focus {
+          color: white;
+          border-color: white;
+        }
+        textarea:focus {
+          color: white;
+          border-color: white;
+        }
+        button {
+          color: $darkGray;
+          width: 100%;
+          background-color: $boxifyyellow !important;
+          font-family: $josefineReg;
+          margin: auto;
+          display: block;
+          overflow: hidden;
+          height: 45px;
+          @media (min-width: 1280px) {
+            height: 66px;
+          }
+          &.submit-animation {
+            @media (max-width: 1280px) {
+              animation: submitAnimationSmall 0.5s ease-in-out both;
+            }
+            animation: submitAnimation 0.5s ease-in-out both;
+            pointer-events: none;
+          }
+          &:disabled {
+            color: $boxifyyellow;
+            border: 1px solid $boxifyyellow;
+            background-color: $darkGray !important;
+          }
+        }
+        i {
+          width: max-content;
+          display: block;
+          margin: auto;
+          color: $darkGray;
+          font-size: 24px;
+          opacity: 0;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 18px;
+          @media (max-width: 1280px) {
+            font-size: 20px;
+            bottom: 13px;
+          }
+          &.icon-paper-plane {
+            transition: all 0.5s 0.4s ease;
+          }
+          &.icon-check {
+            transition: all 0.3s 1.2s ease-out;
+          }
+          &.submit-animation {
+            opacity: 1;
+            animation: planeOut 0.6s 0.8s ease forwards;
+          }
+          &.submit-animation-check {
+            opacity: 1;
+          }
         }
       }
     }
   }
 }
 
-.container {
-  width: 80% !important;
-  @media (min-width: 1024px) {
-    max-width: 1000px !important;
+@keyframes submitAnimation {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    width: 66px;
+    height: 66px;
+    border-radius: 50px;
+    font-size: 0;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    padding: 0;
+  }
+}
+
+@keyframes submitAnimationSmall {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    font-size: 0;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    padding: 0;
+  }
+}
+@keyframes planeOut {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(50px, -50px);
   }
 }

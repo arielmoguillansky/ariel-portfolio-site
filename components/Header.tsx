@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import HeaderLogo from "../public/vercel.svg";
+import HeaderLogo from "../public/images/logo2.svg";
 import CustomLink from "./CustomLink";
 import { useRouter } from "next/router";
 
@@ -12,7 +12,6 @@ type HeaderProps = {
 
 const Header = ({ expand, handleMobileMenu, showMenu }: HeaderProps) => {
   const { locale } = useRouter();
-
   return (
     <header className={expand ? "expanded" : ""}>
       <Link href={"/"}>

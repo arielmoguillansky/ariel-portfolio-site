@@ -317,13 +317,7 @@ const VetFriends: NextPage = ({ handleMobileMenu, showMenu }: any) => {
   }, []);
 
   return (
-    <div className="ux-view vetfriends">
-      <Head>
-        <title>Ariel Moguillansky</title>
-        <meta name="description" content="Ari's Portfolio Website" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header handleMobileMenu={handleMobileMenu} showMenu={showMenu} />
+    <div className="ux-projects-view vetfriends">
       <div className="content-nav">
         <Scrollspy
           items={[
@@ -757,7 +751,6 @@ const VetFriends: NextPage = ({ handleMobileMenu, showMenu }: any) => {
             />
           </div>
         </Fade>
-        <Footer />
       </div>
     </div>
   );
