@@ -6,23 +6,41 @@ header {
   padding: 24px;
 
   @media (min-width: 768px) {
-    padding: 1rem 5rem;
+    padding: 40px;
   }
   .nav-link-wrapper {
     display: none;
     @media (min-width: 768px) {
+      display: flex;
+      align-items: center;
+      > div:first-of-type {
+        margin-right: 80px;
+      }
+    }
+  }
+  .language-header-selector {
+    font-size: 14px;
+    color: gray;
+    display: flex;
+    align-items: flex-start;
+    display: none;
+    @media (min-width: 768px) {
       display: block;
     }
-  }
-  &.expanded {
-    position: unset;
-    padding: 16px;
-    padding-right: 28px;
-    @media (min-width: 768px) {
-      padding: 5rem;
+    a.active {
+      color: $darkGray;
+      font-weight: bold;
+    }
+    span {
+      cursor: pointer;
+    }
+    .pipe-separator {
+      cursor: unset;
+      margin: 0 10px;
     }
   }
-  .custom-link:first-of-type {
+
+  .custom-link:not(:last-of-type) {
     margin-right: 50px;
   }
   .hamburger-wrapper {

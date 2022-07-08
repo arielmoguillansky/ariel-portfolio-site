@@ -11,7 +11,7 @@ type HeaderProps = {
 };
 
 const Header = ({ expand, handleMobileMenu, showMenu }: HeaderProps) => {
-  const { locale } = useRouter();
+  const { locale, asPath } = useRouter();
   return (
     <header className={expand ? "expanded" : ""}>
       <Link href={"/"}>
@@ -25,18 +25,49 @@ const Header = ({ expand, handleMobileMenu, showMenu }: HeaderProps) => {
         </div>
       </div>
       <div className="nav-link-wrapper">
-        <CustomLink
-          text={`${locale === "en-US" ? "About" : "Acerca de"}`}
-          url="/about"
-        />
-        <CustomLink
-          text={`${locale === "en-US" ? "Contact" : "Contacto"}`}
-          url="/contact"
-        />
+        <div className="">
+          {asPath !== "/" && (
+            <CustomLink
+              text={`${locale === "en-US" ? "Work" : "Trabajos"}`}
+              url="/about"
+            />
+          )}
+          <CustomLink
+            text={`${locale === "en-US" ? "About" : "Acerca de"}`}
+            url="/about"
+          />
+          <CustomLink
+            text={`${locale === "en-US" ? "Contact" : "Contacto"}`}
+            url="/contact"
+          />
+        </div>
+        <div className="language-header-selector">
+          <Link href={asPath} locale="es-ES" scroll={false}>
+            <a
+              href=""
+              className={`language-link es-link ${
+                locale === "es-ES" ? "active" : ""
+              }`}
+            >
+              ES
+            </a>
+          </Link>
+          <span className="pipe-separator">|</span>
+          <Link href={asPath} locale="en-US" scroll={false}>
+            <a
+              href=""
+              className={`language-link es-link ${
+                locale === "en-US" ? "active" : ""
+              }`}
+            >
+              EN
+            </a>
+          </Link>
+        </div>
       </div>
       <div className={`mobile-menu ${showMenu ? "menu-open" : ""}`}>
         <Link href="/ux-projects">
-          {locale === "en-US" ? "Projects" : "Proyectos"}
+          {locale === "en-US" ? "Work" : "Trabajos"}
         </Link>
         <Link href="/about">{locale === "en-US" ? "About" : "Acerca de"}</Link>
         <Link href="/contact">
