@@ -31,6 +31,7 @@ export const useWindowSize = () => {
 
 export const useToggleMenu = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
+  
   const handleMobileMenu = () => {
     
     setShowMenu(!showMenu);
@@ -44,4 +45,21 @@ export const useToggleMenu = () => {
   };
 
   return [showMenu, handleMobileMenu] as any[]
+}
+
+export const useToTopButton = () => {
+  const [showTopBtn, setShowTopBtn] = useState<boolean>(false);
+
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        setShowTopBtn(true);
+      } else {
+        setShowTopBtn(false);
+      }
+    });
+  }, []);
+
+  return [showTopBtn, setShowTopBtn]
 }

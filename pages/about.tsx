@@ -6,15 +6,22 @@ import DevIcon from "/public/images/about/Development.svg";
 import MainButton from "../components/MainButton";
 import { useRouter } from "next/router";
 import { Fade } from "react-awesome-reveal";
+import { Diagram } from "../components/Diagram";
+import { useState } from "react";
+import ToTopButton from "../components/ToTopButton";
+import { goToTop } from "../helpers/utils";
+import { useToTopButton } from "../helpers/hooks";
 
 const indexContent: { [key: string]: any } = {
   "en-US": {
     bannerTitle: "Who is he?",
     overview: {
       title: "Finally, nice to meet you!",
-      text: "I am Ariel Moguillansky an Industrial Designer, developer & UX researcher in Buenos Aires, Argentina. That's right, all of that. But I prefer to just call myself a creative product developer. Don't worry, I will make it more clear soon.",
+      text: "I am Ariel Moguillansky an Industrial Designer, developer & UX researcher in Buenos Aires, Argentina. But I prefer to just call myself a creative product developer.",
       text2:
-        " In my free time you can find me practicing basketball or maybe playing a football match with my friends. It's not only sports, but I also find pleasure in reading novels, playing video games and having new culinary experiences - I really love food, who doesn't right? -",
+        "In my free time you can find me practicing basketball or maybe playing a football match with my friends. It's not only sports, but I also find pleasure in reading novels, playing video games and having new culinary experiences - I really love food, who doesn't right? -",
+      text3:
+        "I conceive the product as a bridge between tangible and digital worlds. In other words, both fields, industrial design -tangible- and development -digital- are aimed to the same result: products.",
     },
     profile: {
       title: "What do I do?",
@@ -93,9 +100,11 @@ const indexContent: { [key: string]: any } = {
     bannerTitle: "Quién es él?",
     overview: {
       title: "Finalmente, un gusto saludarte!",
-      text: "Soy Ariel Moguillansky, un Diseñador Industrial, programador y analista UX en Buenos Aires, Argentina. Así es, todo eso. Pero prefiero simplemente considerarme un creativo desarrollador de productos.",
+      text: "Soy Ariel Moguillansky, un Diseñador Industrial, programador y analista UX en Buenos Aires, Argentina. Aunque prefiero simplemente considerarme un desarrollador de productos.",
       text2:
         "En mi tiempo libre podrás encontrarme practicando basquet o también jugando un partido de fútbol con amigos. Pero no todo es deporte: me gusta leer, jugar videojuegos y probar nuevas experiencias culinarias - me encanta la comida, a quién no, cierto? - .",
+      text3:
+        "Considero al producto como puente entre el mundo tangilbe y el digital. Tanto el campo del diseño industrial - tangilble - como el de desarrollo - digital - convergen en la resolución de productos. ",
     },
     profile: {
       title: "Lo que hago",
@@ -177,6 +186,7 @@ const indexContent: { [key: string]: any } = {
 
 const AboutView = ({ showMenu }: any) => {
   const { locale } = useRouter();
+  const [showTopBtn] = useToTopButton();
   const {
     bannerTitle,
     overview,
@@ -188,6 +198,9 @@ const AboutView = ({ showMenu }: any) => {
     languages,
     like,
   } = indexContent[locale ?? "en-US"];
+  const [showTools, setShowTools] = useState(false);
+  const [showId, setShowId] = useState(false);
+  const [showUx, setShowUx] = useState(false);
 
   return (
     <div className={`content-wrapper ${showMenu ? "menu-open" : ""}`}>
@@ -209,10 +222,20 @@ const AboutView = ({ showMenu }: any) => {
           <p>{overview.text}</p>
           <p>{overview.text2}</p>
         </div>
+        <div className="about-section highlighted">
+          <div className="flex justify-center w-full m-auto md:w-1/3 mb-9">
+            <Diagram />
+          </div>
+          <p>{overview.text3}</p>
+        </div>
         <div className=" about-section profile">
           <div className="wrapper">
             <h3>{profile.title}</h3>
-            <div className="container content">
+            <div
+              className={`container content ${
+                showTools || showId || showUx ? "active-tools" : ""
+              }`}
+            >
               <div>
                 <div className="image-wrapper">
                   <Image
@@ -228,16 +251,12 @@ const AboutView = ({ showMenu }: any) => {
                     <h4>{profile.fields[0].title}</h4>
                     <p>{profile.fields[0].text}</p>
                   </div>
-                  <div>
-                    <span>{profile.toolTitle}</span>
-                    <ul>
-                      <li>AdobeXD</li>
-                      <li>Figma</li>
-                      <li>FlowMapp</li>
-                      <li>InVision</li>
-                      <li>Balsamiq</li>
-                    </ul>
-                  </div>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => setShowUx(true)}
+                  >
+                    see more &gt;
+                  </span>
                 </div>
               </div>
               <div>
@@ -255,20 +274,12 @@ const AboutView = ({ showMenu }: any) => {
                     <h4>{profile.fields[1].title}</h4>
                     <p>{profile.fields[1].text}</p>
                   </div>
-                  <div>
-                    <span>{profile.toolTitle}</span>
-                    <ul>
-                      <li>3D Max</li>
-                      <li>SolidWorks</li>
-                      <li>Blender</li>
-                      <li>V-Ray</li>
-                      <li>Keyshot</li>
-                      <li>Illustrator</li>
-                      <li>Photoshop</li>
-                      <li>Cinema 4D</li>
-                      <li>Substance</li>
-                    </ul>
-                  </div>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => setShowId(true)}
+                  >
+                    see more &gt;
+                  </span>
                 </div>
               </div>
               <div>
@@ -286,33 +297,94 @@ const AboutView = ({ showMenu }: any) => {
                     <h4>{profile.fields[2].title}</h4>
                     <p>{profile.fields[2].text}</p>
                   </div>
-                  <div>
-                    <span>{profile.languages}</span>
-                    <ul>
-                      <li>JavaScript</li>
-                      <li>Ruby</li>
-                      <li>PHP</li>
-                    </ul>
-                    <span>{profile.toolTitle} &#38; Frameworks</span>
-                    <ul>
-                      <li>Rails</li>
-                      <li>React</li>
-                      <li>React Native</li>
-                      <li>VueJs</li>
-                      <li>CodeIgniter</li>
-                      <li>MongoDB</li>
-                      <li>MySQL</li>
-                      <li>Docker</li>
-                      <li>NodeJs</li>
-                      <li>Apache</li>
-                      <li>Webpack</li>
-                      <li>HTML5</li>
-                      <li>CSS &#38; pre preprocessors</li>
-                      <li>Git</li>
-                    </ul>
-                  </div>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => setShowTools(true)}
+                  >
+                    see more &gt;
+                  </span>
                 </div>
               </div>
+            </div>
+            <div className={`tool-list ${showTools ? "active-tools" : ""}`}>
+              <h4>{profile.fields[2].title}</h4>
+              <div className="flex">
+                <div className="mr-10">
+                  <span>{profile.languages}</span>
+                  <ul>
+                    <li>JavaScript</li>
+                    <li>Ruby</li>
+                    <li>PHP</li>
+                  </ul>
+                </div>
+                <div>
+                  <span>{profile.toolTitle} &#38; Frameworks</span>
+                  <ul>
+                    <li>Rails</li>
+                    <li>React</li>
+                    <li>React Native</li>
+                    <li>VueJs</li>
+                    <li>CodeIgniter</li>
+                    <li>MongoDB</li>
+                    <li>MySQL</li>
+                    <li>Docker</li>
+                    <li>NodeJs</li>
+                    <li>Apache</li>
+                    <li>Webpack</li>
+                    <li>HTML5</li>
+                    <li>
+                      CSS &#38; <br /> pre preprocessors
+                    </li>
+                    <li>Git</li>
+                  </ul>
+                </div>
+              </div>
+              <i
+                className="icon-long-arrow-right"
+                onClick={() => setShowTools(false)}
+              />
+            </div>
+            <div className={`tool-list ${showUx ? "active-ux" : ""}`}>
+              <h4>{profile.fields[0].title}</h4>
+              <div className="flex">
+                <div className="mr-10">
+                  <span>{profile.toolTitle}</span>
+                  <ul>
+                    <li>AdobeXD</li>
+                    <li>Figma</li>
+                    <li>FlowMapp</li>
+                    <li>InVision</li>
+                    <li>Balsamiq</li>
+                  </ul>
+                </div>
+              </div>
+              <i
+                className="icon-long-arrow-right"
+                onClick={() => setShowUx(false)}
+              />
+            </div>
+            <div className={`tool-list ${showId ? "active-id" : ""}`}>
+              <h4>{profile.fields[1].title}</h4>
+              <div className="flex">
+                <div className="mr-10">
+                  <span>{profile.toolTitle}</span>
+                  <ul>
+                    <li>3D Max</li>
+                    <li>SolidWorks</li>
+                    <li>Blender</li>
+                    <li>V-Ray</li>
+                    <li>Keyshot</li>
+                    <li>Illustrator</li>
+                    <li>Photoshop</li>
+                    <li>Cinema 4D</li>
+                    <li>Substance</li>
+                  </ul>
+                </div>
+              </div>
+              <i
+                className="icon-long-arrow-right"
+                onClick={() => setShowId(false)}
+              />
             </div>
           </div>
         </div>
@@ -472,6 +544,9 @@ const AboutView = ({ showMenu }: any) => {
           </div>
         </div>
       </Fade>
+      {showTopBtn && (
+        <ToTopButton className="icon-angle-up" onClick={goToTop} />
+      )}
     </div>
   );
 };

@@ -1,8 +1,5 @@
 import { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
 import MainButton from "../../components/MainButton";
 import PresentationBanner from "/public/images/ux-2/presentation-banner.jpg";
 import CloseBanner from "/public/images/ux-2/close-banner.jpg";
@@ -21,11 +18,12 @@ import Screen6 from "/public/images/ux-2/screen6.png";
 import PrototypeMockup from "/public/images/ux-2/prototype.png";
 import Scrollspy from "react-scrollspy";
 import { Fade } from "react-awesome-reveal";
-import { useEffect, useState } from "react";
 import ToTopButton from "../../components/ToTopButton";
 import { goToTop } from "../../helpers/utils";
 import { useRouter } from "next/router";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useToTopButton } from "../../helpers/hooks";
+import { SlideNextButton } from "../../components/SliderNextButton";
 
 const contentSideMenu: { [key: string]: any } = {
   "en-US": {
@@ -289,32 +287,12 @@ const indexContent: { [key: string]: any } = {
   },
 };
 
-const SlideNextButton = ({ customClass }: any) => {
-  const swiper = useSwiper();
-
-  return (
-    <button className={customClass} onClick={() => swiper.slideNext()}>
-      Slide &gt;
-    </button>
-  );
-};
-
-const VetFriends: NextPage = ({ handleMobileMenu, showMenu }: any) => {
-  const [showTopBtn, setShowTopBtn] = useState<boolean>(false);
+const VetFriends: NextPage = ({ showMenu }: any) => {
+  const [showTopBtn] = useToTopButton();
   const { locale } = useRouter();
   const { overview, understanding, lofi, hifi, reflection } =
     indexContent[locale ?? "en-US"];
   const { sideMenu } = contentSideMenu[locale ?? "en-US"];
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 400) {
-        setShowTopBtn(true);
-      } else {
-        setShowTopBtn(false);
-      }
-    });
-  }, []);
 
   return (
     <div className="ux-projects-view vetfriends">

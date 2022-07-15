@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513.33 341.02">
+  <defs>
+  <style>
+    .cls-1,.cls-19{fill:none;stroke-miterlimit:10;}.cls-1{stroke:#3f3f3f;stroke-width:3px;}.cls-2{fill:#efefef;}.cls-3{fill:#ffd039;}.cls-12,.cls-4{font-size:12px;}.cls-12,.cls-16,.cls-4{font-family:MyriadPro-Regular, Myriad Pro;}.cls-5{letter-spacing:0.01em;}.cls-6{letter-spacing:0em;}.cls-7{letter-spacing:0em;}.cls-8{letter-spacing:-0.01em;}.cls-9{letter-spacing:-0.01em;}.cls-10{letter-spacing:0em;}.cls-11{letter-spacing:0em;}.cls-12{fill:#777;}.cls-13{letter-spacing:-0.02em;}.cls-14{letter-spacing:0.01em;}.cls-15{letter-spacing:0.01em;}.cls-16{font-size:17.51px;}.cls-17{letter-spacing:0em;}.cls-18{letter-spacing:0.03em;}.cls-19{stroke:#777;stroke-width:2px;stroke-dasharray:11.95 11.95;}
+  </style>
+  </defs>
+  <g id="Layer_3" data-name="Layer 3">
+    <path class="cls-1" d="M306,224v-99.4a20,20,0,0,0-10-17.32l-86.08-49.7a20,20,0,0,0-20,0l-86.09,49.7a20,20,0,0,0-10,17.32V224a20,20,0,0,0,10,17.32L189.87,291a20,20,0,0,0,20,0L296,241.29A20,20,0,0,0,306,224Z"/><path class="cls-1" d="M419.29,224v-99.4a20,20,0,0,0-10-17.32L323.2,57.55a20,20,0,0,0-20,0l-86.09,49.7a20,20,0,0,0-10,17.32V224a20,20,0,0,0,10,17.32L303.2,291a20,20,0,0,0,20,0l86.09-49.71A20,20,0,0,0,419.29,224Z"/><path class="cls-2" d="M187.05,235.52V113a20,20,0,0,1,10-17.32l49.42-28.53a20,20,0,0,1,20,0L315.89,95.7a20,20,0,0,1,10,17.32v122.5a20,20,0,0,1-10,17.32l-49.42,28.53a20,20,0,0,1-20,0l-49.42-28.53A20,20,0,0,1,187.05,235.52Z"/><path class="cls-3" d="M295.89,107.25l-29.42-17a20,20,0,0,0-20,0l-29.42,17a20,20,0,0,0-10,17.32V224a20,20,0,0,0,10,17.32l29.42,17a20,20,0,0,0,20,0l29.42-17a20,20,0,0,0,10-17.32v-99.4A20,20,0,0,0,295.89,107.25Z"/>
+    <text class="cls-4" transform="translate(139.88 237.11) rotate(30)">
+      <tspan class="cls-5">Industrial</tspan>
+      <tspan class="cls-7" x="0" y="14.4">Design</tspan>
+    </text>
+    <text class="cls-4" transform="translate(325.89 264.05) rotate(-30)"> 
+        <tspan class="cls-7">Development / </tspan>
+        <tspan x="0" y="14.4">UX research</tspan>
+    </text>
+    <text class="cls-12" transform="translate(32.2 34.21)">
+      <tspan class="cls-13">Project Management</tspan>
+    </text>
+    <text class="cls-16" transform="translate(219.01 176.34)">PRODUCT</text>
+    <rect class="cls-19" x="12.13" y="13.16" width="488.67" height="317.33" rx="20"/>
+  </g>
+</svg>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import HeaderLogo from "../public/images/logo2.svg";
+import HeaderLogo from "../public/images/logo.svg";
 import CustomLink from "./CustomLink";
 import { useRouter } from "next/router";
 
