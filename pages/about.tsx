@@ -252,7 +252,7 @@ const AboutView = ({ showMenu }: any) => {
                     <p>{profile.fields[0].text}</p>
                   </div>
                   <span
-                    className="cursor-pointer"
+                    className="hidden cursor-pointer md:block"
                     onClick={() => setShowUx(true)}
                   >
                     see more &gt;
@@ -275,7 +275,7 @@ const AboutView = ({ showMenu }: any) => {
                     <p>{profile.fields[1].text}</p>
                   </div>
                   <span
-                    className="cursor-pointer"
+                    className="hidden cursor-pointer md:block"
                     onClick={() => setShowId(true)}
                   >
                     see more &gt;
@@ -298,7 +298,7 @@ const AboutView = ({ showMenu }: any) => {
                     <p>{profile.fields[2].text}</p>
                   </div>
                   <span
-                    className="cursor-pointer"
+                    className="hidden cursor-pointer md:block"
                     onClick={() => setShowTools(true)}
                   >
                     see more &gt;

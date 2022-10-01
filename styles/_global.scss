@@ -171,6 +171,7 @@
 }
 
 footer {
+  height: 258px;
   .contact-block {
     display: flex;
     flex-direction: column;
@@ -246,6 +247,9 @@ footer {
   div {
     display: flex;
   }
+}
+.social-footer {
+  position: fixed;
 }
 .custom-link {
   font-size: 1.25rem;

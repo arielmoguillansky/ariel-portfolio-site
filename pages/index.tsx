@@ -113,8 +113,7 @@ const Home: NextPage = () => {
       <div className="dev-section-content">
         <div>
           <h2> {locale === "es-ES" ? "desarrollo" : "development"}</h2>
-          <h3>{locale === "es-ES" ? "proximamente" : "coming soon"}</h3>
-          {/* <MainButton url="#" arrowColor="black"  /> */}
+          <MainButton url="/development" arrowColor="black" />
         </div>
       </div>
     ),

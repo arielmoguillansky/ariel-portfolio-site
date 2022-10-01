@@ -91,6 +91,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-external-link:before {
+  content: "\e902";
+}
 .icon-pin-drop:before {
   content: "\e900";
 }

@@ -16,7 +16,7 @@ const Header = ({ expand, handleMobileMenu, showMenu }: HeaderProps) => {
     <header className={expand ? "expanded" : ""}>
       <Link href={"/"}>
         <a>
-          <Image src={HeaderLogo} alt="Author's logo" width={70} height={70} />
+          <Image src={HeaderLogo} alt="Author's logo" width={50} height={50} />
         </a>
       </Link>
       <div onClick={handleMobileMenu} className="hamburger-wrapper">

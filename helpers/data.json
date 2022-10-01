@@ -1,0 +1,44 @@
+[
+  {
+  "slug":"pulip",
+  "title":"Pulip",
+  "image":"/images/development/fora.png",
+  "stack":["html", "node", "Javascript", "Sass"],
+  "views":["/images/ux-2/screen6.png", "/images/ux-2/screen6.png"]
+},
+  {
+  "slug":"creators",
+  "title":"Creators",
+  "image":"/images/development/fora.png",
+  "stack":["html", "node", "Javascript", "Sass"],
+  "views":["/images/ux-2/screen6.png", "/images/ux-2/screen6.png"]
+},
+  {
+  "slug":"aptuno",
+  "title":"Aptuno",
+  "image":"/images/development/fora.png",
+  "stack":["html", "node", "Javascript", "Sass"],
+  "views":["/images/ux-2/screen6.png", "/images/ux-2/screen6.png"]
+},
+  {
+  "slug":"educabot",
+  "title":"Educabot",
+  "image":"/images/development/fora.png",
+  "stack":["html", "node", "Javascript", "Sass"],
+  "views":["/images/ux-2/screen6.png", "/images/ux-2/screen6.png"]
+},
+  {
+  "slug":"brightline",
+  "title":"Brightline",
+  "image":"/images/development/fora.png",
+  "stack":["html", "node", "Javascript", "Sass"],
+  "views":["/images/ux-2/screen6.png", "/images/ux-2/screen6.png"]
+},
+  {
+  "slug":"fora",
+  "title":"Fora Travel",
+  "image":"/images/development/fora.png",
+  "stack":["html", "node", "Javascript", "Sass"],
+  "views":["/images/ux-2/screen6.png", "/images/ux-2/screen6.png"]
+}
+]
