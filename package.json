@@ -9,9 +9,6 @@
     "lint": "next lint",
     "stylelint-check": "stylelint-config-prettier-check"
   },
-  "overrides": {
-    "postcss": "7.0.36"
-  },
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "next": "12.1.6",
@@ -34,7 +31,7 @@
     "autoprefixer": "^10.4.7",
     "eslint": "8.16.0",
     "eslint-config-next": "12.1.6",
-    "postcss": "8.4.15",
+    "postcss": "8.4.16",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^14.1.0",
     "postcss-preset-env": "^7.7.1",
