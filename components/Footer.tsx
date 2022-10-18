@@ -6,6 +6,17 @@ const Footer = () => {
   const { locale, asPath } = useRouter();
   return (
     <footer>
+      <div className="social-footer">
+        <Link href="www.google.com">
+          <i className="icon-github" />
+        </Link>
+        <Link href="www.google.com">
+          <i className="icon-github" />
+        </Link>
+        <Link href="www.google.com">
+          <i className="icon-github" />
+        </Link>
+      </div>
       <div className="contact-block">
         <span>Handcrafted by Ariel Moguillansky</span>
         <span>

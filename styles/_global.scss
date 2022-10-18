@@ -236,6 +236,16 @@ footer {
       }
     }
   }
+  .social-footer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+    i {
+      cursor: pointer;
+      margin: 0 10px;
+      font-size: 24px;
+    }
+  }
   span {
     display: block;
     font-size: 1rem;
@@ -243,39 +253,6 @@ footer {
   }
   div {
     display: flex;
-  }
-}
-.social-footer {
-  display: none;
-  width: 40px;
-  position: fixed;
-  bottom: 0px;
-  left: 40px;
-  right: auto;
-  z-index: 10;
-  @media (min-width: 768px) {
-    display: block;
-  }
-  ul {
-    font-size: 1.4rem;
-    display: flex;
-    flex-direction: column;
-    -webkit-box-align: center;
-    align-items: center;
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
-    i {
-      cursor: pointer;
-    }
-    &::after {
-      content: "";
-      display: block;
-      width: 1px;
-      height: 90px;
-      margin: 0px auto;
-      background-color: black;
-    }
   }
 }
 .custom-link {

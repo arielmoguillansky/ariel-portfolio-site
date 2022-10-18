@@ -5,7 +5,6 @@ import { useToggleMenu } from "../helpers/hooks";
 import Footer from "./Footer";
 import Header from "./Header";
 import LoadingBar from "./LoadingBar";
-import SocialFooter from "./SocialFooter";
 
 const Layout = ({ children }: any): JSX.Element => {
   const [progress, setProgress] = useState(100);
@@ -63,7 +62,6 @@ const Layout = ({ children }: any): JSX.Element => {
         {children}
       </main>
       {router.pathname !== "/contact" && <Footer />}
-      {router.pathname !== "/contact" && <SocialFooter />}
     </div>
   );
 };
