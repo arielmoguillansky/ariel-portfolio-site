@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { useToggleMenu } from "../helpers/hooks";
 import Footer from "./Footer";
+import GridLayout from "./GridLayout";
 import Header from "./Header";
 import LoadingBar from "./LoadingBar";
 
@@ -58,10 +59,10 @@ const Layout = ({ children }: any): JSX.Element => {
       {router.pathname !== "/" && (
         <Header showMenu={showMenu} handleMobileMenu={handleMobileMenu} />
       )}
-      <main className={`${url}-view  ${showMenu ? "menu-open" : ""}`}>
+      <main className={`${url || "main"}-view  ${showMenu ? "menu-open" : ""}`}>
         {children}
       </main>
-      {router.pathname !== "/contact" && <Footer />}
+      {/* {router.pathname !== "/contact" && <Footer />} */}
     </div>
   );
 };

@@ -14,7 +14,22 @@
   }
 }
 main {
-  padding-bottom: 5rem;
+  background-color: #f1f1f1;
+  height: 200vh;
+  .grid-holder {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    }
+    .col {
+      border-left: 1px solid #dbdbdb;
+    }
+  }
 }
 .main-layout {
   transition: transform 0.2s ease, opacity 0.5s ease;
@@ -24,13 +39,33 @@ main {
     transform: translateX(-100vw);
   }
 }
+@keyframes firstword {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(120px);
+  }
+}
+@keyframes wordin {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(120px);
+  }
+}
+@keyframes wordout {
+  from {
+    transform: translateY(120px);
+  }
+  to {
+    transform: translateY(240px);
+  }
+}
+
 .hero-block {
   height: 100vh;
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background-color: black;
-  }
   .hero-content {
     position: absolute;
     inset: 0;
@@ -48,6 +83,122 @@ main {
       }
     }
     .hero-text {
+      .top-titles-container {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .bottom-titles-container {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .default-view,
+      .default-view-b {
+        display: none;
+      }
+      .turning-title {
+        display: block;
+        position: absolute;
+        text-align: center;
+        font-size: 96px;
+        height: 120px;
+        line-height: 90px;
+        &.f1 {
+          top: 0;
+          animation: firstword 0.8s 3s cubic-bezier(1, 0, 1, 0.7) forwards;
+        }
+        &.f2 {
+          animation: wordin 0.8s 3.6s cubic-bezier(0, 0, 0.3, 1) forwards,
+            wordout 0.8s 6s cubic-bezier(1, 0, 1, 0.7) forwards;
+          top: -120px;
+        }
+        &.f3 {
+          top: -120px;
+          animation: wordin 0.8s 6.6s cubic-bezier(0, 0, 0.3, 1) forwards,
+            wordout 0.8s 9.6s cubic-bezier(1, 0, 1, 0.7) forwards;
+        }
+        &.f4 {
+          top: -120px;
+          animation: wordin 0.8s 10.2s cubic-bezier(0, 0, 0.3, 1) forwards,
+            wordout 0.8s 13.2s cubic-bezier(1, 0, 1, 0.7) forwards;
+        }
+
+        &.s1 {
+          animation: wordin 0.8s cubic-bezier(0, 0, 0.3, 1) forwards,
+            wordout 0.8s 3.6s cubic-bezier(1, 0, 1, 0.7) forwards;
+          top: -120px;
+        }
+        &.s2 {
+          animation: wordin 0.8s 4.2s cubic-bezier(0, 0, 0.3, 1) forwards,
+            wordout 0.8s 7.4s cubic-bezier(1, 0, 1, 0.7) forwards;
+          top: -120px;
+        }
+        &.s3 {
+          top: -120px;
+          animation: wordin 0.8s 8s cubic-bezier(0, 0, 0.3, 1) forwards,
+            wordout 0.8s 11s cubic-bezier(1, 0, 1, 0.7) forwards;
+        }
+        &.s4 {
+          top: -120px;
+          animation: wordin 0.8s 11.6s cubic-bezier(0, 0, 0.3, 1) forwards,
+            wordout 0.8s 13.6s cubic-bezier(1, 0, 1, 0.7) forwards;
+        }
+        &.b-f1 {
+          top: 0;
+          animation: firstword 0.8s 3s cubic-bezier(1, 0, 1, 0.7) forwards;
+        }
+        &.b-f2 {
+          animation: wordin 0.8s 3.6s cubic-bezier(0, 0, 0.3, 1) forwards,
+            wordout 0.8s 6s cubic-bezier(1, 0, 1, 0.7) forwards;
+          top: -120px;
+        }
+        &.b-f3 {
+          top: -120px;
+          animation: wordin 0.8s 6.6s cubic-bezier(0, 0, 0.3, 1) forwards,
+            wordout 0.8s 9.6s cubic-bezier(1, 0, 1, 0.7) forwards;
+        }
+        &.b-f4 {
+          top: -120px;
+          animation: wordin 0.8s 10.2s cubic-bezier(0, 0, 0.3, 1) forwards,
+            wordout 0.8s 13.2s cubic-bezier(1, 0, 1, 0.7) forwards;
+        }
+
+        &.b-s1 {
+          animation: wordin 0.8s cubic-bezier(0, 0, 0.3, 1) forwards,
+            wordout 0.8s 3.6s cubic-bezier(1, 0, 1, 0.7) forwards;
+          top: -120px;
+        }
+        &.b-s2 {
+          animation: wordin 0.8s 4.2s cubic-bezier(0, 0, 0.3, 1) forwards,
+            wordout 0.8s 7.4s cubic-bezier(1, 0, 1, 0.7) forwards;
+          top: -120px;
+        }
+        &.b-s3 {
+          top: -120px;
+          animation: wordin 0.8s 8s cubic-bezier(0, 0, 0.3, 1) forwards,
+            wordout 0.8s 11s cubic-bezier(1, 0, 1, 0.7) forwards;
+        }
+        &.b-s4 {
+          top: -120px;
+          animation: wordin 0.8s 11.6s cubic-bezier(0, 0, 0.3, 1) forwards,
+            wordout 0.8s 13.6s cubic-bezier(1, 0, 1, 0.7) forwards;
+        }
+      }
+      .bottom-titles-container {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
       transition: transform 0.2s ease, opacity 0.5s ease;
       display: flex;
       opacity: 1;
@@ -56,9 +207,11 @@ main {
       padding: 16px;
       height: 100%;
       width: 100vw;
+      font-family: "HalantMedium";
       @media (min-width: 768px) {
         width: unset;
-        justify-content: flex-end;
+        justify-content: center;
+        align-items: center;
         padding: 5rem;
       }
       h1 {

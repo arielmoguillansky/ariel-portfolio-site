@@ -9,11 +9,14 @@ import ProductBg from "/public/images/product-bg.png";
 import RenderBg from "/public/images/render-bg.png";
 import { useRouter } from "next/router";
 import { useToggleMenu, useWindowSize } from "../helpers/hooks";
-import { useState } from "react";
-
+import Footer from "../components/Footer";
+import GridLayout from "../components/GridLayout";
+import TextLoop from "react-text-loop";
+import TextTransition, { presets } from "react-text-transition";
+import { useEffect, useState } from "react";
 const indexContent: { [key: string]: any } = {
   "en-US": {
-    heroTitle: "hi, i'm ariel.",
+    heroTitle: "I am",
     heroSubtitle: [
       "product designer",
       "ux analyst",
@@ -31,7 +34,7 @@ const indexContent: { [key: string]: any } = {
   },
 
   "es-ES": {
-    heroTitle: "hola, soy ariel.",
+    heroTitle: "Yo soy.",
     heroSubtitle: [
       "diseñador industrial",
       "analista UX",
@@ -62,6 +65,37 @@ const Home: NextPage = () => {
   const isMobile = useWindowSize();
   const [showMenu, handleMobileMenu] = useToggleMenu();
 
+  useEffect(() => {
+    const trigger = setInterval(() => {
+      const t1 = document.getElementsByClassName("default-view");
+      for (let i = 0; i < t1.length; i++) {
+        t1[i].classList.remove("turning-title");
+        t1[i].classList.remove(`f${i + 1}`);
+        t1[i].classList.remove(`s${i}`);
+        setTimeout(() => {
+          t1[i].classList.add("turning-title");
+          t1[i].classList.add(`s${i + 1}`);
+        }, 500);
+      }
+    }, 15000);
+    const trigger2 = setInterval(() => {
+      const t1 = document.getElementsByClassName("default-view-b");
+      for (let i = 0; i < t1.length; i++) {
+        t1[i].classList.remove("turning-title");
+        t1[i].classList.remove(`b-f${i + 1}`);
+        t1[i].classList.remove(`s${i}`);
+        setTimeout(() => {
+          t1[i].classList.add("turning-title");
+          t1[i].classList.add(`b-s${i + 1}`);
+        }, 500);
+      }
+    }, 16000);
+    return () => {
+      clearInterval(trigger);
+      clearInterval(trigger2);
+    };
+  }, []);
+
   const header: any = {
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
@@ -72,6 +106,12 @@ const Home: NextPage = () => {
         showMenu={showMenu}
       />
     ),
+  };
+
+  const footer: any = {
+    shouldAlwaysCompleteAnimation: true,
+    expanded: false,
+    children: <Footer />,
   };
   const heroBg: any = {
     opacity: [0, 0.9],
@@ -87,10 +127,22 @@ const Home: NextPage = () => {
     children: (
       <div className={`hero-content ${showMenu ? "menu-open" : ""}`}>
         <div className="hero-text">
-          <h1>{heroTitle}</h1>
-          <h2>
-            <Typed strings={heroSubtitle} typeSpeed={40} backSpeed={50} loop />
-          </h2>
+          <div className="top-titles-container">
+            <div className="turning-title f1 default-view">I am</div>
+            <div className="turning-title f2 default-view">Io sono</div>
+            <div className="turning-title f3 default-view">Yo soy</div>
+            <div className="turning-title f4 default-view">I am</div>
+          </div>
+          <div className="bottom-titles-container">
+            <div className="turning-title b-f1 default-view-b">
+              development.
+            </div>
+            <div className="turning-title b-f2 default-view-b">creativity.</div>
+            <div className="turning-title b-f3 default-view-b">gestion.</div>
+            <div className="turning-title b-f4 default-view-b">
+              creatividad.
+            </div>
+          </div>
         </div>
       </div>
     ),
@@ -210,6 +262,10 @@ const Home: NextPage = () => {
   return (
     <div>
       <ParallaxProvider>
+        <GridLayout />
+        <ParallaxBanner layers={[heroBlock]} className="hero-block" />
+        <ParallaxBanner layers={[footer]} />
+        {/* 
         <ParallaxBanner
           layers={[heroBlock, heroBg, header]}
           className="hero-block"
@@ -230,6 +286,7 @@ const Home: NextPage = () => {
           layers={[renderSectionBg, renderSectionContent]}
           className="render-section parallax-wrapper"
         ></ParallaxBanner>
+      */}
       </ParallaxProvider>
     </div>
   );
