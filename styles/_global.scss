@@ -14,7 +14,65 @@
   }
 }
 main {
-  padding-bottom: 5rem;
+  background-color: white;
+  // background-color: #f1f1f1;
+  h1 {
+    color: $darkGray;
+    font-family: $halantBold;
+    font-size: 90px;
+  }
+  h2 {
+    color: $darkGray;
+    font-family: $halantBold;
+    font-size: 56px;
+  }
+  .main-view {
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 48px;
+    gap: 24px;
+    .row {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+      gap: 24px;
+      .box {
+        text-align: center;
+        border: 4px solid $darkGray;
+        border-radius: 1rem;
+        padding: 24px;
+        flex-grow: 1;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.link {
+          cursor: pointer;
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  .grid-holder {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    }
+    .col {
+      border-left: 1px solid #dbdbdb;
+    }
+  }
 }
 .main-layout {
   transition: transform 0.2s ease, opacity 0.5s ease;
@@ -24,13 +82,33 @@ main {
     transform: translateX(-100vw);
   }
 }
+@keyframes firstword {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(120px);
+  }
+}
+@keyframes wordin {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(120px);
+  }
+}
+@keyframes wordout {
+  from {
+    transform: translateY(120px);
+  }
+  to {
+    transform: translateY(240px);
+  }
+}
+
 .hero-block {
   height: 100vh;
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background-color: black;
-  }
   .hero-content {
     position: absolute;
     inset: 0;
@@ -48,6 +126,43 @@ main {
       }
     }
     .hero-text {
+      .top-titles-container {
+        width: 100%;
+        // height: 120px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .bottom-titles-container {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .turning-title {
+        display: block;
+        position: absolute;
+        text-align: center;
+        font-size: 96px;
+        height: 120px;
+        top: 0px;
+      }
+      .is-hidden,
+      .default-view-b {
+        display: none;
+      }
+      .bottom-titles-container {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
       transition: transform 0.2s ease, opacity 0.5s ease;
       display: flex;
       opacity: 1;
@@ -56,9 +171,11 @@ main {
       padding: 16px;
       height: 100%;
       width: 100vw;
+      font-family: "HalantMedium";
       @media (min-width: 768px) {
         width: unset;
-        justify-content: flex-end;
+        justify-content: center;
+        align-items: center;
         padding: 5rem;
       }
       h1 {
@@ -385,4 +502,42 @@ h2 {
   position: absolute;
   transition-property: transform;
   transform-origin: center center;
+}
+
+.old-phrase {
+  animation: rotateOut 0.4s ease-in-out forwards;
+}
+.next-phrase {
+  animation: rotateIn 0.4s ease-in-out forwards;
+}
+
+@keyframes rotateOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    transform: translateY(-3rem);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

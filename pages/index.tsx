@@ -9,15 +9,20 @@ import ProductBg from "/public/images/product-bg.png";
 import RenderBg from "/public/images/render-bg.png";
 import { useRouter } from "next/router";
 import { useToggleMenu, useWindowSize } from "../helpers/hooks";
-import { useState } from "react";
-
+import Footer from "../components/Footer";
+import GridLayout from "../components/GridLayout";
+import TextLoop from "react-text-loop";
+import TextTransition, { presets } from "react-text-transition";
+import { useEffect, useState } from "react";
+import { RotatingText } from "../components/RotatingText";
 const indexContent: { [key: string]: any } = {
   "en-US": {
-    heroTitle: "hi, i'm ariel.",
+    heroTitle: "I am",
     heroSubtitle: [
+      "web developer",
       "product designer",
       "ux analyst",
-      "web developer",
+      "dev ops",
       "project manager",
       "university lecturer",
     ],
@@ -31,11 +36,12 @@ const indexContent: { [key: string]: any } = {
   },
 
   "es-ES": {
-    heroTitle: "hola, soy ariel.",
+    heroTitle: "Yo soy.",
     heroSubtitle: [
-      "diseñador industrial",
-      "analista UX",
       "desarrollador",
+      "diseñador industrial",
+      "dev ops",
+      "analista UX",
       "project manager",
       "docente universitario",
     ],
@@ -61,6 +67,7 @@ const Home: NextPage = () => {
   const { heroTitle, heroSubtitle } = indexContent[locale ?? "en-US"];
   const isMobile = useWindowSize();
   const [showMenu, handleMobileMenu] = useToggleMenu();
+  const [index, setIndex] = useState(0);
 
   const header: any = {
     shouldAlwaysCompleteAnimation: true,
@@ -72,6 +79,12 @@ const Home: NextPage = () => {
         showMenu={showMenu}
       />
     ),
+  };
+
+  const footer: any = {
+    shouldAlwaysCompleteAnimation: true,
+    expanded: false,
+    children: <Footer />,
   };
   const heroBg: any = {
     opacity: [0, 0.9],
@@ -87,10 +100,27 @@ const Home: NextPage = () => {
     children: (
       <div className={`hero-content ${showMenu ? "menu-open" : ""}`}>
         <div className="hero-text">
-          <h1>{heroTitle}</h1>
-          <h2>
-            <Typed strings={heroSubtitle} typeSpeed={40} backSpeed={50} loop />
-          </h2>
+          <div className="flex-col top-titles-container">
+            <RotatingText
+              rotatingTextContent={["I am", "Io sono", "Yo soy"] || []}
+              duration={4532}
+            />
+            <RotatingText
+              rotatingTextContent={
+                [
+                  "development",
+                  "arquitectura",
+                  "creativity",
+                  "design",
+                  "automatización",
+                  "performance",
+                  "code",
+                  "programacion",
+                ] || []
+              }
+              duration={2000}
+            />
+          </div>
         </div>
       </div>
     ),
@@ -208,8 +238,38 @@ const Home: NextPage = () => {
     ),
   };
   return (
-    <div>
-      <ParallaxProvider>
+    <div className="main-view">
+      <div className="row">
+        <div className="box">
+          <div>
+            <h1>Hey!</h1>
+            <h1>While Im building this page, relax</h1>
+          </div>
+        </div>
+      </div>
+      <div className="row">
+        <div className="box">
+          <h2>its me, Ariel</h2>
+        </div>
+        <div className="box">
+          <h2>a developer, devops, pm & designer</h2>
+        </div>
+      </div>
+      <div className="row">
+        <a className="box link" href="development">
+          development
+        </a>
+        <a className="box link" href="ux-projects">
+          UX/UI projects
+        </a>
+        <a className="box link" href="https://github.com/arielmoguillansky">
+          github
+        </a>
+      </div>
+      {/* <ParallaxProvider>
+        <GridLayout />
+        <ParallaxBanner layers={[heroBlock]} className="hero-block" />
+        <ParallaxBanner layers={[footer]} />
         <ParallaxBanner
           layers={[heroBlock, heroBg, header]}
           className="hero-block"
@@ -230,7 +290,7 @@ const Home: NextPage = () => {
           layers={[renderSectionBg, renderSectionContent]}
           className="render-section parallax-wrapper"
         ></ParallaxBanner>
-      </ParallaxProvider>
+      </ParallaxProvider> */}
     </div>
   );
 };

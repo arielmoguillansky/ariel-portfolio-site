@@ -8,3 +8,10 @@ export const goToTop = () => {
     behavior: "smooth",
   });
 };
+
+export const isDesktop = (breakpoint: string) => {
+  return ['2xl', 'xl', 'lg'].includes(breakpoint)
+}
+export const isMobile = (breakpoint: string) => {
+  return ['sm', 'md'].includes(breakpoint)
+}
