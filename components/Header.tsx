@@ -25,7 +25,7 @@ const Header = ({ expand, handleMobileMenu, showMenu }: HeaderProps) => {
         </div>
       </div>
       <div className="nav-link-wrapper">
-        <div className="">
+        {/* <div className="">
           {asPath !== "/" && (
             <CustomLink
               text={`${locale === "en-US" ? "Work" : "Trabajos"}`}
@@ -40,7 +40,7 @@ const Header = ({ expand, handleMobileMenu, showMenu }: HeaderProps) => {
             text={`${locale === "en-US" ? "Contact" : "Contacto"}`}
             url="/contact"
           />
-        </div>
+        </div> */}
         <div className="language-header-selector">
           <Link href={asPath} locale="es-ES" scroll={false}>
             <a
